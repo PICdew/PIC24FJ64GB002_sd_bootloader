@@ -186,42 +186,56 @@ int main(void){
 	sourceAddr.Val = USER_PROG_RESET;
 	userReset.Val = ReadLatch(sourceAddr.word.HW, sourceAddr.word.LW);
     
-    //Read hex file and 
-    if(is_boot_mode()){
-        sd_initialize();
-        //TODO read hex file and 
-        	
-        //File IO
-        FILEIO_OBJECT file;
-        
-        //open file
-        if (FILEIO_Open (&file,  HEX_FILE_NAME , FILEIO_OPEN_READ | FILEIO_OPEN_APPEND | FILEIO_OPEN_CREATE) == FILEIO_RESULT_FAILURE)
-        {
-            return -1;
-        }
 
-
-
-        //read one line data
-        int ret;
-        int line_size=100;
-        char str[BUF];
-        ret = FILEIO_Read(str, 1, line_size, &file);
-
-        // Close the file to save the data
-        if (FILEIO_Close (&file) != FILEIO_RESULT_SUCCESS)
-        {
-            return -1;
-        }
-        
-        sd_finalize();
+    //It is not boot mode. goto user app.
+    if(0==is_boot_mode()){   
+        //GOTO user application.
+        ResetDevice(userReset.Val); 
     }
-    
-    
+     
+    //It is boot_mode.
+    //Read hex file and write to program memory.
+    sd_initialize();
+        
+        	
+    //File IO
+    FILEIO_OBJECT file;
+        
+    //open file
+    if (FILEIO_Open (&file,  HEX_FILE_NAME , FILEIO_OPEN_READ | FILEIO_OPEN_APPEND | FILEIO_OPEN_CREATE) == FILEIO_RESULT_FAILURE)
+    {
+        return -1;
+    }
+
+    //Read file.
+    int ret;
+    char str[BUF] ="";
+    int i=0;
+        
+    while(1){
+        ret = FILEIO_GetChar(&file);    //read char from file.
+        str[i]=ret;
+        i++;
+        if(ret == EOF){break;}
+        if(ret=='\r' ||  ret=='\n' ){   //Detect CR or LF
+            str[i]='\0';
+            //TODO : parse str and write data to program memory.
+                
+                
+            //Reset str
+            str[0]='\0';
+            i=0;
+        }
+    }
+
+    // Close the file to save the data
+    if (FILEIO_Close (&file) != FILEIO_RESULT_SUCCESS){ return -1; }
+        
+    sd_finalize();
     
     //GOTO user application.
     ResetDevice(userReset.Val); 
-    
+
     return 0;
 }
 
