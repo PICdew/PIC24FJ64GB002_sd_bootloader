@@ -7,9 +7,7 @@
 
 
 //Includes *******************************
-#include "config.h"
 #include <stdio.h>
-#include "uart.h"
 #include "delay.h"
 #include "sd_card.h"
 #include "system.h"
@@ -18,6 +16,8 @@
 
 #ifdef __XC16
 #include <xc.h>
+#include "config.h"
+#include "uart.h"
 #endif
 
 #define HEX_FILE_NAME "TEST.hex"
@@ -45,21 +45,10 @@ volatile WORD keyTest2 = 0xAAAA;
 BYTE buffer[MAX_PACKET_SIZE+1];
 //****************************************
 
-//Configuration bits *********************
-/*
-*	These configuration settings are not required for proper 
-*	bootloader operation and can be modified as desired.  
-*
-*	Refer to AN1157 troubleshooting for configuration suggestions
-*/
-
-
 #define DEV_HAS_USB
 
 #ifndef DEV_HAS_CONFIG_BITS
     #ifdef DEV_HAS_USB
-    //_CONFIG1(JTAGEN_OFF & GWRP_OFF & ICS_PGx1 & FWDTEN_OFF)
-    //_CONFIG2(POSCMOD_HS & FNOSC_PRIPLL & PLLDIV_DIV2 & PLL96MHZ_ON)
     _CONFIG1( JTAGEN_OFF & GCP_OFF & GWRP_OFF & ICS_PGx1 & FWDTEN_OFF )
     _CONFIG2( IESO_ON & FNOSC_FRCPLL & FCKSM_CSDCMD & OSCIOFNC_ON &
 	IOL1WAY_OFF & I2C1SEL_PRI & POSCMOD_NONE  & PLL96MHZ_ON & PLLDIV_DIV2 )
@@ -93,6 +82,7 @@ BYTE buffer[MAX_PACKET_SIZE+1];
 * Note:		 	None.
 ********************************************************************/
     
+       
         
 void init_uart(void){
     RPINR18bits.U1RXR = 2;  //rx UART1 RP2
@@ -125,7 +115,7 @@ void init_uart(void){
 	IEC0bits.U1RXIE = 0; //disable interrupt
 }
 
-
+    
 int is_boot_mode(void){
     //TODO: Implement decision logic here.
     
@@ -168,13 +158,36 @@ int process_each_line(FILEIO_OBJECT file, void (processor)(char* )){
     return 0;
 }
 
+/**
+ * 
+ * @param str
+ */
 void parse_hex_and_map(char *str){
     FORMAT fmt;
     if(-1==parse_hex_format(str,&fmt)){
         printf("ERROR!!!!\r\n");
     }
-
     map_hex_format(&fmt);
+}
+
+/**
+ * 
+ * @param str
+ */
+void print(char *str){
+    printf("%s\r\n",str);
+}
+
+/**
+ * 
+ * @param str
+ */
+void verify(char *str){
+    FORMAT fmt;
+    if(-1==parse_hex_format(str,&fmt)){
+        printf("ERROR!!!!\r\n");
+    }
+    //TODO : Implement verify function.
 }
 
 
@@ -373,6 +386,7 @@ int main()
 *			
 * Note:		 	None.
 ********************************************************************/
+/*
 void GetCommand(){
     
 #ifdef DEBUG
@@ -438,7 +452,7 @@ void GetCommand(){
 		
 }//end GetCommand()
 
-
+*/
 
 
 /********************************************************************
@@ -456,6 +470,7 @@ void GetCommand(){
 *			
 * Note:		 	None.
 ********************************************************************/
+/*
 void HandleCommand()
 {
 	
@@ -666,7 +681,7 @@ void HandleCommand()
 	}// end switch(Command)
 }//end HandleCommand()
 
-
+*/
 
 
 /********************************************************************
@@ -685,6 +700,7 @@ void HandleCommand()
 *
 * Note:		 	None.
 ********************************************************************/
+/*
 void PutResponse(WORD responseLen)
 {
 	WORD i;
@@ -726,7 +742,7 @@ void PutResponse(WORD responseLen)
 }//end PutResponse()
 
 
-
+*/
 
 /********************************************************************
 * Function: 	void PutChar(BYTE Char)
@@ -744,6 +760,7 @@ void PutResponse(WORD responseLen)
 *
 * Note:		 	None
 ********************************************************************/
+/*
 void PutChar(BYTE txChar)
 {
 	while(UxSTAbits.UTXBF);	//wait for FIFO space
@@ -751,7 +768,7 @@ void PutChar(BYTE txChar)
 }//end PutChar(BYTE Char)
 
 
-
+*/
 
 /********************************************************************
 * Function:        void GetChar(BYTE * ptrChar)
@@ -769,6 +786,7 @@ void PutChar(BYTE txChar)
 *
 * Note:			None
 ********************************************************************/
+/*
 void GetChar(BYTE * ptrChar)
 {
    
@@ -801,7 +819,7 @@ void GetChar(BYTE * ptrChar)
         #endif
 	}//end while(1)
 }//end GetChar(BYTE *ptrChar)
-
+*/
 
 
 
@@ -1253,6 +1271,7 @@ void WriteTimeout()
 * Note:			Contains code to handle UART errata issues for
 				PIC24FJ128 family parts, A2 and A3 revs.
 ********************************************************************/
+/*
 void AutoBaud()
 {
 	BYTE dummy;
@@ -1291,6 +1310,7 @@ void AutoBaud()
 	#endif
 
 }//end AutoBaud()
+ * */
 
 
 
@@ -1311,6 +1331,7 @@ void AutoBaud()
 *
 * Note:			None.
 ********************************************************************/
+/*
 void ioMap()
 {
 
@@ -1327,7 +1348,9 @@ void ioMap()
 	__builtin_write_OSCCONL(OSCCON | 0x0040);
 
 }//end ioMap()
+ * */
 #endif
+
 
 
 
