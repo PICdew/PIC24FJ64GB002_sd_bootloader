@@ -14,6 +14,7 @@
 #include "sd_card.h"
 #include "system.h"
 #include "fileio.h"
+#include "pic_hex_mapper.h"
 
 #ifdef __XC16
 #include <xc.h>
@@ -92,51 +93,6 @@ BYTE buffer[MAX_PACKET_SIZE+1];
 * Note:		 	None.
 ********************************************************************/
     
-    /*
-void SYSTEM_Initialize (void)
-{
-#if defined(unix) || defined(__APPLE__) || defined(_WIN32)
-#else
-	AD1PCFG = 0xFFFC; //Never use AD converter
-	
-#ifdef PCB1
-	TRISAbits.TRISA0 = 1;   //AN0  P2: set to Input for analog in
-	TRISAbits.TRISA1 = 1;   //AN1  P3: set to Input for analog in
-#endif
-
-	TRISBbits.TRISB0 = 1;   //State of wireless module
-	TRISBbits.TRISB1 = 0;   //RESET pin of wireless module.
-	LATBbits.LATB1 = 1;     //wake_sw : active
-	TRISAbits.TRISA2 = 0;   //9:wake_up pin of wireless module
-	LATAbits.LATA2 = 1;     
-
-	TRISBbits.TRISB2 = 1;   //P6: set to Input  for UART1 Rx
-	TRISBbits.TRISB3 = 0;   //P7: set to Output for UART1 Tx
-
-	TRISBbits.TRISB15 = 1;   //P15: set to Output for UART2 Rx
-	TRISBbits.TRISB14 = 0;   //P14: set to Input  for UART2 Tx
-
-	TRISAbits.TRISA3 = 0;   //P10: set to Output for high side switch
-	LATAbits.LATA3 = 0;     //turn off high side switch
-
-	TRISBbits.TRISB5 = 0;   //P14: wake_measurement module
-	LATBbits.LATB5 = 1;     //
-
-	TRISBbits.TRISB13 = 1;   //P24: set to Input for analog in
-
-	TRISBbits.TRISB11 = 1;
-	TRISBbits.TRISB10 = 0;
-	
-	TRISBbits.TRISB13 = 0;  //Set status LED
-	LATBbits.LATB13 = 0;    //Turn off status LED
-
-	TRISBbits.TRISB7 = 0;   //set 
-	RPINR20bits.SDI1R = 11; // SDI??RP7??
-	RPOR5bits.RP10R = 8;    // SCK1??RP2??
-	RPOR3bits.RP7R = 7;     // SDO1??RP3??
-#endif 
-}
-*/
         
 void init_uart(void){
     RPINR18bits.U1RXR = 2;  //rx UART1 RP2
@@ -175,8 +131,57 @@ int is_boot_mode(void){
     
     return 1;
 }
+   
+
+/**
+ * process_each_line
+ * @param 
+ * @param processor
+ * @return 
+ */
+int process_each_line(FILEIO_OBJECT file, void (processor)(char* )){
+    int ret;
+    char str[BUF] ="";
+    int i=0;
     
-    
+    while(1){
+        ret = FILEIO_GetChar(&file);    //read char from file.
+        str[i]=ret;
+        i++;
+        if(ret == EOF){break;}
+        if(ret=='\r'||ret=='\n'){   //Detect CR or LF.
+			if(i!=0){
+            	str[i]='\0';
+
+                //Process strings
+                processor(str);
+			
+            	//Reset str
+            	str[0]='\0';
+            	i=0;
+			}
+        }else{
+			str[i]=ret;
+			i++;
+		}
+    }
+    return 0;
+}
+
+void parse_hex_and_map(char *str){
+    FORMAT fmt;
+    if(-1==parse_hex_format(str,&fmt)){
+        printf("ERROR!!!!\r\n");
+    }
+
+    map_hex_format(&fmt);
+}
+
+
+/**
+ * main
+ * @return 
+ */
 int main(void){
     
     CLKDIV = 0;
@@ -206,27 +211,8 @@ int main(void){
     {
         return -1;
     }
-
-    //Read file.
-    int ret;
-    char str[BUF] ="";
-    int i=0;
-        
-    while(1){
-        ret = FILEIO_GetChar(&file);    //read char from file.
-        str[i]=ret;
-        i++;
-        if(ret == EOF){break;}
-        if(ret=='\r' ||  ret=='\n' ){   //Detect CR or LF
-            str[i]='\0';
-            //TODO : parse str and write data to program memory.
-                
-                
-            //Reset str
-            str[0]='\0';
-            i=0;
-        }
-    }
+    
+    process_each_line(file, parse_hex_and_map);
 
     // Close the file to save the data
     if (FILEIO_Close (&file) != FILEIO_RESULT_SUCCESS){ return -1; }
