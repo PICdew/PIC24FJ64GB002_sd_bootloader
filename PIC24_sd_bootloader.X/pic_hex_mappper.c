@@ -6,6 +6,7 @@
 
 #include <string.h>
 #include "pic_hex_mapper.h"
+#include <stdio.h>
 
 
 #define FILENAME	"test.hex" 	//File name of hex file.
@@ -133,23 +134,31 @@ int parse_hex_format(const char *str, FORMAT *format ){
 * 	memory handler.
 */
 void erase_memory(void){
-#ifdef EMURATE_MEMORY
+#ifdef __XC16
+    printf(">Erase_memory\r\n");
+#elif defined EMURATE_MEMORY
 	memset(program_memory,0xFF,sizeof(program_memory));
 #endif 
 }	
 void write_memory(long address, unsigned char data){
-#ifdef EMURATE_MEMORY
+#ifdef __XC16
+    printf(">Write memory. address:%lx,data:%x\r\n",address, data);
+#elif defined EMURATE_MEMORY
 	program_memory[address]=data;
 #endif
 }
 unsigned char read_memory(long address){
-#ifdef EMURATE_MEMORY
+#ifdef __XC16
+    printf(">Write memory. address:%lx\r\n",address);
+#elif defined EMURATE_MEMORY
 	return program_memory[address];
 #endif 
 	return 0;
 }
 void show_memory(void){
-#ifdef  EMURATE_MEMORY
+#ifdef __XC16
+    
+#elif defined EMURATE_MEMORY
 	int i=0;
 	for(i=0;i<MEMORY_SIZE;i++){
 		if(i%0x20==0) printf("\r\n%04x :",i/0x20*0x20);
@@ -167,7 +176,23 @@ void map_hex_format(const FORMAT *format){
 	int i=0;
 	long offset= format->address_offset;
 	for(i=0;i<format->data_length;i++){
-		write_memory(offset+i,format->data[i]);
+        switch(format->record_type){
+            case 0:
+                write_memory(offset+i,format->data[i]);
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+            default:
+                break;
+        }
 	}
 }
 

@@ -20,7 +20,9 @@
 #include "uart.h"
 #endif
 
-#define HEX_FILE_NAME "TEST.hex"
+#define HEX_FILE_NAME "TEST.HEX"
+//#define HEX_FILE_NAME "LOG.TXT"
+//#define HEX_FILE_NAME "DATA.CSV"
 #define BUF             (100)
 
 //****************************************
@@ -83,7 +85,9 @@ BYTE buffer[MAX_PACKET_SIZE+1];
 ********************************************************************/
     
        
-        
+/**
+ * 
+ */
 void init_uart(void){
     RPINR18bits.U1RXR = 2;  //rx UART1 RP2
 	RPOR1bits.RP3R = 3;     //tx UART1
@@ -109,13 +113,15 @@ void init_uart(void){
 							UART_ADR_DETECT_DIS &
 							UART_RX_OVERRUN_CLEAR;
 
-
 	OpenUART1(config1, config2,8 );
 	ConfigIntUART1( UART_RX_INT_EN & UART_TX_INT_DIS );
 	IEC0bits.U1RXIE = 0; //disable interrupt
 }
 
-    
+/**
+ * 
+ * @return 
+ */   
 int is_boot_mode(void){
     //TODO: Implement decision logic here.
     
@@ -129,15 +135,14 @@ int is_boot_mode(void){
  * @param processor
  * @return 
  */
-int process_each_line(FILEIO_OBJECT file, void (processor)(char* )){
+int process_each_line(FILEIO_OBJECT *file, void (processor)(char* )){
     int ret;
     char str[BUF] ="";
     int i=0;
+
     
     while(1){
-        ret = FILEIO_GetChar(&file);    //read char from file.
-        str[i]=ret;
-        i++;
+        ret = FILEIO_GetChar(file);    //read char from file.
         if(ret == EOF){break;}
         if(ret=='\r'||ret=='\n'){   //Detect CR or LF.
 			if(i!=0){
@@ -175,7 +180,7 @@ void parse_hex_and_map(char *str){
  * @param str
  */
 void print(char *str){
-    printf("%s\r\n",str);
+    printf(">%s\r\n",str);
 }
 
 /**
@@ -196,25 +201,33 @@ void verify(char *str){
  * @return 
  */
 int main(void){
-    
     CLKDIV = 0;
     SYSTEM_Initialize();
+    delay_ms(1000);
+    
+    
+    init_uart();
     
     //Setup user reset vector
 	sourceAddr.Val = USER_PROG_RESET;
 	userReset.Val = ReadLatch(sourceAddr.word.HW, sourceAddr.word.LW);
     
-
+    printf("bootloader start\r\n");
+    
     //It is not boot mode. goto user app.
     if(0==is_boot_mode()){   
         //GOTO user application.
         ResetDevice(userReset.Val); 
     }
+    
+    printf("Device boot mode\r\n");
      
     //It is boot_mode.
     //Read hex file and write to program memory.
-    sd_initialize();
-        
+    int ret = sd_initialize();
+    if(-1==ret){
+        printf("failed to read sd\r\n");
+    }
         	
     //File IO
     FILEIO_OBJECT file;
@@ -222,18 +235,53 @@ int main(void){
     //open file
     if (FILEIO_Open (&file,  HEX_FILE_NAME , FILEIO_OPEN_READ | FILEIO_OPEN_APPEND | FILEIO_OPEN_CREATE) == FILEIO_RESULT_FAILURE)
     {
+        printf("failed to open file.\r\n");
         return -1;
     }
+    printf("Open log file.\r\n");
     
-    process_each_line(file, parse_hex_and_map);
+    //move pointer to the target.
+	if(FILEIO_Seek (&file,0, FILEIO_SEEK_SET) != FILEIO_RESULT_SUCCESS){
+		return -1;
+	}
+    
+   
+    
+    long f_pos = FILEIO_Tell(&file);
+    printf("Pos file: %ld.\r\n",f_pos);
+    
+    
+    //ret = FILEIO_GetChar(&file);    //read char from file.
+    //printf("char : %d\r\n  ",ret);
 
+    //process_each_line(&file, print); //TEST 
+    process_each_line(&file, parse_hex_and_map);
+            
+    Nop();
+    
+    printf("Read log each line.\r\n");
+    
+    //TODO ERASE MEMORY
+    
+    //TODO read file and map memory.
+    //process_each_line(file, parse_hex_and_map); 
+    
+    //TODO :verify memory
+    //process_each_line(file, verify); 
+    
     // Close the file to save the data
-    if (FILEIO_Close (&file) != FILEIO_RESULT_SUCCESS){ return -1; }
+    if (FILEIO_Close (&file) != FILEIO_RESULT_SUCCESS){ 
+        return -1; 
+    }
         
     sd_finalize();
     
     //GOTO user application.
-    ResetDevice(userReset.Val); 
+    ResetDevice(userReset.Val);
+    
+    printf("finish loader\r\n");
+    
+    while(1);
 
     return 0;
 }
@@ -470,7 +518,7 @@ void GetCommand(){
 *			
 * Note:		 	None.
 ********************************************************************/
-/*
+
 void HandleCommand()
 {
 	
@@ -527,7 +575,7 @@ void HandleCommand()
 				writeKey2 += Command;		
 			#endif
 
-			WritePM(length, sourceAddr);	
+			WritePM(length, sourceAddr);
 
 			responseBytes = 1; //set length of reply
  			break;
@@ -681,7 +729,6 @@ void HandleCommand()
 	}// end switch(Command)
 }//end HandleCommand()
 
-*/
 
 
 /********************************************************************
