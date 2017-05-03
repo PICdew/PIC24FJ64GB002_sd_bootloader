@@ -6,11 +6,12 @@
 
 #include <string.h>
 #include "pic_hex_mapper.h"
+#include "config.h"
 #include <stdio.h>
 
 
 #define FILENAME	"test.hex" 	//File name of hex file.
-#define BUF 		(10000)	
+#define BUF 		(100)	
 #define MEMORY_SIZE	(0xAC00)	//Memory size of PIC program memory.	
 
 //#define EMURATE_MEMORY			
@@ -167,33 +168,84 @@ void show_memory(void){
 #endif 
 }
 
+
+
+
+
+int intel_hex2program_memory(FORMAT *fmt, MEMORY *mem, int max_memory_size){
+	//NULL check
+	if(fmt==NULL){
+		printf("Err: null1\r\n");
+		return -1;
+	}
+	if(mem==NULL){
+		printf("Err: null2\r\n");
+		return -1;
+	}
+
+	long base_addr = fmt->address_offset/2;
+	int memsize = fmt->data_length /4;
+
+	
+	int i=0;
+	switch(fmt->record_type){
+		case 0:
+			//Error check
+			if(fmt->address_offset%2!=0){
+				return -1;
+			}
+			if(fmt->data_length%4 != 0){
+				return -1;
+			}
+			//Read mem
+			for(i=0;i<memsize;i++){
+				mem->address = base_addr+2*i;
+				mem->data.b_data[0] = fmt->data[0+4*i];
+				mem->data.b_data[1] = fmt->data[1+4*i];
+				mem->data.b_data[2] = fmt->data[2+4*i];
+				mem->data.b_data[3] = fmt->data[3+4*i];
+				mem++;
+			}
+			break;
+		case 1:
+			//TODO : end of file.
+			break;
+		case 2:
+			break;
+		case 3:
+			break;
+		case 4:
+			//TODO : set extend linear address.
+			break;
+		case 5:
+			break;
+		default:
+			break;
+	}
+	return 0;	
+}
+
 /*
 *	map_hex_format
 *	
 *	Read hex format and map the data to progmemory.
 */
-void map_hex_format(const FORMAT *format){
-	int i=0;
-	long offset= format->address_offset;
-	for(i=0;i<format->data_length;i++){
-        switch(format->record_type){
-            case 0:
-                write_memory(offset+i,format->data[i]);
-                break;
-            case 1:
-                break;
-            case 2:
-                break;
-            case 3:
-                break;
-            case 4:
-                break;
-            case 5:
-                break;
-            default:
-                break;
-        }
+int map_hex_format(FORMAT *fmt){
+
+	int length = fmt->data_length/4;
+	MEMORY mem[BUF];
+	if(-1==intel_hex2program_memory(fmt, mem, BUF)){ 
+		printf("Failed to convert hex->progmem\r\n ");
+        return -1;
 	}
+    
+    //TODO write data into latchei
+    int i=0;
+    for(i=0;i<length;i++){
+        WriteLatch(mem[i].address<<16, mem[i].address, mem[0].data.i_data[1], mem[i].data.i_data[0]);
+    }
+    //TODO : write memory
+    return 0;
 }
 
 #ifdef unix

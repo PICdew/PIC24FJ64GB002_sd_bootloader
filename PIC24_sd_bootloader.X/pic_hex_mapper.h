@@ -25,8 +25,20 @@ typedef struct intel_hex_format{
 	unsigned char 	check_sum;	
 } FORMAT;
 
+typedef union pic_program_memory{
+	unsigned long l_data;
+	unsigned char b_data[4];
+    unsigned int  i_data[2];
+} PROG_MEM;
+
+typedef struct memory{
+	long address;
+	PROG_MEM data;
+} MEMORY;
+
+
 int parse_hex_format(const char *str, FORMAT *format );
-void map_hex_format(const FORMAT *format);
+int map_hex_format(FORMAT *format);
 
 
 #ifdef	__cplusplus
