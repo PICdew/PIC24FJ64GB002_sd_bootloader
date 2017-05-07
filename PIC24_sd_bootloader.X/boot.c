@@ -13,27 +13,22 @@
 #include "system.h"
 #include "fileio.h"
 #include "pic_hex_mapper.h"
+#include "program_memory.h"
+#include "memory.h"
+#include "config.h"
 
 #ifdef __XC16
 #include <xc.h>
-#include "config.h"
 #include "uart.h"
 #endif
 
-#define HEX_FILE_NAME "TEST.HEX"
-//#define HEX_FILE_NAME "LOG.TXT"
-//#define HEX_FILE_NAME "DATA.CSV"
 #define BUF             (100)
 
 //****************************************
 
 
 //Globals ********************************
-WORD responseBytes;		//number of bytes in command response
-DWORD_VAL sourceAddr;	//general purpose address variable
-DWORD_VAL userReset;	//user code reset vector
-DWORD_VAL userTimeout; 	//bootloader entry timeout value
-WORD userResetRead;		//bool - for relocating user reset vector
+
 
 //Variables for storing runaway code protection keys
 #ifdef USE_RUNAWAY_PROTECT
@@ -43,12 +38,12 @@ volatile WORD keyTest1 = 0x0000;
 volatile WORD keyTest2 = 0xAAAA;
 #endif
 
-//Transmit/Recieve Buffer
-BYTE buffer[MAX_PACKET_SIZE+1];
+
 //****************************************
 
 #define DEV_HAS_USB
 
+//Configuation bits****************************************
 #ifndef DEV_HAS_CONFIG_BITS
     #ifdef DEV_HAS_USB
     _CONFIG1( JTAGEN_OFF & GCP_OFF & GWRP_OFF & ICS_PGx1 & FWDTEN_OFF )
@@ -128,7 +123,6 @@ int is_boot_mode(void){
     return 1;
 }
    
-
 /**
  * process_each_line
  * @param 
@@ -140,7 +134,6 @@ int process_each_line(FILEIO_OBJECT *file, void (processor)(char* )){
     char str[BUF] ="";
     int i=0;
 
-    
     while(1){
         ret = FILEIO_GetChar(file);    //read char from file.
         if(ret == EOF){break;}
@@ -169,9 +162,13 @@ int process_each_line(FILEIO_OBJECT *file, void (processor)(char* )){
  */
 void parse_hex_and_map(char *str){
     FORMAT fmt;
+    
+    //Parse hex_format.
     if(-1==parse_hex_format(str,&fmt)){
         printf("ERROR!!!!\r\n");
     }
+    
+    //Write Program memory.
     map_hex_format(&fmt);
 }
 
@@ -195,33 +192,142 @@ void verify(char *str){
     //TODO : Implement verify function.
 }
 
-
 /**
  * main
  * @return 
  */
 int main(void){
+    
+    /***************************Initial settings****************************/
+    
     CLKDIV = 0;
     SYSTEM_Initialize();
-    delay_ms(1000);
-    
-    
     init_uart();
     
-    //Setup user reset vector
+    //DWORD_VAL delay;
+    DWORD_VAL sourceAddr;	//general purpose address variable
+    DWORD_VAL userReset;	//user code reset vector
+    WORD userResetRead;		//bool - for relocating user reset vector
+   
+	//Setup bootloader entry delay
+	//sourceAddr.Val = DELAY_TIME_ADDR;	//bootloader timer address
+	//delay.Val = ReadLatch(sourceAddr.word.HW, sourceAddr.word.LW); //read BL timeout
+	
+	//Setup user reset vector
 	sourceAddr.Val = USER_PROG_RESET;
 	userReset.Val = ReadLatch(sourceAddr.word.HW, sourceAddr.word.LW);
+
+	//Prevent bootloader lockout - if no user reset vector, reset to BL start
+	if(userReset.Val == 0xFFFFFF){
+		userReset.Val = BOOT_ADDR_LOW;	
+	}
+	userResetRead = 0;
     
-    printf("bootloader start\r\n");
+	//If timeout is zero, check reset state.
+    /*
+	if(delay.v[0] == 0){
+
+		//If device is returning from reset, BL is disabled call user code
+		//otherwise assume the BL was called from use code and enter BL
+		if(RCON & 0xFED3){
+			//If bootloader disabled, go to user code
+			ResetDevice(userReset.Val);         //
+		}else{
+			delay.Val = 0xFF;
+		}
+	}
+     * */
+
+
+    /*
+	T2CONbits.TON = 0;
+	T2CONbits.T32 = 1; // Setup Timer 2/3 as 32 bit timer incrementing every clock
+	IFS0bits.T3IF = 0; // Clear the Timer3 Interrupt Flag 
+	IEC0bits.T3IE = 0; // Disable Timer3 Interrupt Service Routine 
+    */
+
+	//Enable timer if not in always-BL mode
+    /*
+	if((delay.Val & 0x000000FF) != 0xFF){
+		//Convert seconds into timer count value 
+		delay.Val = ((DWORD)(FCY)) * ((DWORD)(delay.v[0])); 
+
+		PR3 = delay.word.HW; //setup timer timeout value
+		PR2 = delay.word.LW;
+
+		TMR2 = 0;
+		TMR3 = 0;
+		T2CONbits.TON=1;  //enable timer
+	}
+     * */
+
+
+	//If using a part with PPS, map the UART I/O
+	#ifdef DEV_HAS_PPS
+		ioMap();
+	#endif
+
+	
+	//Configure UART pins to be digital I/O.
+	#ifdef UTX_ANA
+		UTX_ANA = 1;
+	#endif
+	#ifdef URX_ANA
+		URX_ANA = 1;
+	#endif
+
+
+	// SETUP UART COMMS: No parity, one stop bit, polled
+	UxMODEbits.UARTEN = 1;		//enable uart
+    #ifdef USE_AUTOBAUD
+	    UxMODEbits.ABAUD = 1;		//use autobaud
+    #else
+        UxBRG = BAUDRATEREG;
+    #endif
+	#ifdef USE_HI_SPEED_BRG
+		UxMODEbits.BRGH = 1;	//use high speed mode
+	#endif
+	UxSTA = 0x0400;  //Enable TX
     
-    //It is not boot mode. goto user app.
-    if(0==is_boot_mode()){   
-        //GOTO user application.
-        ResetDevice(userReset.Val); 
+//---TEST Program Memory-------------------------------------------------------------------------------------------
+    
+    printf("\r\nTESTTESTTESTTEST");
+    unsigned int addr = 0xA000;
+    
+    int i,k=0;
+    delay_ms(1000);
+
+
+
+    printf("erase\r\n\r\n\r\n");
+  
+    //WRITE
+    
+    printf("write\r\n\r\n\r\n");
+    for(k=0;k<0x10;k++){
+        sourceAddr.Val = addr+0x80*k;
+        for(i=5;i<5+0xFF;i++){
+                //buffer[i] = i;
+        }
+        WritePM(1,sourceAddr);
+        //delay_ms(0);
     }
     
-    printf("Device boot mode\r\n");
-     
+    
+    delay_ms(1000);
+    //READ
+    sourceAddr.Val = addr;
+    printf("\r\nread\r\n\r\n\r\n");
+    for(k=0;k<0x10;k++){
+        sourceAddr.Val = addr+0x80*k;
+        ReadPM(64,sourceAddr);
+    }
+    Nop();
+    while(1);
+    
+    
+    /***************************SD BOOTLOADER****************************/
+    
     //It is boot_mode.
     //Read hex file and write to program memory.
     int ret = sd_initialize();
@@ -249,17 +355,12 @@ int main(void){
     
     long f_pos = FILEIO_Tell(&file);
     printf("Pos file: %ld.\r\n",f_pos);
-    
-    
-    //ret = FILEIO_GetChar(&file);    //read char from file.
-    //printf("char : %d\r\n  ",ret);
 
     //process_each_line(&file, print); //TEST 
     process_each_line(&file, parse_hex_and_map);
-            
-    Nop();
     
     printf("Read log each line.\r\n");
+    
     
     //TODO ERASE MEMORY
     
@@ -271,10 +372,16 @@ int main(void){
     
     // Close the file to save the data
     if (FILEIO_Close (&file) != FILEIO_RESULT_SUCCESS){ 
+        printf("failed to close sd \r\n");
         return -1; 
     }
+    
+    
         
     sd_finalize();
+    printf("SD finalize\r\n");
+    
+    while(1);
     
     //GOTO user application.
     ResetDevice(userReset.Val);
@@ -519,7 +626,8 @@ void GetCommand(){
 * Note:		 	None.
 ********************************************************************/
 
-void HandleCommand()
+/*
+ void HandleCommand()
 {
 	
 	BYTE Command;
@@ -729,7 +837,7 @@ void HandleCommand()
 	}// end switch(Command)
 }//end HandleCommand()
 
-
+*/
 
 /********************************************************************
 * Function: 	void PutResponse()
@@ -870,351 +978,6 @@ void GetChar(BYTE * ptrChar)
 
 
 
-/********************************************************************
-* Function:     void ReadPM(WORD length, DWORD_VAL sourceAddr)
-*
-* PreCondition: None
-*
-* Input:		length		- number of instructions to read
-*				sourceAddr 	- address to read from
-*
-* Output:		None
-*
-* Side Effects:	Puts read instructions into buffer.
-*
-* Overview:		Reads from program memory, stores data into buffer. 
-*
-* Note:			None
-********************************************************************/
-void ReadPM(WORD length, DWORD_VAL sourceAddr)
-{
-	WORD bytesRead = 0;
-	DWORD_VAL temp;
-
-	//Read length instructions from flash
-	while(bytesRead < length*PM_INSTR_SIZE)
-	{
-		//read flash
-		temp.Val = ReadLatch(sourceAddr.word.HW, sourceAddr.word.LW);
-
-		buffer[bytesRead+5] = temp.v[0];   	//put read data onto 
-		buffer[bytesRead+6] = temp.v[1];	//response buffer
-		buffer[bytesRead+7] = temp.v[2];
-		buffer[bytesRead+8] = temp.v[3];
-	
-		//4 bytes per instruction: low word, high byte, phantom byte
-		bytesRead+=PM_INSTR_SIZE; 
-
-		sourceAddr.Val = sourceAddr.Val + 2;  //increment addr by 2
-	}//end while(bytesRead < length*PM_INSTR_SIZE)
-}//end ReadPM(WORD length, DWORD_VAL sourceAddr)
-
-
-
-
-/********************************************************************
-* Function:     void WritePM(WORD length, DWORD_VAL sourceAddr)
-*
-* PreCondition: Page containing rows to write should be erased.
-*
-* Input:		length		- number of rows to write
-*				sourceAddr 	- row aligned address to write to
-*
-* Output:		None.
-*
-* Side Effects:	None.
-*
-* Overview:		Writes number of rows indicated from buffer into
-*				flash memory
-*
-* Note:			None
-********************************************************************/
-void WritePM(WORD length, DWORD_VAL sourceAddr)
-{
-	WORD bytesWritten;
-	DWORD_VAL data;
-	#ifdef USE_RUNAWAY_PROTECT
-	WORD temp = (WORD)sourceAddr.Val;
-	#endif
-
-	bytesWritten = 0;	//first 5 buffer locations are cmd,len,addr	
-	
-	//write length rows to flash
-	while((bytesWritten) < length*PM_ROW_SIZE)
-	{
-		asm("clrwdt");
-
-		//get data to write from buffer
-		data.v[0] = buffer[bytesWritten+5];
-		data.v[1] = buffer[bytesWritten+6];
-		data.v[2] = buffer[bytesWritten+7];
-		data.v[3] = buffer[bytesWritten+8];
-
-		//4 bytes per instruction: low word, high byte, phantom byte
-		bytesWritten+=PM_INSTR_SIZE;
-
-		//Flash configuration word handling
-		#ifndef DEV_HAS_CONFIG_BITS
-			//Mask of bit 15 of CW1 to ensure it is programmed as 0
-			//as noted in PIC24FJ datasheets
-			if(sourceAddr.Val == CONFIG_END){
-				data.Val &= 0x007FFF;
-			}
-		#endif
-
-		//Protect the bootloader & reset vector
-		#ifdef USE_BOOT_PROTECT
-			//protect BL reset & get user reset
-			if(sourceAddr.Val == 0x0){
-				//get user app reset vector lo word
-				userReset.Val = data.Val & 0xFFFF;
-
-				//program low word of BL reset
-				data.Val = 0x040000 + (0xFFFF & BOOT_ADDR_LOW);
-
-				userResetRead = 1;
-			}
-			if(sourceAddr.Val == 0x2){
-				//get user app reset vector hi byte	
-				userReset.Val += (DWORD)(data.Val & 0x00FF)<<16;			
-			
-				//program high byte of BL reset
-				data.Val = ((DWORD)(BOOT_ADDR_LOW & 0xFF0000))>>16;
-
-				userResetRead = 1;
-			}
-		#else
-			//get user app reset vector lo word
-			if(sourceAddr.Val == 0x0){
-				userReset.Val = data.Val & 0xFFFF;					
-
-				userResetRead = 1;
-			}
-
-			//get user app reset vector	hi byte
-			if(sourceAddr.Val == 0x2) {
-				userReset.Val |= ((DWORD)(data.Val & 0x00FF))<<16;	
-
-				userResetRead = 1;
-			}
-		#endif
-
-
-		//put information from reset vector in user reset vector location
-		if(sourceAddr.Val == USER_PROG_RESET){
-			if(userResetRead){  //has reset vector been grabbed from location 0x0?
-				//if yes, use that reset vector
-				data.Val = userReset.Val;	
-			}else{
-				//if no, use the user's indicated reset vector
-				userReset.Val = data.Val;
-			}
-		}
-
-		//If address is delay timer location, store data and write empty word
-		if(sourceAddr.Val == DELAY_TIME_ADDR){
-			userTimeout.Val = data.Val;
-			data.Val = 0xFFFFFF;
-		}
-	
-		#ifdef USE_BOOT_PROTECT			//do not erase bootloader & reset vector
-			if(sourceAddr.Val < BOOT_ADDR_LOW || sourceAddr.Val > BOOT_ADDR_HI){
-		#endif
-		
-		#ifdef USE_CONFIGWORD_PROTECT	//do not erase last page
-			if(sourceAddr.Val < (CONFIG_START & 0xFFFC00)){
-		#endif
-
-		#ifdef USE_VECTOR_PROTECT		//do not erase first page
-			//if(sourceAddr.Val >= PM_PAGE_SIZE/2){
-			if(sourceAddr.Val >= VECTOR_SECTION){
-		#endif
-		
-
-
-		//write data into latches
-   		WriteLatch(sourceAddr.word.HW, sourceAddr.word.LW, 
-					data.word.HW, data.word.LW);
-
-
-		#ifdef USE_VECTOR_PROTECT	
-			}//end vectors protect
-		#endif
-
-		#ifdef USE_CONFIGWORD_PROTECT
-			}//end config protect
-		#endif
-
-		#ifdef USE_BOOT_PROTECT
-			}//end bootloader protect
-		#endif
-
-
-		#ifdef USE_RUNAWAY_PROTECT
-			writeKey1 += 4;			// Modify keys to ensure proper program flow
-			writeKey2 -= 4;
-		#endif
-
-
-		//write to flash memory if complete row is finished
-		if((bytesWritten % PM_ROW_SIZE) == 0)
-		{
-
-			#ifdef USE_RUNAWAY_PROTECT
-				//setup program flow protection test keys
-				keyTest1 =  (0x0009 | temp) - length + bytesWritten - 5;
-				keyTest2 =  (((0x557F << 1) + WT_FLASH) - bytesWritten) + 6;
-			#endif
-
-
-			#ifdef USE_BOOT_PROTECT			//Protect the bootloader & reset vector
-				if((sourceAddr.Val < BOOT_ADDR_LOW || sourceAddr.Val > BOOT_ADDR_HI)){
-			#endif
-
-			#ifdef USE_CONFIGWORD_PROTECT	//do not erase last page
-				if(sourceAddr.Val < (CONFIG_START & 0xFFFC00)){
-			#endif
-	
-			#ifdef USE_VECTOR_PROTECT		//do not erase first page
-				if(sourceAddr.Val >= VECTOR_SECTION){
-			#endif
-	
-
-			//execute write sequence
-			WriteMem(PM_ROW_WRITE);	
-
-			#ifdef USE_RUNAWAY_PROTECT
-				writeKey1 += 5; // Modify keys to ensure proper program flow
-				writeKey2 -= 6;
-			#endif
-
-
-			#ifdef USE_VECTOR_PROTECT	
-				}//end vectors protect
-			#endif
-	
-			#ifdef USE_CONFIGWORD_PROTECT
-				}//end config protect
-			#endif	
-
-			#ifdef USE_BOOT_PROTECT
-				}//end boot protect
-			#endif
-
-		}
-
-		sourceAddr.Val = sourceAddr.Val + 2;  //increment addr by 2
-	}//end while((bytesWritten-5) < length*PM_ROW_SIZE)
-}//end WritePM(WORD length, DWORD_VAL sourceAddr)
-
-
-
-
-/********************************************************************
-* Function:     void ErasePM(WORD length, DWORD_VAL sourceAddr)
-*
-* PreCondition: 
-*
-* Input:		length		- number of pages to erase
-*				sourceAddr 	- page aligned address to erase
-*
-* Output:		None.
-*
-* Side Effects:	None.
-*
-* Overview:		Erases number of pages from flash memory
-*
-* Note:			None
-********************************************************************/
-void ErasePM(WORD length, DWORD_VAL sourceAddr)
-{
-	WORD i=0;
-	#ifdef USE_RUNAWAY_PROTECT
-	WORD temp = (WORD)sourceAddr.Val;
-	#endif
-
-	while(i<length){
-
-		i++;
-	
-		#ifdef USE_RUNAWAY_PROTECT
-			writeKey1++;	// Modify keys to ensure proper program flow
-			writeKey2--;
-		#endif
-
-
-		//if protection enabled, protect BL and reset vector
-		#ifdef USE_BOOT_PROTECT		
-			if(sourceAddr.Val < BOOT_ADDR_LOW ||	//do not erase bootloader
-	   	   	   sourceAddr.Val > BOOT_ADDR_HI){
-		#endif
-
-		#ifdef USE_CONFIGWORD_PROTECT		//do not erase last page
-			if(sourceAddr.Val < (CONFIG_START & 0xFFFC00)){
-		#endif
-
-		#ifdef USE_VECTOR_PROTECT			//do not erase first page
-			if(sourceAddr.Val >= VECTOR_SECTION){
-		#endif
-
-		
-		#ifdef USE_RUNAWAY_PROTECT
-			//setup program flow protection test keys
-			keyTest1 = (0x0009 | temp) + length + i + 7;
-			keyTest2 = (0x557F << 1) - ER_FLASH - i + 3;
-		#endif
-
-
-		//perform erase
-		Erase(sourceAddr.word.HW, sourceAddr.word.LW, PM_PAGE_ERASE);
-
-
-		#ifdef USE_RUNAWAY_PROTECT
-			writeKey1 -= 7;	// Modify keys to ensure proper program flow
-			writeKey2 -= 3;
-		#endif
-
-
-
-		#ifdef USE_VECTOR_PROTECT	
-			}//end vectors protect
-
-		#elif  defined(USE_BOOT_PROTECT) || defined(USE_RESET_SAVE)
-			//Replace the bootloader reset vector
-			DWORD_VAL blResetAddr;
-
-			if(sourceAddr.Val < PM_PAGE_SIZE/2){
-	
-				//Replace BL reset vector at 0x00 and 0x02 if erased
-				blResetAddr.Val = 0;
-	
-				#ifdef USE_RUNAWAY_PROTECT
-					//setup program flow protection test keys
-					keyTest1 = (0x0009 | temp) + length + i;
-					keyTest2 = (0x557F << 1) - ER_FLASH - i;
-				#endif
-				
-				replaceBLReset(blResetAddr);
-
-			}
-		#endif
-
-		#ifdef USE_CONFIGWORD_PROTECT
-			}//end config protect
-		#endif
-
-		#ifdef USE_BOOT_PROTECT
-			}//end bootloader protect
-		#endif
-
-
-		sourceAddr.Val += PM_PAGE_SIZE/2;	//increment by a page
-
-	}//end while(i<length)
-}//end ErasePM
-
-
-
 
 /********************************************************************
 * Function:     void WriteTimeout()
@@ -1235,6 +998,7 @@ void ErasePM(WORD length, DWORD_VAL sourceAddr)
 *
 * Note:			None
 ********************************************************************/
+/*
 void WriteTimeout()
 {
 	#ifdef USE_RUNAWAY_PROTECT
@@ -1298,7 +1062,7 @@ void WriteTimeout()
 
 
 }//end WriteTimeout
-
+*/
 
 
 
@@ -1378,7 +1142,6 @@ void AutoBaud()
 *
 * Note:			None.
 ********************************************************************/
-/*
 void ioMap()
 {
 
@@ -1395,7 +1158,7 @@ void ioMap()
 	__builtin_write_OSCCONL(OSCCON | 0x0040);
 
 }//end ioMap()
- * */
+
 #endif
 
 
