@@ -65,8 +65,14 @@ extern volatile WORD keyTest2;
 ;
 ; Overview: 	Write stored registers to flash memory
 ;*********************************************************************/
+
+
 void WriteMem(WORD cmd)
 {
+#ifdef DEBUG
+    printf(">>>WRITEMEM:%x\r\n",cmd);
+#endif
+    
 	NVMCON = cmd;
 
 	#ifdef USE_RUNAWAY_PROTECT
@@ -108,12 +114,15 @@ void WriteMem(WORD cmd)
 ;*********************************************************************/	
 void WriteLatch(WORD page, WORD addrLo, WORD dataHi, WORD dataLo)
 {
+#ifdef DEBUG
+    printf(">>>writelatch:%x,%x\r\n",addrLo,dataLo);
+#endif
 	TBLPAG = page;
 
 	__builtin_tblwtl(addrLo,dataLo);
 	__builtin_tblwth(addrLo,dataHi);
 	
-}	
+}
 
 
 /********************************************************************
@@ -138,6 +147,9 @@ DWORD ReadLatch(WORD page, WORD addrLo)
 
 	temp.word.LW = __builtin_tblrdl(addrLo);
 	temp.word.HW = __builtin_tblrdh(addrLo);
+#ifdef DEBUG
+    printf(">>>readlatch:%x,%x,%x,%x\r\n",page,addrLo,temp.word.HW,temp.word.LW);
+#endif
 
 	return temp.Val;
 }
@@ -178,7 +190,11 @@ void ResetDevice(WORD addr)
 *********************************************************************/	
 void Erase(WORD page, WORD addrLo, WORD cmd)
 {
+#ifdef DEBUG
+    printf(">>>Erase:%x,%x\r\n",cmd,addrLo);
+#endif
 	WORD temp;	
+
 
 	temp = TBLPAG;
 	TBLPAG = page;
@@ -186,7 +202,8 @@ void Erase(WORD page, WORD addrLo, WORD cmd)
 	NVMCON = cmd;
 
 	__builtin_tblwtl(addrLo,addrLo);
-
+    
+        
 	#ifdef USE_RUNAWAY_PROTECT
 		writeKey1+=7;
 		writeKey2+=3;
@@ -194,8 +211,8 @@ void Erase(WORD page, WORD addrLo, WORD cmd)
 		if(writeKey1 == keyTest1 && writeKey2 == keyTest2){
 	#endif
 
-	__builtin_write_NVM();
 
+	__builtin_write_NVM();
 
 	while(NVMCONbits.WR == 1);
 

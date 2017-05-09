@@ -1,13 +1,14 @@
-
 #ifdef unix
 #include<stdlib.h>
 #include <stdio.h>
 #endif
 
+#include <stdio.h>
 #include <string.h>
 #include "pic_hex_mapper.h"
 #include "config.h"
-#include <stdio.h>
+#include "program_memory.h"
+
 
 
 #define FILENAME	"test.hex" 	//File name of hex file.
@@ -20,7 +21,11 @@ unsigned char program_memory[MEMORY_SIZE];
 #endif
 
 
-
+/*
+ *  global variables
+ */
+static unsigned long extended_address_offset=0;
+static unsigned long active_row_addr = 0;
 
 /*
  * private functions
@@ -170,16 +175,14 @@ void show_memory(void){
 
 
 
-
-
-int intel_hex2program_memory(FORMAT *fmt, MEMORY *mem, int max_memory_size){
+static int intel_hex2program_memory(FORMAT *fmt, MEMORY *mem, int max_memory_size){
 	//NULL check
 	if(fmt==NULL){
-		printf("Err: null1\r\n");
+		printf("Err: null\r\n");
 		return -1;
 	}
 	if(mem==NULL){
-		printf("Err: null2\r\n");
+		printf("Err: null\r\n");
 		return -1;
 	}
 
@@ -209,6 +212,8 @@ int intel_hex2program_memory(FORMAT *fmt, MEMORY *mem, int max_memory_size){
 			break;
 		case 1:
 			//TODO : end of file.
+            printf("End hex file.");
+            mem=NULL;
 			break;
 		case 2:
 			break;
@@ -216,14 +221,57 @@ int intel_hex2program_memory(FORMAT *fmt, MEMORY *mem, int max_memory_size){
 			break;
 		case 4:
 			//TODO : set extend linear address.
+            extended_address_offset = fmt->data[0]*0x100+fmt->data[1];
+            printf("Ex address setting.");
+            mem=NULL;
 			break;
 		case 5:
 			break;
 		default:
 			break;
 	}
-	return 0;	
+	return fmt->record_type;	
 }
+
+/**
+ * 
+ * @param mem
+ * @return 
+ */
+int write_program_memory(MEMORY *mem){
+    
+    unsigned long address = extended_address_offset*0x8000 + mem->address;
+
+        if(0==(address%0x80)){
+                //Reset active_row_addr and refreshg buffer.
+                active_row_addr = address;
+                erase_buffer();
+        }
+
+        int index = (address - active_row_addr) / 2;
+        if (index >= 0x40)
+        {
+                printf("ERROR: invalid index %lx\r\n",mem->address);
+                return -1;
+        }
+
+        set_buffer(4*index + 0, mem->data.b_data[0]);
+        set_buffer(4*index + 1, mem->data.b_data[1]);
+        set_buffer(4*index + 2, mem->data.b_data[2]);
+        set_buffer(4*index + 3, mem->data.b_data[3]);
+        if(index==0x3F){
+                //TODO write 1 block to memory.
+                int i=0;
+                for(i=0;i<0x40;i++){
+                    DWORD_VAL write_addr;
+                    write_addr.Val = active_row_addr;
+                    WritePM(1,write_addr);
+                }
+        }
+    return 0;
+}
+
+
 
 /*
 *	map_hex_format
@@ -234,19 +282,29 @@ int map_hex_format(FORMAT *fmt){
 
 	int length = fmt->data_length/4;
 	MEMORY mem[BUF];
-	if(-1==intel_hex2program_memory(fmt, mem, BUF)){ 
+    int ret = intel_hex2program_memory(fmt, mem, BUF);
+	if(-1==ret){ 
 		printf("Failed to convert hex->progmem\r\n ");
         return -1;
 	}
     
-    //TODO write data into latchei
+    //format is not data. return without writing memory.
+    if(ret!=0){
+        return 0;
+    }
+    
+    //write program memory.
     int i=0;
     for(i=0;i<length;i++){
-        WriteLatch(mem[i].address<<16, mem[i].address, mem[0].data.i_data[1], mem[i].data.i_data[0]);
+        if(-1==write_program_memory(&mem[i])){
+            return -1;
+        }
     }
-    //TODO : write memory
+    
     return 0;
 }
+
+
 
 #ifdef unix
 #ifndef TEST

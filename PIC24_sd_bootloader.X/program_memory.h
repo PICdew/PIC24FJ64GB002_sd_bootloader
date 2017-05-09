@@ -19,7 +19,7 @@ BYTE get_buffer(unsigned int address);
 void erase_buffer(void);
 
 void ReadPM( WORD length, DWORD_VAL sourceAddr);
-void WritePM( WORD length, DWORD_VAL sourceAddr);
+void WritePM( WORD length, DWORD_VAL addr);
 void ErasePM( WORD length, DWORD_VAL sourceAddr);
 
 

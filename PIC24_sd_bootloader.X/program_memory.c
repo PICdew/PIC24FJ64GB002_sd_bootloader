@@ -91,13 +91,14 @@ void ReadPM(WORD length, DWORD_VAL sourceAddr)
 *
 * Note:			None
 ********************************************************************/
-#define USER_RESET      0x00
-#define USER_RESET_READ 0x00
-void WritePM(WORD length, DWORD_VAL sourceAddr)
+
+void WritePM(WORD length, DWORD_VAL addr)
 {
+    DWORD_VAL sourceAddr;
+    sourceAddr.Val = addr.Val;
     DWORD_VAL userReset;
-    userReset.Val= USER_RESET;	//user code reset vector
-    WORD userResetRead  = USER_RESET_READ;		//bool - for relocating user reset vector
+    userReset.Val = BOOT_ADDR_LOW;	//user code reset vector
+    WORD userResetRead  = 0;		//bool - for relocating user reset vector
     //DWORD_VAL userTimeout; 	//bootloader entry timeout value
     
 	WORD bytesWritten;
@@ -121,10 +122,16 @@ void WritePM(WORD length, DWORD_VAL sourceAddr)
 		asm("clrwdt"); //clear watch dog.
 
 		//get data to write from buffer
+        /*
 		data.v[0] = buffer[bytesWritten+5];
 		data.v[1] = buffer[bytesWritten+6];
 		data.v[2] = buffer[bytesWritten+7];
 		data.v[3] = buffer[bytesWritten+8];
+         * */
+        data.v[0] = buffer[bytesWritten];
+		data.v[1] = buffer[bytesWritten+1];
+		data.v[2] = buffer[bytesWritten+2];
+		data.v[3] = buffer[bytesWritten+3];
 
 		//4 bytes per instruction: low word, high byte, phantom byte
 		bytesWritten+=PM_INSTR_SIZE;
@@ -210,7 +217,6 @@ void WritePM(WORD length, DWORD_VAL sourceAddr)
 
 
 		//write data into latches
-                data.word.HW=0;
    		WriteLatch(sourceAddr.word.HW, sourceAddr.word.LW, 
 					data.word.HW, data.word.LW);
         
@@ -233,11 +239,9 @@ void WritePM(WORD length, DWORD_VAL sourceAddr)
 			writeKey2 -= 4;
 		#endif
 
-
 		//write to flash memory if complete row is finished
 		if((bytesWritten % PM_ROW_SIZE) == 0)
 		{
-
 			#ifdef USE_RUNAWAY_PROTECT
 				//setup program flow protection test keys
 				keyTest1 =  (0x0009 | temp) - length + bytesWritten - 5;

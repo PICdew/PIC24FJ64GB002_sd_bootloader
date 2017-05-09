@@ -7,12 +7,12 @@
 
 
 
-#ifndef FCY
+#ifndef _FCY
 #ifdef __XC16
 //#define FCY 32000000UL
-#define FCY 16000000UL
+#define _FCY 16000000UL
 #else
-#define FCY 40000000UL
+#define _FCY 40000000UL
 #endif
 #endif
 
@@ -28,9 +28,9 @@ extern "C" {
 #ifdef __XC16
  extern void __delay32(unsigned long cycles);
 #define delay_ms(d) \
-  { __delay32( (unsigned long) (((unsigned long long) d)*(FCY)/1000ULL)); }
+  { __delay32( (unsigned long) (((unsigned long long) d)*(_FCY)/1000ULL)); }
 #define delay_us(d) \
-  { __delay32( (unsigned long) (((unsigned long long) d)*(FCY)/1000000ULL)); }
+  { __delay32( (unsigned long) (((unsigned long long) d)*(_FCY)/1000000ULL)); }
 #else
  
  

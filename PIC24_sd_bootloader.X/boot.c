@@ -169,7 +169,9 @@ void parse_hex_and_map(char *str){
     }
     
     //Write Program memory.
-    map_hex_format(&fmt);
+    if(-1==map_hex_format(&fmt)){
+        printf("str: %s\r\n",str);
+    }
 }
 
 /**
@@ -307,24 +309,28 @@ int main(void){
     for(k=0;k<0x10;k++){
         sourceAddr.Val = addr+0x80*k;
         for(i=5;i<5+0xFF;i++){
-                //buffer[i] = i;
+                set_buffer(i,i);
         }
         WritePM(1,sourceAddr);
         //delay_ms(0);
     }
     
+    int l=0;
+    for(l=0;l<0xFF;l++){
+        set_buffer(l,0);
+    }
     
     delay_ms(1000);
     //READ
     sourceAddr.Val = addr;
     printf("\r\nread\r\n\r\n\r\n");
-    for(k=0;k<0x10;k++){
-        sourceAddr.Val = addr+0x80*k;
-        ReadPM(64,sourceAddr);
+    sourceAddr.Val = addr;
+    ReadPM(64,sourceAddr);
+
+    for(l=0;l<0xFF;l++){
+        printf("%x \r\n",(unsigned int)get_buffer(l));
     }
-    Nop();
-    while(1);
-    
+
     
     /***************************SD BOOTLOADER****************************/
     
@@ -345,6 +351,7 @@ int main(void){
         return -1;
     }
     printf("Open log file.\r\n");
+
     
     //move pointer to the target.
 	if(FILEIO_Seek (&file,0, FILEIO_SEEK_SET) != FILEIO_RESULT_SUCCESS){
@@ -361,7 +368,6 @@ int main(void){
     
     printf("Read log each line.\r\n");
     
-    
     //TODO ERASE MEMORY
     
     //TODO read file and map memory.
@@ -376,7 +382,7 @@ int main(void){
         return -1; 
     }
     
-    
+   Nop(); 
         
     sd_finalize();
     printf("SD finalize\r\n");

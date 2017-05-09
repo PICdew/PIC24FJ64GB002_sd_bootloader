@@ -66,7 +66,7 @@
 
 //Bootloader feature configuration
 #define USE_BOOT_PROTECT	//Use BL block protection 
-#define USE_RUNAWAY_PROTECT	//Provide runaway code protection using program flow
+//#define USE_RUNAWAY_PROTECT	//Provide runaway code protection using program flow
 //#define USE_CONFIGWORD_PROTECT	//Protect last page from writes/erases
 //#define USE_VECTOR_PROTECT  //Use Reset and IVT protection
 //#define USE_HI_SPEED_BRG	//Use BRGH=1, UART high speed mode
@@ -74,6 +74,10 @@
 //#define USE_AUTOBAUD      //Use hardware autobaud feature
 //#define USE_AES //Use encryption
 //#define USE_RESET_SAVE    //Restores the reset vector without using USE_BOOT_PROTECT
+
+
+//HEX file name.
+#define HEX_FILE_NAME "TEST.HEX"
 
 //Bootloader Operation Configuration
 #define MAJOR_VERSION		0x01	//Bootloader FW version
@@ -95,11 +99,12 @@
 //not the location of the first instruction of the user application.
 //#define USER_PROG_RESET     0x100	//User app reset vector location
 #define USER_PROG_RESET     0x100
+#define USER_PROG_RESET_ADDR 0x2400
 #define DELAY_TIME_ADDR 	0x102	//BL entry delay location
 
 #define BOOT_ADDR_LOW 		0x400	//start of BL protection area
 #ifndef USE_AES
-	#define BOOT_ADDR_HI  		0x1400	//end of BL protection area 
+	#define BOOT_ADDR_HI  		0x8000	//end of BL protection area 
 #else
  	#define BOOT_ADDR_HI  		0x13FF	//end of BL protection area ** USE 0x13FF for AES support
 #endif
@@ -289,16 +294,18 @@
 
 
 //Function Prototypes **************************************************************
-extern DWORD ReadLatch(WORD, WORD);
+/*
+    extern DWORD ReadLatch(WORD, WORD);
 extern void Erase(WORD, WORD, WORD);
 extern void WriteLatch(WORD, WORD, WORD, WORD);
 extern void WriteMem(WORD);
 extern void ResetDevice(WORD);
-void PutChar(BYTE);
-void GetChar(BYTE *);
-void ReadPM(WORD, DWORD_VAL);
-void WritePM(WORD, DWORD_VAL);
-void ErasePM(WORD, DWORD_VAL);
+*/
+//void PutChar(BYTE);
+//void GetChar(BYTE *);
+//void ReadPM(WORD, DWORD_VAL);
+//void WritePM(WORD, DWORD_VAL);
+//void ErasePM(WORD, DWORD_VAL);
 void WriteTimeout();
 void GetCommand();
 void HandleCommand();
