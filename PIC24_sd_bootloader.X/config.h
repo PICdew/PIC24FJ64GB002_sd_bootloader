@@ -99,7 +99,7 @@
 //not the location of the first instruction of the user application.
 //#define USER_PROG_RESET     0x100	//User app reset vector location
 #define USER_PROG_RESET     0x100
-#define USER_PROG_RESET_ADDR 0x2400
+#define USER_PROG_RESET_ADDR 0x80C0
 #define DELAY_TIME_ADDR 	0x102	//BL entry delay location
 
 #define BOOT_ADDR_LOW 		0x400	//start of BL protection area

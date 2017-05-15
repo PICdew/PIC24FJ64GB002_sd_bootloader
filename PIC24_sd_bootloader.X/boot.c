@@ -133,6 +133,8 @@ int process_each_line(FILEIO_OBJECT *file, void (processor)(char* )){
     int ret;
     char str[BUF] ="";
     int i=0;
+    int line_num = 0;
+    FILEIO_Seek(file, 0,FILEIO_SEEK_CUR);
 
     while(1){
         ret = FILEIO_GetChar(file);    //read char from file.
@@ -142,7 +144,10 @@ int process_each_line(FILEIO_OBJECT *file, void (processor)(char* )){
             	str[i]='\0';
 
                 //Process strings
+                printf("ln:%d\r\n ",line_num);
+                line_num++;
                 processor(str);
+                
 			
             	//Reset str
             	str[0]='\0';
@@ -182,6 +187,23 @@ void print(char *str){
     printf(">%s\r\n",str);
 }
 
+
+int verify_format(FORMAT *fmt){
+    DWORD_VAL  address;
+    DWORD  data;
+    
+    address.Val= fmt->address_offset/2;
+    data = ReadLatch(address.word.HW, address.word.LW);
+    printf("read:%lx , ",(unsigned long)data);
+    int i=0;
+    for(i=0;i<fmt->data_length;i++){
+        printf("%x,",fmt->data[i]);
+    }
+    printf("\r\n");
+    
+    return 0;
+}
+
 /**
  * 
  * @param str
@@ -191,8 +213,10 @@ void verify(char *str){
     if(-1==parse_hex_format(str,&fmt)){
         printf("ERROR!!!!\r\n");
     }
-    //TODO : Implement verify function.
+    verify_format(&fmt);
 }
+
+
 
 /**
  * main
@@ -217,8 +241,8 @@ int main(void){
 	
 	//Setup user reset vector
 	sourceAddr.Val = USER_PROG_RESET;
-	userReset.Val = ReadLatch(sourceAddr.word.HW, sourceAddr.word.LW);
-
+	//userReset.Val = ReadLatch(sourceAddr.word.HW, sourceAddr.word.LW);
+    userReset.Val = USER_PROG_RESET_ADDR;
 	//Prevent bootloader lockout - if no user reset vector, reset to BL start
 	if(userReset.Val == 0xFFFFFF){
 		userReset.Val = BOOT_ADDR_LOW;	
@@ -266,7 +290,7 @@ int main(void){
 
 	//If using a part with PPS, map the UART I/O
 	#ifdef DEV_HAS_PPS
-		ioMap();
+		//ioMap();
 	#endif
 
 	
@@ -292,7 +316,7 @@ int main(void){
 	UxSTA = 0x0400;  //Enable TX
     
 //---TEST Program Memory-------------------------------------------------------------------------------------------
-    
+/* 
     printf("\r\nTESTTESTTESTTEST");
     unsigned int addr = 0xA000;
     
@@ -331,8 +355,10 @@ int main(void){
         printf("%x \r\n",(unsigned int)get_buffer(l));
     }
 
-    
+*/
     /***************************SD BOOTLOADER****************************/
+    
+    //ErasePM(8, userReset);
     
     //It is boot_mode.
     //Read hex file and write to program memory.
@@ -350,7 +376,7 @@ int main(void){
         printf("failed to open file.\r\n");
         return -1;
     }
-    printf("Open log file.\r\n");
+    printf("Open HEX file.\r\n");
 
     
     //move pointer to the target.
@@ -361,36 +387,36 @@ int main(void){
    
     
     long f_pos = FILEIO_Tell(&file);
-    printf("Pos file: %ld.\r\n",f_pos);
 
     //process_each_line(&file, print); //TEST 
+    printf("parse and hex\r\n");
     process_each_line(&file, parse_hex_and_map);
     
-    printf("Read log each line.\r\n");
-    
-    //TODO ERASE MEMORY
-    
-    //TODO read file and map memory.
-    //process_each_line(file, parse_hex_and_map); 
-    
     //TODO :verify memory
-    //process_each_line(file, verify); 
+    //printf("parse and verify\r\n");
+    //process_each_line(&file, verify); 
     
     // Close the file to save the data
     if (FILEIO_Close (&file) != FILEIO_RESULT_SUCCESS){ 
         printf("failed to close sd \r\n");
         return -1; 
     }
-    
-   Nop(); 
+
         
     sd_finalize();
     printf("SD finalize\r\n");
     
-    while(1);
+    //while(1);
     
     //GOTO user application.
+    //userReset.Val=0x400;
+    printf("GOTO %lx\r\n",userReset.Val);
+    delay_ms(1000);
+    
     ResetDevice(userReset.Val);
+    delay_ms(1000);
+    printf("**********");
+    
     
     printf("finish loader\r\n");
     
@@ -424,8 +450,12 @@ int main()
 	delay.Val = ReadLatch(sourceAddr.word.HW, sourceAddr.word.LW); //read BL timeout
 	
 	//Setup user reset vector
-	sourceAddr.Val = USER_PROG_RESET;
-	userReset.Val = ReadLatch(sourceAddr.word.HW, sourceAddr.word.LW);
+	sourceAddr.Val = USER_PROG_RESET;NOP
+NOP
+
+	userReset.Val = ReadLatch(sourceAddr.word.HW, sNOP
+NOP
+ourceAddr.word.LW);
 
 	//Prevent bootloader lockout - if no user reset vector, reset to BL start
 	if(userReset.Val == 0xFFFFFF){

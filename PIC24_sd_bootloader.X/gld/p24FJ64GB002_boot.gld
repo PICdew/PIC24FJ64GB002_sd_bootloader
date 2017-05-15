@@ -51,9 +51,9 @@ MEMORY
   ivt            : ORIGIN = 0x4,           LENGTH = 0xFC
   _reserved      : ORIGIN = 0x100,         LENGTH = 0x4
   aivt           : ORIGIN = 0x104,         LENGTH = 0xFC
-  app_ivt        : ORIGIN = 0x1800,        LENGTH = 0xC0    /*add for interrupt vector jump*/
-  //program (xr)   : ORIGIN = 0x200,         LENGTH = 0xA9F8
-  program (xr)   :ORIGIN = 0x400,          LENGTH = 0x1000 /*start & length of BL*/
+  app_ivt        : ORIGIN = 0xA000,        LENGTH = 0xC0    /*add for interrupt vector jump*/
+  /*program (xr)   : ORIGIN = 0x200,         LENGTH = 0xA9F8*/
+  program (xr)   : ORIGIN = 0x400,         LENGTH = 0x8000 /*start & length of BL*/
   CONFIG4        : ORIGIN = 0xABF8,        LENGTH = 0x2
   CONFIG3        : ORIGIN = 0xABFA,        LENGTH = 0x2
   CONFIG2        : ORIGIN = 0xABFC,        LENGTH = 0x2
@@ -68,10 +68,10 @@ __NO_HANDLES = 1;          /* Suppress handles on this device  */
 /*__CODE_BASE = 0x200;*/
 /*__CODE_LENGTH = 0xA9F8;*/
 __CODE_BASE = 0x400;
-__CODE_LENGTH = 0x0FFF;
+__CODE_LENGTH = 0xB000;
 __IVT_BASE  = 0x4;
 __AIVT_BASE = 0x104;
-__APP_IVT_BASE = 0x1800;
+/*__APP_IVT_BASE = 0xA000;*/
 __DATA_BASE = 0x800;
 __DATA_LENGTH = 0x2000;
 
