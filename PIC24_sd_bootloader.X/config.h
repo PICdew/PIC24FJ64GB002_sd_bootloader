@@ -7,42 +7,7 @@
 * Dependencies:
 * Processor:	PIC24F Family
 * Compiler:		C30 v3.00 or later
-* Company:		Microchip Technology, Inc.
-*
-* Software License Agreement:
-*
-* The software supplied herewith by Microchip Technology Incorporated
-* (the �Company�) for its PICmicro� Microcontroller is intended and
-* supplied to you, the Company�s customer, for use solely and
-* exclusively on Microchip PICmicro Microcontroller products. The
-* software is owned by the Company and/or its supplier, and is
-* protected under applicable copyright laws. All rights are reserved.
-* Any use in violation of the foregoing restrictions may subject the
-* user to criminal sanctions under applicable laws, as well as to
-* civil liability for the breach of the terms and conditions of this
-* license.
-*
-* THIS SOFTWARE IS PROVIDED IN AN �AS IS� CONDITION. NO WARRANTIES,
-* WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING, BUT NOT LIMITED
-* TO, IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
-* PARTICULAR PURPOSE APPLY TO THIS SOFTWARE. THE COMPANY SHOALL NT,
-* IN ANY CIRCUMSTANCES, BE LIABLE FOR SPECIAL, INCIDENTAL OR
-* CONSEQUENTIAL DAMAGES, FOR ANY REASON WHATSOEVER.
-*
-* 
-* File Description:
-*
-* Configuration for PIC24F Serial Bootloader
-* 
-*
-* Change History:
-*
-* Author      	Revision #      Date        Comment
-*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-* Brant Ivey	1.00   			1-17-2008	Initial release with AN1157
-* Brant Ivey	1.01   			4-09-2008	Added AES support
-* Brant Ivey    1.02            11-17-2008  Updated AES and 'K' device support
-*                                           Added extra configuration options
+*SD CARD BOOTLOADER 
 ********************************************************************/
 
 #ifndef CONFIG_H
@@ -312,7 +277,7 @@ void HandleCommand();
 void PutResponse(WORD);
 void AutoBaud();
 #if defined(USE_BOOT_PROTECT) || defined(USE_RESET_SAVE)
-void replaceBLReset(DWORD_VAL);
+//void replaceBLReset(DWORD_VAL);
 #endif
 //**********************************************************************************
 

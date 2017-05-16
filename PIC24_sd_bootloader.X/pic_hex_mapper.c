@@ -317,8 +317,6 @@ int map_hex_format(FORMAT *fmt){
     return 0;
 }
 
-
-
 #ifdef unix
 #ifndef TEST
 int main(void){

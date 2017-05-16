@@ -120,67 +120,64 @@ void WritePM(WORD length, DWORD_VAL addr)
 	while((bytesWritten) < length*PM_ROW_SIZE) //BYTE length  * 256, byteswritten +=4;
 	{
 		asm("clrwdt"); //clear watch dog.
-
-		//get data to write from buffer
-        /*
-		data.v[0] = buffer[bytesWritten+5];
-		data.v[1] = buffer[bytesWritten+6];
-		data.v[2] = buffer[bytesWritten+7];
-		data.v[3] = buffer[bytesWritten+8];
-         * */
-        data.v[0] = buffer[bytesWritten];
-		data.v[1] = buffer[bytesWritten+1];
-		data.v[2] = buffer[bytesWritten+2];
-		data.v[3] = buffer[bytesWritten+3];
+		data.v[0] = buffer[bytesWritten];
+		data.v[1] = buffer[bytesWritten + 1];
+		data.v[2] = buffer[bytesWritten + 2];
+		data.v[3] = buffer[bytesWritten + 3];
 
 		//4 bytes per instruction: low word, high byte, phantom byte
-		bytesWritten+=PM_INSTR_SIZE;
+		bytesWritten += PM_INSTR_SIZE;
 
-		//Flash configuration word handling
-		#ifndef DEV_HAS_CONFIG_BITS
-			//Mask of bit 15 of CW1 to ensure it is programmed as 0
-			//as noted in PIC24FJ datasheets
-			if(sourceAddr.Val == CONFIG_END){
-				data.Val &= 0x007FFF;
-			}
-		#endif
+//Flash configuration word handling
+#ifndef DEV_HAS_CONFIG_BITS
+		//Mask of bit 15 of CW1 to ensure it is programmed as 0
+		//as noted in PIC24FJ datasheets
+		if (sourceAddr.Val == CONFIG_END)
+		{
+			data.Val &= 0x007FFF;
+		}
+#endif
 
-		//Protect the bootloader & reset vector
-		#ifdef USE_BOOT_PROTECT
-			//protect BL reset & get user reset
-			if(sourceAddr.Val == 0x0){
-				//get user app reset vector lo word
-				//userReset.Val = data.Val & 0xFFFF;
-
-				//program low word of BL reset
-				data.Val = 0x040000 + (0xFFFF & BOOT_ADDR_LOW);
-
-				userResetRead = 1;
-			}
-			if(sourceAddr.Val == 0x2){
-				//get user app reset vector hi byte	
-				userReset.Val += (DWORD)(data.Val & 0x00FF)<<16;			
-			
-				//program high byte of BL reset
-				data.Val = ((DWORD)(BOOT_ADDR_LOW & 0xFF0000))>>16;
-
-				userResetRead = 1;
-			}
-		#else
+//Protect the bootloader & reset vector
+#ifdef USE_BOOT_PROTECT
+		//protect BL reset & get user reset
+		if (sourceAddr.Val == 0x0)
+		{
 			//get user app reset vector lo word
-			if(sourceAddr.Val == 0x0){
-				userReset.Val = data.Val & 0xFFFF;					
+			//userReset.Val = data.Val & 0xFFFF;
 
-				userResetRead = 1;
-			}
+			//program low word of BL reset
+			data.Val = 0x040000 + (0xFFFF & BOOT_ADDR_LOW);
 
-			//get user app reset vector	hi byte
-			if(sourceAddr.Val == 0x2) {
-				userReset.Val |= ((DWORD)(data.Val & 0x00FF))<<16;	
+			userResetRead = 1;
+		}
+		if (sourceAddr.Val == 0x2)
+		{
+			//get user app reset vector hi byte
+			userReset.Val += (DWORD)(data.Val & 0x00FF) << 16;
 
-				userResetRead = 1;
-			}
-		#endif
+			//program high byte of BL reset
+			data.Val = ((DWORD)(BOOT_ADDR_LOW & 0xFF0000)) >> 16;
+
+			userResetRead = 1;
+		}
+#else
+		//get user app reset vector lo word
+		if (sourceAddr.Val == 0x0)
+		{
+			userReset.Val = data.Val & 0xFFFF;
+
+			userResetRead = 1;
+		}
+
+		//get user app reset vector	hi byte
+		if (sourceAddr.Val == 0x2)
+		{
+			userReset.Val |= ((DWORD)(data.Val & 0x00FF)) << 16;
+
+			userResetRead = 1;
+		}
+#endif
 
 
 		//put information from reset vector in user reset vector location
@@ -374,7 +371,7 @@ void ErasePM(WORD length, DWORD_VAL sourceAddr)
 					keyTest2 = (0x557F << 1) - ER_FLASH - i;
 				#endif
 				
-				replaceBLReset(blResetAddr);
+				//replaceBLReset(blResetAddr);
 
 			}
 		#endif
