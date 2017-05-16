@@ -47,33 +47,33 @@ char sd_finalize(void);
  *      return total size of sd
  *      return -1 if error
  ********************************************************************************************/
-long write_sd(const char *str, size_t size);
+//long write_sd(const char *str, size_t size);
 
 /*********************************************************************************************
  * long read_sizeof_sd(void)
  *      read total size
  *      return total size of SD
  ********************************************************************************************/
-int write_log_file(const char *str, size_t size);
+//int write_log_file(const char *str, size_t size);
 
 /*********************************************************************************************
  * long read_sizeof_sd(void)
  *      read total size
  *      return total size of SD
  ********************************************************************************************/
-long read_sizeof_sd(void);
+//long read_sizeof_sd(void);
 
 
 
 /*********************************************************************************************
  * get_serial
  ********************************************************************************************/
-int get_serial(char *uuid);
+//int get_serial(char *uuid);
 
 /*********************************************************************************************
  * set_serial
  ********************************************************************************************/
-void set_serial(unsigned long);
+//void set_serial(unsigned long);
 
 
 /*********************************************************************************************
@@ -82,6 +82,6 @@ void set_serial(unsigned long);
  *      return total size
  *      return -1 if error
  ********************************************************************************************/
-long get_line_sd(long line_num, char *str, int line_size);
+//long get_line_sd(long line_num, char *str, int line_size);
 
 #endif

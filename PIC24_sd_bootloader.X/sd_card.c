@@ -120,6 +120,7 @@ char sd_finalize(void){
  *      return total size of sd
  *      return -1 if error
  ********************************************************************************************/
+/*
 long write_sd(const char *str, size_t size){
 	long f_pos = -1;
 
@@ -152,6 +153,7 @@ long write_sd(const char *str, size_t size){
 
 	return f_pos;
 }
+ * */
 
 /*********************************************************************************************
  * long write_error_log(char *str, size_t size)
@@ -159,6 +161,7 @@ long write_sd(const char *str, size_t size){
  *      return  0 no error
  *      return -1 if error
  ********************************************************************************************/
+/*
 int write_log_file(const char *str, size_t size){
 	//File IO
 	FILEIO_OBJECT file;
@@ -184,6 +187,7 @@ int write_log_file(const char *str, size_t size){
 	}
 	return SD_SUCCESS;
 }
+ * */
 
 /*********************************************************************************************
  * long read_sizeof_sd(void)
@@ -191,6 +195,7 @@ int write_log_file(const char *str, size_t size){
  *      return total size of SD
  *      error->return -1
  ********************************************************************************************/
+/*
 long read_sizeof_sd(void){
 
 	long f_pos = -1;
@@ -220,10 +225,12 @@ long read_sizeof_sd(void){
 	 
 	return f_pos;
 }
+ * */
 
 /*********************************************************************************************
  * get_serial
  ********************************************************************************************/
+/*
 int get_serial(char *uuid){
 	FILEIO_OBJECT file;
 
@@ -250,15 +257,18 @@ int get_serial(char *uuid){
 
 	return SD_SUCCESS;
 }
+ * */
 
 /*********************************************************************************************
  * set_serial
  ********************************************************************************************/
+/*
 void set_serial(unsigned long id){
 	id = 0;
 	//TODO write serial to .CONFIG file
 	
 }
+ * */
 
 /*********************************************************************************************
  * int get_line_sd(long line_num, char *str)
@@ -266,6 +276,7 @@ void set_serial(unsigned long id){
  *      return total size
  *      return -1 if error
  ********************************************************************************************/
+/*
 long get_line_sd(long line_num, char *str, int line_size){
 
 	long read_size;
@@ -298,6 +309,7 @@ long get_line_sd(long line_num, char *str, int line_size){
 	}
 	return read_size;
 }
+ * */
 
 /*
  * TEST CODE

@@ -1,13 +1,7 @@
 #include "program_memory.h"
 #include "config.h"
 #include "memory.h"
-#include <string.h>
-
-
-//WORD responseBytes;		//number of bytes in command response
-//DWORD_VAL userReset;	//user code reset vector
-DWORD_VAL userTimeout; 	//bootloader entry timeout value
-WORD userResetRead;		//bool - for relocating user reset vector
+//#include <string.h>
 
 //Transmit/Recieve Buffer
 BYTE buffer[MAX_PACKET_SIZE+1];
@@ -26,7 +20,11 @@ BYTE get_buffer(unsigned int address){
     return buffer[address];
 }
 void erase_buffer(void){
-    memset(buffer,0x00,MAX_PACKET_SIZE+1);
+    //memset(buffer,0x00,MAX_PACKET_SIZE+1);
+    int i=0;
+    for(i=0;i<MAX_PACKET_SIZE+1;i++){
+        buffer[i]=0xFF;
+    }
 }
 
 
@@ -194,7 +192,7 @@ void WritePM(WORD length, DWORD_VAL addr)
 
 		//If address is delay timer location, store data and write empty word
 		if(sourceAddr.Val == DELAY_TIME_ADDR){
-			userTimeout.Val = data.Val;
+			//userTimeout.Val = data.Val;
 			data.Val = 0xFFFFFF;
 		}
 	
@@ -244,7 +242,6 @@ void WritePM(WORD length, DWORD_VAL addr)
 				keyTest1 =  (0x0009 | temp) - length + bytesWritten - 5;
 				keyTest2 =  (((0x557F << 1) + WT_FLASH) - bytesWritten) + 6;
 			#endif
-
 
 			#ifdef USE_BOOT_PROTECT			//Protect the bootloader & reset vector
 				if((sourceAddr.Val < BOOT_ADDR_LOW || sourceAddr.Val > BOOT_ADDR_HI)){

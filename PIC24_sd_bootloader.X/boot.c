@@ -14,9 +14,8 @@
 #include <xc.h>
 #endif
 
-#ifdef DEV_HAS_USB
+#ifdef DEV_HAS_UART
 #include <stdio.h>
-#include "uart.h"
 #endif
 
 #include "delay.h"
@@ -27,6 +26,7 @@
 #include "program_memory.h"
 #include "memory.h"
 #include "config.h"
+#include "uart.h"
 
 #define BUF             (100)
 //****************************************
@@ -115,7 +115,6 @@ int process_each_line(FILEIO_OBJECT *file, void (processor)(char* )){
             	str[i]='\0';
 
                 //Process strings
-                printf("ln:%d\r\n ",line_num);
                 line_num++;
                 processor(str);
                 
@@ -141,12 +140,16 @@ void parse_hex_and_map(char *str){
     
     //Parse hex_format.
     if(-1==parse_hex_format(str,&fmt)){
+#ifdef DEV_HAS_UART
         printf("ERROR!!!!\r\n");
+#endif
     }
     
     //Write Program memory.
     if(-1==map_hex_format(&fmt)){
+#ifdef DEV_HAS_UART
         printf("str: %s\r\n",str);
+#endif
     }
 }
 
@@ -209,7 +212,9 @@ int main(void){
     //It is boot_mode. Read hex file and write to program memory.
     int ret = sd_initialize();
     if(-1==ret){
+        #ifdef DEV_HAS_UART
         printf("failed to read sd\r\n");
+        #endif
     }
         	
     //File IO
@@ -218,10 +223,14 @@ int main(void){
     //open file
     if (FILEIO_Open (&file,  HEX_FILE_NAME , FILEIO_OPEN_READ | FILEIO_OPEN_APPEND | FILEIO_OPEN_CREATE) == FILEIO_RESULT_FAILURE)
     {
+        #ifdef DEV_HAS_UART
         printf("failed to open file.\r\n");
+        #endif
         return -1;
     }
+    #ifdef DEV_HAS_UART
     printf("Open HEX file.\r\n");
+    #endif
 
     //move pointer to the target.
 	if(FILEIO_Seek (&file,0, FILEIO_SEEK_SET) != FILEIO_RESULT_SUCCESS){
@@ -229,7 +238,9 @@ int main(void){
 	}
     
     //process_each_line(&file, print); //TEST 
+    #ifdef DEV_HAS_UART
     printf("parse and hex\r\n");
+    #endif
     process_each_line(&file, parse_hex_and_map);
     
     //TODO :verify memory
@@ -237,15 +248,20 @@ int main(void){
     
     // Close the file to save the data
     if (FILEIO_Close (&file) != FILEIO_RESULT_SUCCESS){ 
+        #ifdef DEV_HAS_UART
         printf("failed to close sd \r\n");
+        #endif
         return -1; 
     }
-
+#ifdef DEV_HAS_UART
     printf("SD finalize\r\n");
+    #endif
     sd_finalize();
     
     //GOTO user application.
+    #ifdef DEV_HAS_UART
     printf("GOTO %lx\r\n",userReset.Val);    
+    #endif
     ResetDevice(userReset.Val);
 
     return 0;
