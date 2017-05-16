@@ -386,7 +386,7 @@ int main(void){
     
    
     
-    long f_pos = FILEIO_Tell(&file);
+    //long f_pos = FILEIO_Tell(&file);
 
     //process_each_line(&file, print); //TEST 
     printf("parse and hex\r\n");

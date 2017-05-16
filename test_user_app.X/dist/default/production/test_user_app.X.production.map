@@ -85,18 +85,18 @@ c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(umuldi3
                               c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(muldi3.eo) (___umuldi3)
 
 
-Program Memory  [Origin = 0x24c0, Length = 0x8738]
+Program Memory  [Origin = 0x80c0, Length = 0x2038]
 
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
-.text                       0x24c0               0xca8          0x12fc  (4860)
-.const                      0x3168                 0xe            0x15  (21)
-.dinit                      0x3176                0xdc           0x14a  (330)
-.text                       0x3252                0xb6           0x111  (273)
-.init.delay32               0x3308                0x1c            0x2a  (42)
-.text                       0x3324                 0xa             0xf  (15)
+.text                       0x80c0               0xca8          0x12fc  (4860)
+.const                      0x8d68                 0xe            0x15  (21)
+.dinit                      0x8d76                0xdc           0x14a  (330)
+.text                       0x8e52                0xb6           0x111  (273)
+.init.delay32               0x8f08                0x1c            0x2a  (42)
+.text                       0x8f24                 0xa             0xf  (15)
 
-                     Total program memory used (bytes):         0x15a5  (5541) 10%
+                     Total program memory used (bytes):         0x15a5  (5541) 44%
 
 
 Data Memory  [Origin = 0x800, Length = 0x2000]
@@ -148,63 +148,63 @@ External Symbols in Data Memory (by name):
 
 External Symbols in Program Memory (by address):
 
-                  0x0024bc                  __DEFAULT_VECTOR
-                  0x0024c0                  __resetPRI
-                  0x0024ec                  __psv_init
-                  0x0024fc                  __data_init
-                  0x0024fc                  __data_init_standard
-                  0x00255a                  __DefaultInterrupt
-                  0x0025be                  _CloseUART1
-                  0x0025ce                  _ConfigIntUART1
-                  0x002640                  _OpenUART1
-                  0x002668                  __printf_cdnopuxX
-                  0x002676                  __vfprintf_cdnopuxX
-                  0x002e7e                  ___udivsi3
-                  0x002e9e                  ___mulsi3
-                  0x002e9e                  ___mulp32eds3
-                  0x002e9e                  ___mulp32peds3
-                  0x002f1c                  ___udivmoddi3
-                  0x003000                  ___udivdi3
-                  0x00300e                  ___umoddi3
-                  0x003016                  ___divdi3
-                  0x003076                  ___moddi3
-                  0x0030d2                  ___muldi3
-                  0x003124                  ___umuldi3
-                  0x003252                  _SYSTEM_Initialize
-                  0x0032a2                  __U1RXInterrupt
-                  0x0032bc                  _main
-                  0x003308                  ___delay32
-                  0x003324                  _config_init
+                  0x0080bc                  __DEFAULT_VECTOR
+                  0x0080c0                  __resetPRI
+                  0x0080ec                  __psv_init
+                  0x0080fc                  __data_init
+                  0x0080fc                  __data_init_standard
+                  0x00815a                  __DefaultInterrupt
+                  0x0081be                  _CloseUART1
+                  0x0081ce                  _ConfigIntUART1
+                  0x008240                  _OpenUART1
+                  0x008268                  __printf_cdnopuxX
+                  0x008276                  __vfprintf_cdnopuxX
+                  0x008a7e                  ___udivsi3
+                  0x008a9e                  ___mulsi3
+                  0x008a9e                  ___mulp32eds3
+                  0x008a9e                  ___mulp32peds3
+                  0x008b1c                  ___udivmoddi3
+                  0x008c00                  ___udivdi3
+                  0x008c0e                  ___umoddi3
+                  0x008c16                  ___divdi3
+                  0x008c76                  ___moddi3
+                  0x008cd2                  ___muldi3
+                  0x008d24                  ___umuldi3
+                  0x008e52                  _SYSTEM_Initialize
+                  0x008ea2                  __U1RXInterrupt
+                  0x008ebc                  _main
+                  0x008f08                  ___delay32
+                  0x008f24                  _config_init
 
 External Symbols in Program Memory (by name):
 
-                  0x0025be                  _CloseUART1
-                  0x0025ce                  _ConfigIntUART1
-                  0x002640                  _OpenUART1
-                  0x003252                  _SYSTEM_Initialize
-                  0x0024bc                  __DEFAULT_VECTOR
-                  0x00255a                  __DefaultInterrupt
-                  0x0032a2                  __U1RXInterrupt
-                  0x003308                  ___delay32
-                  0x003016                  ___divdi3
-                  0x003076                  ___moddi3
-                  0x0030d2                  ___muldi3
-                  0x002e9e                  ___mulp32eds3
-                  0x002e9e                  ___mulp32peds3
-                  0x002e9e                  ___mulsi3
-                  0x003000                  ___udivdi3
-                  0x002f1c                  ___udivmoddi3
-                  0x002e7e                  ___udivsi3
-                  0x00300e                  ___umoddi3
-                  0x003124                  ___umuldi3
-                  0x0024fc                  __data_init
-                  0x0024fc                  __data_init_standard
-                  0x002668                  __printf_cdnopuxX
-                  0x0024ec                  __psv_init
-                  0x0024c0                  __resetPRI
-                  0x002676                  __vfprintf_cdnopuxX
-                  0x003324                  _config_init
-                  0x0032bc                  _main
+                  0x0081be                  _CloseUART1
+                  0x0081ce                  _ConfigIntUART1
+                  0x008240                  _OpenUART1
+                  0x008e52                  _SYSTEM_Initialize
+                  0x0080bc                  __DEFAULT_VECTOR
+                  0x00815a                  __DefaultInterrupt
+                  0x008ea2                  __U1RXInterrupt
+                  0x008f08                  ___delay32
+                  0x008c16                  ___divdi3
+                  0x008c76                  ___moddi3
+                  0x008cd2                  ___muldi3
+                  0x008a9e                  ___mulp32eds3
+                  0x008a9e                  ___mulp32peds3
+                  0x008a9e                  ___mulsi3
+                  0x008c00                  ___udivdi3
+                  0x008b1c                  ___udivmoddi3
+                  0x008a7e                  ___udivsi3
+                  0x008c0e                  ___umoddi3
+                  0x008d24                  ___umuldi3
+                  0x0080fc                  __data_init
+                  0x0080fc                  __data_init_standard
+                  0x008268                  __printf_cdnopuxX
+                  0x0080ec                  __psv_init
+                  0x0080c0                  __resetPRI
+                  0x008276                  __vfprintf_cdnopuxX
+                  0x008f24                  _config_init
+                  0x008ebc                  _main
 
 Memory Configuration
 
@@ -214,8 +214,8 @@ reset            0x000000           0x000004
 ivt              0x000004           0x0000fc  
 _reserved        0x000100           0x000004  
 aivt             0x000104           0x0000fc  
-app_ivt          0x002400           0x0000c0  
-program          0x0024c0           0x008738           xr
+app_ivt          0x008000           0x0000c0  
+program          0x0080c0           0x002038           xr
 CONFIG4          0x00abf8           0x000002  
 CONFIG3          0x00abfa           0x000002  
 CONFIG2          0x00abfc           0x000002  
@@ -230,7 +230,7 @@ LOAD build/default/production/delay.o
                     0x0001                  __MPLAB_BUILD = 0x1
 LOAD c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-elf.a
 LOAD c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libfx-elf.a
-                    0x2400                  __APP_IVT_BASE = 0x2400
+                    0x8000                  __APP_IVT_BASE = 0x8000
                     0xabf8                  __CONFIG4 = 0xabf8
                     0xabfa                  __CONFIG3 = 0xabfa
                     0xabfc                  __CONFIG2 = 0xabfc
@@ -240,82 +240,82 @@ LOAD c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libfx-elf.a
                     0x0104                  __AIVT_BASE = 0x104
                     0x0800                  __DATA_BASE = 0x800
                     0x2000                  __DATA_LENGTH = 0x2000
-                    0x24c0                  __CODE_BASE = 0x24c0
-                    0x8738                  __CODE_LENGTH = 0x8738
+                    0x80c0                  __CODE_BASE = 0x80c0
+                    0x2038                  __CODE_LENGTH = 0x2038
 
 .reset            0x000000          0x4
-                  0x000000          0x2 SHORT 0x24c0 ABSOLUTE (__reset)
+                  0x000000          0x2 SHORT 0x80c0 ABSOLUTE (__reset)
                   0x000001          0x2 SHORT 0x4
                   0x000002          0x2 SHORT 0x0 ((ABSOLUTE (__reset) >> 0x10) & 0x7f)
                   0x000003          0x2 SHORT 0x0
 
-.text             0x0024c0        0xca8
+.text             0x0080c0        0xca8
  *(.init)
- .init            0x0024c0         0x3c c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(crt0_standard.o)
-                  0x0024c0                  __resetPRI
-                  0x0024c0                  __reset
-                  0x0024ec                  __psv_init
- .init            0x0024fc         0x5e c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(data_init_standard.o)
-                  0x0024fc                  __data_init_standard
-                  0x0024fc                  __data_init
+ .init            0x0080c0         0x3c c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(crt0_standard.o)
+                  0x0080c0                  __resetPRI
+                  0x0080c0                  __reset
+                  0x0080ec                  __psv_init
+ .init            0x0080fc         0x5e c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(data_init_standard.o)
+                  0x0080fc                  __data_init_standard
+                  0x0080fc                  __data_init
  *(.user_init)
  *(.handle)
  *(.isr*)
- .isr             0x00255a          0x4 default_isr
-                  0x00255a                  __DefaultInterrupt
+ .isr             0x00815a          0x4 default_isr
+                  0x00815a                  __DefaultInterrupt
  *(.libc)
- .libc            0x00255e         0x60 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(write.eo)
-                  0x00255e                  _write
+ .libc            0x00815e         0x60 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(write.eo)
+                  0x00815e                  _write
  *(.libm)
  *(.libdsp)
  *(.lib*)
- .libperi         0x0025be         0x10 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-elf.a(CloseUART1.o)
-                  0x0025be                  _CloseUART1
- .libperi         0x0025ce         0x72 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-elf.a(ConfigIntUART1.o)
-                  0x0025ce                  _ConfigIntUART1
- .libperi         0x002640         0x28 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-elf.a(OpenUART1.o)
-                  0x002640                  _OpenUART1
+ .libperi         0x0081be         0x10 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-elf.a(CloseUART1.o)
+                  0x0081be                  _CloseUART1
+ .libperi         0x0081ce         0x72 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-elf.a(ConfigIntUART1.o)
+                  0x0081ce                  _ConfigIntUART1
+ .libperi         0x008240         0x28 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-elf.a(OpenUART1.o)
+                  0x008240                  _OpenUART1
  .libc._printf_cdnopuxX
-                  0x002668          0xe c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(printf_cdnopuxX.XXeo)
-                  0x002668                  __printf_cdnopuxX
+                  0x008268          0xe c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(printf_cdnopuxX.XXeo)
+                  0x008268                  __printf_cdnopuxX
  .libc._vfprintf_cdnopuxX
-                  0x002676        0x6f8 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(doprnt_cdnopuxX.XXeo)
-                  0x002676                  __vfprintf_cdnopuxX
- .libc.fputc      0x002d6e         0x88 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(fputc.eo)
-                  0x002d6e                  _fputc
- .libc._flsbuf    0x002df6         0x84 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(flsbuf.eo)
-                  0x002df6                  __flsbuf
- .libc.dowrite    0x002e7a          0x4 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(write.eo)
- .libm.udivsi3    0x002e7e         0x20 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(udivsi3.eo)
-                  0x002e7e                  ___udivsi3
- .libm.mulsi3     0x002e9e          0xc c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(mulsi3.eo)
-                  0x002e9e                  ___mulp32peds3
-                  0x002e9e                  ___mulsi3
-                  0x002e9e                  ___mulp32eds3
+                  0x008276        0x6f8 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(doprnt_cdnopuxX.XXeo)
+                  0x008276                  __vfprintf_cdnopuxX
+ .libc.fputc      0x00896e         0x88 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(fputc.eo)
+                  0x00896e                  _fputc
+ .libc._flsbuf    0x0089f6         0x84 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(flsbuf.eo)
+                  0x0089f6                  __flsbuf
+ .libc.dowrite    0x008a7a          0x4 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(write.eo)
+ .libm.udivsi3    0x008a7e         0x20 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(udivsi3.eo)
+                  0x008a7e                  ___udivsi3
+ .libm.mulsi3     0x008a9e          0xc c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(mulsi3.eo)
+                  0x008a9e                  ___mulp32peds3
+                  0x008a9e                  ___mulsi3
+                  0x008a9e                  ___mulp32eds3
  .libm.__PplusBdi
-                  0x002eaa         0x28 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(divmoddi3.eo)
+                  0x008aaa         0x28 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(divmoddi3.eo)
  .libm.__PminusBdi
-                  0x002ed2         0x4a c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(divmoddi3.eo)
+                  0x008ad2         0x4a c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(divmoddi3.eo)
  .libm.__udivmoddi3
-                  0x002f1c         0xe4 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(divmoddi3.eo)
-                  0x002f1c                  ___udivmoddi3
+                  0x008b1c         0xe4 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(divmoddi3.eo)
+                  0x008b1c                  ___udivmoddi3
  .libm.__udivdi3
-                  0x003000          0xe c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(divmoddi3.eo)
-                  0x003000                  ___udivdi3
+                  0x008c00          0xe c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(divmoddi3.eo)
+                  0x008c00                  ___udivdi3
  .libm.__umoddi3
-                  0x00300e          0x8 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(divmoddi3.eo)
-                  0x00300e                  ___umoddi3
+                  0x008c0e          0x8 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(divmoddi3.eo)
+                  0x008c0e                  ___umoddi3
  .libm.__divdi3
-                  0x003016         0x60 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(divmoddi3.eo)
-                  0x003016                  ___divdi3
+                  0x008c16         0x60 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(divmoddi3.eo)
+                  0x008c16                  ___divdi3
  .libm.__moddi3
-                  0x003076         0x5c c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(divmoddi3.eo)
-                  0x003076                  ___moddi3
+                  0x008c76         0x5c c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(divmoddi3.eo)
+                  0x008c76                  ___moddi3
  .libm.__muldi3
-                  0x0030d2         0x52 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(muldi3.eo)
-                  0x0030d2                  ___muldi3
- .libm.umuldi3    0x003124         0x44 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(umuldi3.eo)
-                  0x003124                  ___umuldi3
+                  0x008cd2         0x52 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(muldi3.eo)
+                  0x008cd2                  ___muldi3
+ .libm.umuldi3    0x008d24         0x44 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(umuldi3.eo)
+                  0x008d24                  ___umuldi3
 
 usercode
  *(usercode)
@@ -391,328 +391,328 @@ __CONFIG1         0x00abfe          0x2
                   0x000018         0x18 build/default/production/config.o
 
 .application_ivt
-                  0x002400         0xc0
-                  0x002400          0x2 SHORT 0x24c0 ABSOLUTE (__reset)
-                  0x002401          0x2 SHORT 0x4
-                  0x002402          0x2 SHORT 0x0 ((ABSOLUTE (__reset) >> 0x10) & 0x7f)
-                  0x002403          0x2 SHORT 0x0
-                  0x002404          0x2 SHORT 0x255a DEFINED (__ReservedTrap0)?ABSOLUTE (__ReservedTrap0):ABSOLUTE (__DefaultInterrupt)
-                  0x002405          0x2 SHORT 0x4
-                  0x002406          0x2 SHORT 0x0 DEFINED (__ReservedTrap0)?((ABSOLUTE (__ReservedTrap0) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x002407          0x2 SHORT 0x0
-                  0x002408          0x2 SHORT 0x255a DEFINED (__OscillatorFail)?ABSOLUTE (__OscillatorFail):ABSOLUTE (__DefaultInterrupt)
-                  0x002409          0x2 SHORT 0x4
-                  0x00240a          0x2 SHORT 0x0 DEFINED (__OscillatorFail)?((ABSOLUTE (__OscillatorFail) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x00240b          0x2 SHORT 0x0
-                  0x00240c          0x2 SHORT 0x255a DEFINED (__AddressError)?ABSOLUTE (__AddressError):ABSOLUTE (__DefaultInterrupt)
-                  0x00240d          0x2 SHORT 0x4
-                  0x00240e          0x2 SHORT 0x0 DEFINED (__AddressError)?((ABSOLUTE (__AddressError) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x00240f          0x2 SHORT 0x0
-                  0x002410          0x2 SHORT 0x255a DEFINED (__StackError)?ABSOLUTE (__StackError):ABSOLUTE (__DefaultInterrupt)
-                  0x002411          0x2 SHORT 0x4
-                  0x002412          0x2 SHORT 0x0 DEFINED (__StackError)?((ABSOLUTE (__StackError) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x002413          0x2 SHORT 0x0
-                  0x002414          0x2 SHORT 0x255a DEFINED (__MathError)?ABSOLUTE (__MathError):ABSOLUTE (__DefaultInterrupt)
-                  0x002415          0x2 SHORT 0x4
-                  0x002416          0x2 SHORT 0x0 DEFINED (__MathError)?((ABSOLUTE (__MathError) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x002417          0x2 SHORT 0x0
-                  0x002418          0x2 SHORT 0x255a DEFINED (__INT0Interrupt)?ABSOLUTE (__INT0Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x002419          0x2 SHORT 0x4
-                  0x00241a          0x2 SHORT 0x0 DEFINED (__INT0Interrupt)?((ABSOLUTE (__INT0Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x00241b          0x2 SHORT 0x0
-                  0x00241c          0x2 SHORT 0x255a DEFINED (__IC1Interrupt)?ABSOLUTE (__IC1Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x00241d          0x2 SHORT 0x4
-                  0x00241e          0x2 SHORT 0x0 DEFINED (__IC1Interrupt)?((ABSOLUTE (__IC1Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x00241f          0x2 SHORT 0x0
-                  0x002420          0x2 SHORT 0x255a DEFINED (__OC1Interrupt)?ABSOLUTE (__OC1Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x002421          0x2 SHORT 0x4
-                  0x002422          0x2 SHORT 0x0 DEFINED (__OC1Interrupt)?((ABSOLUTE (__OC1Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x002423          0x2 SHORT 0x0
-                  0x002424          0x2 SHORT 0x255a DEFINED (__T1Interrupt)?ABSOLUTE (__T1Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x002425          0x2 SHORT 0x4
-                  0x002426          0x2 SHORT 0x0 DEFINED (__T1Interrupt)?((ABSOLUTE (__T1Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x002427          0x2 SHORT 0x0
-                  0x002428          0x2 SHORT 0x255a DEFINED (__IC2Interrupt)?ABSOLUTE (__IC2Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x002429          0x2 SHORT 0x4
-                  0x00242a          0x2 SHORT 0x0 DEFINED (__IC2Interrupt)?((ABSOLUTE (__IC2Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x00242b          0x2 SHORT 0x0
-                  0x00242c          0x2 SHORT 0x255a DEFINED (__OC2Interrupt)?ABSOLUTE (__OC2Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x00242d          0x2 SHORT 0x4
-                  0x00242e          0x2 SHORT 0x0 DEFINED (__OC2Interrupt)?((ABSOLUTE (__OC2Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x00242f          0x2 SHORT 0x0
-                  0x002430          0x2 SHORT 0x255a DEFINED (__T2Interrupt)?ABSOLUTE (__T2Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x002431          0x2 SHORT 0x4
-                  0x002432          0x2 SHORT 0x0 DEFINED (__T2Interrupt)?((ABSOLUTE (__T2Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x002433          0x2 SHORT 0x0
-                  0x002434          0x2 SHORT 0x255a DEFINED (__T3Interrupt)?ABSOLUTE (__T3Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x002435          0x2 SHORT 0x4
-                  0x002436          0x2 SHORT 0x0 DEFINED (__T3Interrupt)?((ABSOLUTE (__T3Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x002437          0x2 SHORT 0x0
-                  0x002438          0x2 SHORT 0x255a DEFINED (__SPI1ErrInterrupt)?ABSOLUTE (__SPI1ErrInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x002439          0x2 SHORT 0x4
-                  0x00243a          0x2 SHORT 0x0 DEFINED (__SPI1ErrInterrupt)?((ABSOLUTE (__SPI1ErrInterrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x00243b          0x2 SHORT 0x0
-                  0x00243c          0x2 SHORT 0x255a DEFINED (__SPI1Interrupt)?ABSOLUTE (__SPI1Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x00243d          0x2 SHORT 0x4
-                  0x00243e          0x2 SHORT 0x0 DEFINED (__SPI1Interrupt)?((ABSOLUTE (__SPI1Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x00243f          0x2 SHORT 0x0
-                  0x002440          0x2 SHORT 0x32a2 DEFINED (__U1RXInterrupt)?ABSOLUTE (__U1RXInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x002441          0x2 SHORT 0x4
-                  0x002442          0x2 SHORT 0x0 DEFINED (__U1RXInterrupt)?((ABSOLUTE (__U1RXInterrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x002443          0x2 SHORT 0x0
-                  0x002444          0x2 SHORT 0x255a DEFINED (__U1TXInterrupt)?ABSOLUTE (__U1TXInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x002445          0x2 SHORT 0x4
-                  0x002446          0x2 SHORT 0x0 DEFINED (__U1TXInterrupt)?((ABSOLUTE (__U1TXInterrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x002447          0x2 SHORT 0x0
-                  0x002448          0x2 SHORT 0x255a DEFINED (__ADC1Interrupt)?ABSOLUTE (__ADC1Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x002449          0x2 SHORT 0x4
-                  0x00244a          0x2 SHORT 0x0 DEFINED (__ADC1Interrupt)?((ABSOLUTE (__ADC1Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x00244b          0x2 SHORT 0x0
-                  0x00244c          0x2 SHORT 0x255a DEFINED (__SI2C1Interrupt)?ABSOLUTE (__SI2C1Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x00244d          0x2 SHORT 0x4
-                  0x00244e          0x2 SHORT 0x0 DEFINED (__SI2C1Interrupt)?((ABSOLUTE (__SI2C1Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x00244f          0x2 SHORT 0x0
-                  0x002450          0x2 SHORT 0x255a DEFINED (__MI2C1Interrupt)?ABSOLUTE (__MI2C1Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x002451          0x2 SHORT 0x4
-                  0x002452          0x2 SHORT 0x0 DEFINED (__MI2C1Interrupt)?((ABSOLUTE (__MI2C1Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x002453          0x2 SHORT 0x0
-                  0x002454          0x2 SHORT 0x255a DEFINED (__CompInterrupt)?ABSOLUTE (__CompInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x002455          0x2 SHORT 0x4
-                  0x002456          0x2 SHORT 0x0 DEFINED (__CompInterrupt)?((ABSOLUTE (__CompInterrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x002457          0x2 SHORT 0x0
-                  0x002458          0x2 SHORT 0x255a DEFINED (__CNInterrupt)?ABSOLUTE (__CNInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x002459          0x2 SHORT 0x4
-                  0x00245a          0x2 SHORT 0x0 DEFINED (__CNInterrupt)?((ABSOLUTE (__CNInterrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x00245b          0x2 SHORT 0x0
-                  0x00245c          0x2 SHORT 0x255a DEFINED (__INT1Interrupt)?ABSOLUTE (__INT1Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x00245d          0x2 SHORT 0x4
-                  0x00245e          0x2 SHORT 0x0 DEFINED (__INT1Interrupt)?((ABSOLUTE (__INT1Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x00245f          0x2 SHORT 0x0
-                  0x002460          0x2 SHORT 0x255a DEFINED (__OC3Interrupt)?ABSOLUTE (__OC3Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x002461          0x2 SHORT 0x4
-                  0x002462          0x2 SHORT 0x0 DEFINED (__OC3Interrupt)?((ABSOLUTE (__OC3Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x002463          0x2 SHORT 0x0
-                  0x002464          0x2 SHORT 0x255a DEFINED (__OC4Interrupt)?ABSOLUTE (__OC4Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x002465          0x2 SHORT 0x4
-                  0x002466          0x2 SHORT 0x0 DEFINED (__OC4Interrupt)?((ABSOLUTE (__OC4Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x002467          0x2 SHORT 0x0
-                  0x002468          0x2 SHORT 0x255a DEFINED (__T4Interrupt)?ABSOLUTE (__T4Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x002469          0x2 SHORT 0x4
-                  0x00246a          0x2 SHORT 0x0 DEFINED (__T4Interrupt)?((ABSOLUTE (__T4Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x00246b          0x2 SHORT 0x0
-                  0x00246c          0x2 SHORT 0x255a DEFINED (__T5Interrupt)?ABSOLUTE (__T5Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x00246d          0x2 SHORT 0x4
-                  0x00246e          0x2 SHORT 0x0 DEFINED (__T5Interrupt)?((ABSOLUTE (__T5Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x00246f          0x2 SHORT 0x0
-                  0x002470          0x2 SHORT 0x255a DEFINED (__INT2Interrupt)?ABSOLUTE (__INT2Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x002471          0x2 SHORT 0x4
-                  0x002472          0x2 SHORT 0x0 DEFINED (__INT2Interrupt)?((ABSOLUTE (__INT2Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x002473          0x2 SHORT 0x0
-                  0x002474          0x2 SHORT 0x255a DEFINED (__U2RXInterrupt)?ABSOLUTE (__U2RXInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x002475          0x2 SHORT 0x4
-                  0x002476          0x2 SHORT 0x0 DEFINED (__U2RXInterrupt)?((ABSOLUTE (__U2RXInterrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x002477          0x2 SHORT 0x0
-                  0x002478          0x2 SHORT 0x255a DEFINED (__U2TXInterrupt)?ABSOLUTE (__U2TXInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x002479          0x2 SHORT 0x4
-                  0x00247a          0x2 SHORT 0x0 DEFINED (__U2TXInterrupt)?((ABSOLUTE (__U2TXInterrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x00247b          0x2 SHORT 0x0
-                  0x00247c          0x2 SHORT 0x255a DEFINED (__SPI2ErrInterrupt)?ABSOLUTE (__SPI2ErrInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x00247d          0x2 SHORT 0x4
-                  0x00247e          0x2 SHORT 0x0 DEFINED (__SPI2ErrInterrupt)?((ABSOLUTE (__SPI2ErrInterrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x00247f          0x2 SHORT 0x0
-                  0x002480          0x2 SHORT 0x255a DEFINED (__SPI2Interrupt)?ABSOLUTE (__SPI2Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x002481          0x2 SHORT 0x4
-                  0x002482          0x2 SHORT 0x0 DEFINED (__SPI2Interrupt)?((ABSOLUTE (__SPI2Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x002483          0x2 SHORT 0x0
-                  0x002484          0x2 SHORT 0x255a DEFINED (__IC3Interrupt)?ABSOLUTE (__IC3Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x002485          0x2 SHORT 0x4
-                  0x002486          0x2 SHORT 0x0 DEFINED (__IC3Interrupt)?((ABSOLUTE (__IC3Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x002487          0x2 SHORT 0x0
-                  0x002488          0x2 SHORT 0x255a DEFINED (__IC4Interrupt)?ABSOLUTE (__IC4Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x002489          0x2 SHORT 0x4
-                  0x00248a          0x2 SHORT 0x0 DEFINED (__IC4Interrupt)?((ABSOLUTE (__IC4Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x00248b          0x2 SHORT 0x0
-                  0x00248c          0x2 SHORT 0x255a DEFINED (__IC5Interrupt)?ABSOLUTE (__IC5Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x00248d          0x2 SHORT 0x4
-                  0x00248e          0x2 SHORT 0x0 DEFINED (__IC5Interrupt)?((ABSOLUTE (__IC5Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x00248f          0x2 SHORT 0x0
-                  0x002490          0x2 SHORT 0x255a DEFINED (__OC5Interrupt)?ABSOLUTE (__OC5Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x002491          0x2 SHORT 0x4
-                  0x002492          0x2 SHORT 0x0 DEFINED (__OC5Interrupt)?((ABSOLUTE (__OC5Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x002493          0x2 SHORT 0x0
-                  0x002494          0x2 SHORT 0x255a DEFINED (__PMPInterrupt)?ABSOLUTE (__PMPInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x002495          0x2 SHORT 0x4
-                  0x002496          0x2 SHORT 0x0 DEFINED (__PMPInterrupt)?((ABSOLUTE (__PMPInterrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x002497          0x2 SHORT 0x0
-                  0x002498          0x2 SHORT 0x255a DEFINED (__SI2C2Interrupt)?ABSOLUTE (__SI2C2Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x002499          0x2 SHORT 0x4
-                  0x00249a          0x2 SHORT 0x0 DEFINED (__SI2C2Interrupt)?((ABSOLUTE (__SI2C2Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x00249b          0x2 SHORT 0x0
-                  0x00249c          0x2 SHORT 0x255a DEFINED (__MI2C2Interrupt)?ABSOLUTE (__MI2C2Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x00249d          0x2 SHORT 0x4
-                  0x00249e          0x2 SHORT 0x0 DEFINED (__MI2C2Interrupt)?((ABSOLUTE (__MI2C2Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x00249f          0x2 SHORT 0x0
-                  0x0024a0          0x2 SHORT 0x255a DEFINED (__RTCCInterrupt)?ABSOLUTE (__RTCCInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0024a1          0x2 SHORT 0x4
-                  0x0024a2          0x2 SHORT 0x0 DEFINED (__RTCCInterrupt)?((ABSOLUTE (__RTCCInterrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x0024a3          0x2 SHORT 0x0
-                  0x0024a4          0x2 SHORT 0x255a DEFINED (__U1ErrInterrupt)?ABSOLUTE (__U1ErrInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0024a5          0x2 SHORT 0x4
-                  0x0024a6          0x2 SHORT 0x0 DEFINED (__U1ErrInterrupt)?((ABSOLUTE (__U1ErrInterrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x0024a7          0x2 SHORT 0x0
-                  0x0024a8          0x2 SHORT 0x255a DEFINED (__U2ErrInterrupt)?ABSOLUTE (__U2ErrInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0024a9          0x2 SHORT 0x4
-                  0x0024aa          0x2 SHORT 0x0 DEFINED (__U2ErrInterrupt)?((ABSOLUTE (__U2ErrInterrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x0024ab          0x2 SHORT 0x0
-                  0x0024ac          0x2 SHORT 0x255a DEFINED (__CRCInterrupt)?ABSOLUTE (__CRCInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0024ad          0x2 SHORT 0x4
-                  0x0024ae          0x2 SHORT 0x0 DEFINED (__CRCInterrupt)?((ABSOLUTE (__CRCInterrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x0024af          0x2 SHORT 0x0
-                  0x0024b0          0x2 SHORT 0x255a DEFINED (__LVDInterrupt)?ABSOLUTE (__LVDInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0024b1          0x2 SHORT 0x4
-                  0x0024b2          0x2 SHORT 0x0 DEFINED (__LVDInterrupt)?((ABSOLUTE (__LVDInterrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x0024b3          0x2 SHORT 0x0
-                  0x0024b4          0x2 SHORT 0x255a DEFINED (__CTMUInterrupt)?ABSOLUTE (__CTMUInterrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0024b5          0x2 SHORT 0x4
-                  0x0024b6          0x2 SHORT 0x0 DEFINED (__CTMUInterrupt)?((ABSOLUTE (__CTMUInterrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x0024b7          0x2 SHORT 0x0
-                  0x0024b8          0x2 SHORT 0x255a DEFINED (__USB1Interrupt)?ABSOLUTE (__USB1Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0024b9          0x2 SHORT 0x4
-                  0x0024ba          0x2 SHORT 0x0 DEFINED (__USB1Interrupt)?((ABSOLUTE (__USB1Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x0024bb          0x2 SHORT 0x0
-                  0x0024bc                  __DEFAULT_VECTOR = .
-                  0x0024bc          0x2 SHORT 0x255a ABSOLUTE (__DefaultInterrupt)
-                  0x0024bd          0x2 SHORT 0x4
-                  0x0024be          0x2 SHORT 0x0 ((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
-                  0x0024bf          0x2 SHORT 0x0
+                  0x008000         0xc0
+                  0x008000          0x2 SHORT 0x80c0 ABSOLUTE (__reset)
+                  0x008001          0x2 SHORT 0x4
+                  0x008002          0x2 SHORT 0x0 ((ABSOLUTE (__reset) >> 0x10) & 0x7f)
+                  0x008003          0x2 SHORT 0x0
+                  0x008004          0x2 SHORT 0x815a DEFINED (__ReservedTrap0)?ABSOLUTE (__ReservedTrap0):ABSOLUTE (__DefaultInterrupt)
+                  0x008005          0x2 SHORT 0x4
+                  0x008006          0x2 SHORT 0x0 DEFINED (__ReservedTrap0)?((ABSOLUTE (__ReservedTrap0) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x008007          0x2 SHORT 0x0
+                  0x008008          0x2 SHORT 0x815a DEFINED (__OscillatorFail)?ABSOLUTE (__OscillatorFail):ABSOLUTE (__DefaultInterrupt)
+                  0x008009          0x2 SHORT 0x4
+                  0x00800a          0x2 SHORT 0x0 DEFINED (__OscillatorFail)?((ABSOLUTE (__OscillatorFail) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x00800b          0x2 SHORT 0x0
+                  0x00800c          0x2 SHORT 0x815a DEFINED (__AddressError)?ABSOLUTE (__AddressError):ABSOLUTE (__DefaultInterrupt)
+                  0x00800d          0x2 SHORT 0x4
+                  0x00800e          0x2 SHORT 0x0 DEFINED (__AddressError)?((ABSOLUTE (__AddressError) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x00800f          0x2 SHORT 0x0
+                  0x008010          0x2 SHORT 0x815a DEFINED (__StackError)?ABSOLUTE (__StackError):ABSOLUTE (__DefaultInterrupt)
+                  0x008011          0x2 SHORT 0x4
+                  0x008012          0x2 SHORT 0x0 DEFINED (__StackError)?((ABSOLUTE (__StackError) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x008013          0x2 SHORT 0x0
+                  0x008014          0x2 SHORT 0x815a DEFINED (__MathError)?ABSOLUTE (__MathError):ABSOLUTE (__DefaultInterrupt)
+                  0x008015          0x2 SHORT 0x4
+                  0x008016          0x2 SHORT 0x0 DEFINED (__MathError)?((ABSOLUTE (__MathError) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x008017          0x2 SHORT 0x0
+                  0x008018          0x2 SHORT 0x815a DEFINED (__INT0Interrupt)?ABSOLUTE (__INT0Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x008019          0x2 SHORT 0x4
+                  0x00801a          0x2 SHORT 0x0 DEFINED (__INT0Interrupt)?((ABSOLUTE (__INT0Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x00801b          0x2 SHORT 0x0
+                  0x00801c          0x2 SHORT 0x815a DEFINED (__IC1Interrupt)?ABSOLUTE (__IC1Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x00801d          0x2 SHORT 0x4
+                  0x00801e          0x2 SHORT 0x0 DEFINED (__IC1Interrupt)?((ABSOLUTE (__IC1Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x00801f          0x2 SHORT 0x0
+                  0x008020          0x2 SHORT 0x815a DEFINED (__OC1Interrupt)?ABSOLUTE (__OC1Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x008021          0x2 SHORT 0x4
+                  0x008022          0x2 SHORT 0x0 DEFINED (__OC1Interrupt)?((ABSOLUTE (__OC1Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x008023          0x2 SHORT 0x0
+                  0x008024          0x2 SHORT 0x815a DEFINED (__T1Interrupt)?ABSOLUTE (__T1Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x008025          0x2 SHORT 0x4
+                  0x008026          0x2 SHORT 0x0 DEFINED (__T1Interrupt)?((ABSOLUTE (__T1Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x008027          0x2 SHORT 0x0
+                  0x008028          0x2 SHORT 0x815a DEFINED (__IC2Interrupt)?ABSOLUTE (__IC2Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x008029          0x2 SHORT 0x4
+                  0x00802a          0x2 SHORT 0x0 DEFINED (__IC2Interrupt)?((ABSOLUTE (__IC2Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x00802b          0x2 SHORT 0x0
+                  0x00802c          0x2 SHORT 0x815a DEFINED (__OC2Interrupt)?ABSOLUTE (__OC2Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x00802d          0x2 SHORT 0x4
+                  0x00802e          0x2 SHORT 0x0 DEFINED (__OC2Interrupt)?((ABSOLUTE (__OC2Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x00802f          0x2 SHORT 0x0
+                  0x008030          0x2 SHORT 0x815a DEFINED (__T2Interrupt)?ABSOLUTE (__T2Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x008031          0x2 SHORT 0x4
+                  0x008032          0x2 SHORT 0x0 DEFINED (__T2Interrupt)?((ABSOLUTE (__T2Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x008033          0x2 SHORT 0x0
+                  0x008034          0x2 SHORT 0x815a DEFINED (__T3Interrupt)?ABSOLUTE (__T3Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x008035          0x2 SHORT 0x4
+                  0x008036          0x2 SHORT 0x0 DEFINED (__T3Interrupt)?((ABSOLUTE (__T3Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x008037          0x2 SHORT 0x0
+                  0x008038          0x2 SHORT 0x815a DEFINED (__SPI1ErrInterrupt)?ABSOLUTE (__SPI1ErrInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x008039          0x2 SHORT 0x4
+                  0x00803a          0x2 SHORT 0x0 DEFINED (__SPI1ErrInterrupt)?((ABSOLUTE (__SPI1ErrInterrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x00803b          0x2 SHORT 0x0
+                  0x00803c          0x2 SHORT 0x815a DEFINED (__SPI1Interrupt)?ABSOLUTE (__SPI1Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x00803d          0x2 SHORT 0x4
+                  0x00803e          0x2 SHORT 0x0 DEFINED (__SPI1Interrupt)?((ABSOLUTE (__SPI1Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x00803f          0x2 SHORT 0x0
+                  0x008040          0x2 SHORT 0x8ea2 DEFINED (__U1RXInterrupt)?ABSOLUTE (__U1RXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x008041          0x2 SHORT 0x4
+                  0x008042          0x2 SHORT 0x0 DEFINED (__U1RXInterrupt)?((ABSOLUTE (__U1RXInterrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x008043          0x2 SHORT 0x0
+                  0x008044          0x2 SHORT 0x815a DEFINED (__U1TXInterrupt)?ABSOLUTE (__U1TXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x008045          0x2 SHORT 0x4
+                  0x008046          0x2 SHORT 0x0 DEFINED (__U1TXInterrupt)?((ABSOLUTE (__U1TXInterrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x008047          0x2 SHORT 0x0
+                  0x008048          0x2 SHORT 0x815a DEFINED (__ADC1Interrupt)?ABSOLUTE (__ADC1Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x008049          0x2 SHORT 0x4
+                  0x00804a          0x2 SHORT 0x0 DEFINED (__ADC1Interrupt)?((ABSOLUTE (__ADC1Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x00804b          0x2 SHORT 0x0
+                  0x00804c          0x2 SHORT 0x815a DEFINED (__SI2C1Interrupt)?ABSOLUTE (__SI2C1Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x00804d          0x2 SHORT 0x4
+                  0x00804e          0x2 SHORT 0x0 DEFINED (__SI2C1Interrupt)?((ABSOLUTE (__SI2C1Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x00804f          0x2 SHORT 0x0
+                  0x008050          0x2 SHORT 0x815a DEFINED (__MI2C1Interrupt)?ABSOLUTE (__MI2C1Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x008051          0x2 SHORT 0x4
+                  0x008052          0x2 SHORT 0x0 DEFINED (__MI2C1Interrupt)?((ABSOLUTE (__MI2C1Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x008053          0x2 SHORT 0x0
+                  0x008054          0x2 SHORT 0x815a DEFINED (__CompInterrupt)?ABSOLUTE (__CompInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x008055          0x2 SHORT 0x4
+                  0x008056          0x2 SHORT 0x0 DEFINED (__CompInterrupt)?((ABSOLUTE (__CompInterrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x008057          0x2 SHORT 0x0
+                  0x008058          0x2 SHORT 0x815a DEFINED (__CNInterrupt)?ABSOLUTE (__CNInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x008059          0x2 SHORT 0x4
+                  0x00805a          0x2 SHORT 0x0 DEFINED (__CNInterrupt)?((ABSOLUTE (__CNInterrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x00805b          0x2 SHORT 0x0
+                  0x00805c          0x2 SHORT 0x815a DEFINED (__INT1Interrupt)?ABSOLUTE (__INT1Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x00805d          0x2 SHORT 0x4
+                  0x00805e          0x2 SHORT 0x0 DEFINED (__INT1Interrupt)?((ABSOLUTE (__INT1Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x00805f          0x2 SHORT 0x0
+                  0x008060          0x2 SHORT 0x815a DEFINED (__OC3Interrupt)?ABSOLUTE (__OC3Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x008061          0x2 SHORT 0x4
+                  0x008062          0x2 SHORT 0x0 DEFINED (__OC3Interrupt)?((ABSOLUTE (__OC3Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x008063          0x2 SHORT 0x0
+                  0x008064          0x2 SHORT 0x815a DEFINED (__OC4Interrupt)?ABSOLUTE (__OC4Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x008065          0x2 SHORT 0x4
+                  0x008066          0x2 SHORT 0x0 DEFINED (__OC4Interrupt)?((ABSOLUTE (__OC4Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x008067          0x2 SHORT 0x0
+                  0x008068          0x2 SHORT 0x815a DEFINED (__T4Interrupt)?ABSOLUTE (__T4Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x008069          0x2 SHORT 0x4
+                  0x00806a          0x2 SHORT 0x0 DEFINED (__T4Interrupt)?((ABSOLUTE (__T4Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x00806b          0x2 SHORT 0x0
+                  0x00806c          0x2 SHORT 0x815a DEFINED (__T5Interrupt)?ABSOLUTE (__T5Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x00806d          0x2 SHORT 0x4
+                  0x00806e          0x2 SHORT 0x0 DEFINED (__T5Interrupt)?((ABSOLUTE (__T5Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x00806f          0x2 SHORT 0x0
+                  0x008070          0x2 SHORT 0x815a DEFINED (__INT2Interrupt)?ABSOLUTE (__INT2Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x008071          0x2 SHORT 0x4
+                  0x008072          0x2 SHORT 0x0 DEFINED (__INT2Interrupt)?((ABSOLUTE (__INT2Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x008073          0x2 SHORT 0x0
+                  0x008074          0x2 SHORT 0x815a DEFINED (__U2RXInterrupt)?ABSOLUTE (__U2RXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x008075          0x2 SHORT 0x4
+                  0x008076          0x2 SHORT 0x0 DEFINED (__U2RXInterrupt)?((ABSOLUTE (__U2RXInterrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x008077          0x2 SHORT 0x0
+                  0x008078          0x2 SHORT 0x815a DEFINED (__U2TXInterrupt)?ABSOLUTE (__U2TXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x008079          0x2 SHORT 0x4
+                  0x00807a          0x2 SHORT 0x0 DEFINED (__U2TXInterrupt)?((ABSOLUTE (__U2TXInterrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x00807b          0x2 SHORT 0x0
+                  0x00807c          0x2 SHORT 0x815a DEFINED (__SPI2ErrInterrupt)?ABSOLUTE (__SPI2ErrInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x00807d          0x2 SHORT 0x4
+                  0x00807e          0x2 SHORT 0x0 DEFINED (__SPI2ErrInterrupt)?((ABSOLUTE (__SPI2ErrInterrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x00807f          0x2 SHORT 0x0
+                  0x008080          0x2 SHORT 0x815a DEFINED (__SPI2Interrupt)?ABSOLUTE (__SPI2Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x008081          0x2 SHORT 0x4
+                  0x008082          0x2 SHORT 0x0 DEFINED (__SPI2Interrupt)?((ABSOLUTE (__SPI2Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x008083          0x2 SHORT 0x0
+                  0x008084          0x2 SHORT 0x815a DEFINED (__IC3Interrupt)?ABSOLUTE (__IC3Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x008085          0x2 SHORT 0x4
+                  0x008086          0x2 SHORT 0x0 DEFINED (__IC3Interrupt)?((ABSOLUTE (__IC3Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x008087          0x2 SHORT 0x0
+                  0x008088          0x2 SHORT 0x815a DEFINED (__IC4Interrupt)?ABSOLUTE (__IC4Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x008089          0x2 SHORT 0x4
+                  0x00808a          0x2 SHORT 0x0 DEFINED (__IC4Interrupt)?((ABSOLUTE (__IC4Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x00808b          0x2 SHORT 0x0
+                  0x00808c          0x2 SHORT 0x815a DEFINED (__IC5Interrupt)?ABSOLUTE (__IC5Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x00808d          0x2 SHORT 0x4
+                  0x00808e          0x2 SHORT 0x0 DEFINED (__IC5Interrupt)?((ABSOLUTE (__IC5Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x00808f          0x2 SHORT 0x0
+                  0x008090          0x2 SHORT 0x815a DEFINED (__OC5Interrupt)?ABSOLUTE (__OC5Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x008091          0x2 SHORT 0x4
+                  0x008092          0x2 SHORT 0x0 DEFINED (__OC5Interrupt)?((ABSOLUTE (__OC5Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x008093          0x2 SHORT 0x0
+                  0x008094          0x2 SHORT 0x815a DEFINED (__PMPInterrupt)?ABSOLUTE (__PMPInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x008095          0x2 SHORT 0x4
+                  0x008096          0x2 SHORT 0x0 DEFINED (__PMPInterrupt)?((ABSOLUTE (__PMPInterrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x008097          0x2 SHORT 0x0
+                  0x008098          0x2 SHORT 0x815a DEFINED (__SI2C2Interrupt)?ABSOLUTE (__SI2C2Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x008099          0x2 SHORT 0x4
+                  0x00809a          0x2 SHORT 0x0 DEFINED (__SI2C2Interrupt)?((ABSOLUTE (__SI2C2Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x00809b          0x2 SHORT 0x0
+                  0x00809c          0x2 SHORT 0x815a DEFINED (__MI2C2Interrupt)?ABSOLUTE (__MI2C2Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x00809d          0x2 SHORT 0x4
+                  0x00809e          0x2 SHORT 0x0 DEFINED (__MI2C2Interrupt)?((ABSOLUTE (__MI2C2Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x00809f          0x2 SHORT 0x0
+                  0x0080a0          0x2 SHORT 0x815a DEFINED (__RTCCInterrupt)?ABSOLUTE (__RTCCInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0080a1          0x2 SHORT 0x4
+                  0x0080a2          0x2 SHORT 0x0 DEFINED (__RTCCInterrupt)?((ABSOLUTE (__RTCCInterrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x0080a3          0x2 SHORT 0x0
+                  0x0080a4          0x2 SHORT 0x815a DEFINED (__U1ErrInterrupt)?ABSOLUTE (__U1ErrInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0080a5          0x2 SHORT 0x4
+                  0x0080a6          0x2 SHORT 0x0 DEFINED (__U1ErrInterrupt)?((ABSOLUTE (__U1ErrInterrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x0080a7          0x2 SHORT 0x0
+                  0x0080a8          0x2 SHORT 0x815a DEFINED (__U2ErrInterrupt)?ABSOLUTE (__U2ErrInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0080a9          0x2 SHORT 0x4
+                  0x0080aa          0x2 SHORT 0x0 DEFINED (__U2ErrInterrupt)?((ABSOLUTE (__U2ErrInterrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x0080ab          0x2 SHORT 0x0
+                  0x0080ac          0x2 SHORT 0x815a DEFINED (__CRCInterrupt)?ABSOLUTE (__CRCInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0080ad          0x2 SHORT 0x4
+                  0x0080ae          0x2 SHORT 0x0 DEFINED (__CRCInterrupt)?((ABSOLUTE (__CRCInterrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x0080af          0x2 SHORT 0x0
+                  0x0080b0          0x2 SHORT 0x815a DEFINED (__LVDInterrupt)?ABSOLUTE (__LVDInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0080b1          0x2 SHORT 0x4
+                  0x0080b2          0x2 SHORT 0x0 DEFINED (__LVDInterrupt)?((ABSOLUTE (__LVDInterrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x0080b3          0x2 SHORT 0x0
+                  0x0080b4          0x2 SHORT 0x815a DEFINED (__CTMUInterrupt)?ABSOLUTE (__CTMUInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0080b5          0x2 SHORT 0x4
+                  0x0080b6          0x2 SHORT 0x0 DEFINED (__CTMUInterrupt)?((ABSOLUTE (__CTMUInterrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x0080b7          0x2 SHORT 0x0
+                  0x0080b8          0x2 SHORT 0x815a DEFINED (__USB1Interrupt)?ABSOLUTE (__USB1Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0080b9          0x2 SHORT 0x4
+                  0x0080ba          0x2 SHORT 0x0 DEFINED (__USB1Interrupt)?((ABSOLUTE (__USB1Interrupt) >> 0x10) & 0x7f):((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x0080bb          0x2 SHORT 0x0
+                  0x0080bc                  __DEFAULT_VECTOR = .
+                  0x0080bc          0x2 SHORT 0x815a ABSOLUTE (__DefaultInterrupt)
+                  0x0080bd          0x2 SHORT 0x4
+                  0x0080be          0x2 SHORT 0x0 ((ABSOLUTE (__DefaultInterrupt) >> 0x10) & 0x7f)
+                  0x0080bf          0x2 SHORT 0x0
 
 .ivt              0x000004         0xfc
-                  0x000004          0x4 LONG 0x2404 (ABSOLUTE (__APP_IVT_BASE) + 0x4)
-                  0x000006          0x4 LONG 0x2408 (ABSOLUTE (__APP_IVT_BASE) + 0x8)
-                  0x000008          0x4 LONG 0x240c (ABSOLUTE (__APP_IVT_BASE) + 0xc)
-                  0x00000a          0x4 LONG 0x2410 (ABSOLUTE (__APP_IVT_BASE) + 0x10)
-                  0x00000c          0x4 LONG 0x2414 (ABSOLUTE (__APP_IVT_BASE) + 0x14)
-                  0x00000e          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x000010          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x000012          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x000014          0x4 LONG 0x2418 (ABSOLUTE (__APP_IVT_BASE) + 0x18)
-                  0x000016          0x4 LONG 0x241c (ABSOLUTE (__APP_IVT_BASE) + 0x1c)
-                  0x000018          0x4 LONG 0x2420 (ABSOLUTE (__APP_IVT_BASE) + 0x20)
-                  0x00001a          0x4 LONG 0x2424 (ABSOLUTE (__APP_IVT_BASE) + 0x24)
-                  0x00001c          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x00001e          0x4 LONG 0x2428 (ABSOLUTE (__APP_IVT_BASE) + 0x28)
-                  0x000020          0x4 LONG 0x242c (ABSOLUTE (__APP_IVT_BASE) + 0x2c)
-                  0x000022          0x4 LONG 0x2430 (ABSOLUTE (__APP_IVT_BASE) + 0x30)
-                  0x000024          0x4 LONG 0x2434 (ABSOLUTE (__APP_IVT_BASE) + 0x34)
-                  0x000026          0x4 LONG 0x2438 (ABSOLUTE (__APP_IVT_BASE) + 0x38)
-                  0x000028          0x4 LONG 0x243c (ABSOLUTE (__APP_IVT_BASE) + 0x3c)
-                  0x00002a          0x4 LONG 0x2440 (ABSOLUTE (__APP_IVT_BASE) + 0x40)
-                  0x00002c          0x4 LONG 0x2444 (ABSOLUTE (__APP_IVT_BASE) + 0x44)
-                  0x00002e          0x4 LONG 0x2448 (ABSOLUTE (__APP_IVT_BASE) + 0x48)
-                  0x000030          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x000032          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x000034          0x4 LONG 0x244c (ABSOLUTE (__APP_IVT_BASE) + 0x4c)
-                  0x000036          0x4 LONG 0x2450 (ABSOLUTE (__APP_IVT_BASE) + 0x50)
-                  0x000038          0x4 LONG 0x2454 (ABSOLUTE (__APP_IVT_BASE) + 0x54)
-                  0x00003a          0x4 LONG 0x2458 (ABSOLUTE (__APP_IVT_BASE) + 0x58)
-                  0x00003c          0x4 LONG 0x245c (ABSOLUTE (__APP_IVT_BASE) + 0x5c)
-                  0x00003e          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x000040          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x000042          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x000044          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x000046          0x4 LONG 0x2460 (ABSOLUTE (__APP_IVT_BASE) + 0x60)
-                  0x000048          0x4 LONG 0x2464 (ABSOLUTE (__APP_IVT_BASE) + 0x64)
-                  0x00004a          0x4 LONG 0x2468 (ABSOLUTE (__APP_IVT_BASE) + 0x68)
-                  0x00004c          0x4 LONG 0x246c (ABSOLUTE (__APP_IVT_BASE) + 0x6c)
-                  0x00004e          0x4 LONG 0x2470 (ABSOLUTE (__APP_IVT_BASE) + 0x70)
-                  0x000050          0x4 LONG 0x2474 (ABSOLUTE (__APP_IVT_BASE) + 0x74)
-                  0x000052          0x4 LONG 0x2478 (ABSOLUTE (__APP_IVT_BASE) + 0x78)
-                  0x000054          0x4 LONG 0x247c (ABSOLUTE (__APP_IVT_BASE) + 0x7c)
-                  0x000056          0x4 LONG 0x2480 (ABSOLUTE (__APP_IVT_BASE) + 0x80)
-                  0x000058          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x00005a          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x00005c          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x00005e          0x4 LONG 0x2484 (ABSOLUTE (__APP_IVT_BASE) + 0x84)
-                  0x000060          0x4 LONG 0x2488 (ABSOLUTE (__APP_IVT_BASE) + 0x88)
-                  0x000062          0x4 LONG 0x248c (ABSOLUTE (__APP_IVT_BASE) + 0x8c)
-                  0x000064          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x000066          0x4 LONG 0x2490 (ABSOLUTE (__APP_IVT_BASE) + 0x90)
-                  0x000068          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x00006a          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x00006c          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x00006e          0x4 LONG 0x2494 (ABSOLUTE (__APP_IVT_BASE) + 0x94)
-                  0x000070          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x000072          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x000074          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x000076          0x4 LONG 0x2498 (ABSOLUTE (__APP_IVT_BASE) + 0x98)
-                  0x000078          0x4 LONG 0x249c (ABSOLUTE (__APP_IVT_BASE) + 0x9c)
-                  0x00007a          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x00007c          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x00007e          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x000080          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x000082          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x000084          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x000086          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x000088          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x00008a          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x00008c          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x00008e          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x000090          0x4 LONG 0x24a0 (ABSOLUTE (__APP_IVT_BASE) + 0xa0)
-                  0x000092          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x000094          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x000096          0x4 LONG 0x24a4 (ABSOLUTE (__APP_IVT_BASE) + 0xa4)
-                  0x000098          0x4 LONG 0x24a8 (ABSOLUTE (__APP_IVT_BASE) + 0xa8)
-                  0x00009a          0x4 LONG 0x24ac (ABSOLUTE (__APP_IVT_BASE) + 0xac)
-                  0x00009c          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x00009e          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000a0          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000a2          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000a4          0x4 LONG 0x24b0 (ABSOLUTE (__APP_IVT_BASE) + 0xb0)
-                  0x0000a6          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000a8          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000aa          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000ac          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000ae          0x4 LONG 0x24b4 (ABSOLUTE (__APP_IVT_BASE) + 0xb4)
-                  0x0000b0          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000b2          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000b4          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000b6          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000b8          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000ba          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000bc          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000be          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000c0          0x4 LONG 0x24b8 (ABSOLUTE (__APP_IVT_BASE) + 0xb8)
-                  0x0000c2          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000c4          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000c6          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000c8          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000ca          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000cc          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000ce          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000d0          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000d2          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000d4          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000d6          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000d8          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000da          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000dc          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000de          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000e0          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000e2          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000e4          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000e6          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000e8          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000ea          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000ec          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000ee          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000f0          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000f2          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000f4          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000f6          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000f8          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000fa          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000fc          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
-                  0x0000fe          0x4 LONG 0x24bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x000004          0x4 LONG 0x8004 (ABSOLUTE (__APP_IVT_BASE) + 0x4)
+                  0x000006          0x4 LONG 0x8008 (ABSOLUTE (__APP_IVT_BASE) + 0x8)
+                  0x000008          0x4 LONG 0x800c (ABSOLUTE (__APP_IVT_BASE) + 0xc)
+                  0x00000a          0x4 LONG 0x8010 (ABSOLUTE (__APP_IVT_BASE) + 0x10)
+                  0x00000c          0x4 LONG 0x8014 (ABSOLUTE (__APP_IVT_BASE) + 0x14)
+                  0x00000e          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x000010          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x000012          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x000014          0x4 LONG 0x8018 (ABSOLUTE (__APP_IVT_BASE) + 0x18)
+                  0x000016          0x4 LONG 0x801c (ABSOLUTE (__APP_IVT_BASE) + 0x1c)
+                  0x000018          0x4 LONG 0x8020 (ABSOLUTE (__APP_IVT_BASE) + 0x20)
+                  0x00001a          0x4 LONG 0x8024 (ABSOLUTE (__APP_IVT_BASE) + 0x24)
+                  0x00001c          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x00001e          0x4 LONG 0x8028 (ABSOLUTE (__APP_IVT_BASE) + 0x28)
+                  0x000020          0x4 LONG 0x802c (ABSOLUTE (__APP_IVT_BASE) + 0x2c)
+                  0x000022          0x4 LONG 0x8030 (ABSOLUTE (__APP_IVT_BASE) + 0x30)
+                  0x000024          0x4 LONG 0x8034 (ABSOLUTE (__APP_IVT_BASE) + 0x34)
+                  0x000026          0x4 LONG 0x8038 (ABSOLUTE (__APP_IVT_BASE) + 0x38)
+                  0x000028          0x4 LONG 0x803c (ABSOLUTE (__APP_IVT_BASE) + 0x3c)
+                  0x00002a          0x4 LONG 0x8040 (ABSOLUTE (__APP_IVT_BASE) + 0x40)
+                  0x00002c          0x4 LONG 0x8044 (ABSOLUTE (__APP_IVT_BASE) + 0x44)
+                  0x00002e          0x4 LONG 0x8048 (ABSOLUTE (__APP_IVT_BASE) + 0x48)
+                  0x000030          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x000032          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x000034          0x4 LONG 0x804c (ABSOLUTE (__APP_IVT_BASE) + 0x4c)
+                  0x000036          0x4 LONG 0x8050 (ABSOLUTE (__APP_IVT_BASE) + 0x50)
+                  0x000038          0x4 LONG 0x8054 (ABSOLUTE (__APP_IVT_BASE) + 0x54)
+                  0x00003a          0x4 LONG 0x8058 (ABSOLUTE (__APP_IVT_BASE) + 0x58)
+                  0x00003c          0x4 LONG 0x805c (ABSOLUTE (__APP_IVT_BASE) + 0x5c)
+                  0x00003e          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x000040          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x000042          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x000044          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x000046          0x4 LONG 0x8060 (ABSOLUTE (__APP_IVT_BASE) + 0x60)
+                  0x000048          0x4 LONG 0x8064 (ABSOLUTE (__APP_IVT_BASE) + 0x64)
+                  0x00004a          0x4 LONG 0x8068 (ABSOLUTE (__APP_IVT_BASE) + 0x68)
+                  0x00004c          0x4 LONG 0x806c (ABSOLUTE (__APP_IVT_BASE) + 0x6c)
+                  0x00004e          0x4 LONG 0x8070 (ABSOLUTE (__APP_IVT_BASE) + 0x70)
+                  0x000050          0x4 LONG 0x8074 (ABSOLUTE (__APP_IVT_BASE) + 0x74)
+                  0x000052          0x4 LONG 0x8078 (ABSOLUTE (__APP_IVT_BASE) + 0x78)
+                  0x000054          0x4 LONG 0x807c (ABSOLUTE (__APP_IVT_BASE) + 0x7c)
+                  0x000056          0x4 LONG 0x8080 (ABSOLUTE (__APP_IVT_BASE) + 0x80)
+                  0x000058          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x00005a          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x00005c          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x00005e          0x4 LONG 0x8084 (ABSOLUTE (__APP_IVT_BASE) + 0x84)
+                  0x000060          0x4 LONG 0x8088 (ABSOLUTE (__APP_IVT_BASE) + 0x88)
+                  0x000062          0x4 LONG 0x808c (ABSOLUTE (__APP_IVT_BASE) + 0x8c)
+                  0x000064          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x000066          0x4 LONG 0x8090 (ABSOLUTE (__APP_IVT_BASE) + 0x90)
+                  0x000068          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x00006a          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x00006c          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x00006e          0x4 LONG 0x8094 (ABSOLUTE (__APP_IVT_BASE) + 0x94)
+                  0x000070          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x000072          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x000074          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x000076          0x4 LONG 0x8098 (ABSOLUTE (__APP_IVT_BASE) + 0x98)
+                  0x000078          0x4 LONG 0x809c (ABSOLUTE (__APP_IVT_BASE) + 0x9c)
+                  0x00007a          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x00007c          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x00007e          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x000080          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x000082          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x000084          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x000086          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x000088          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x00008a          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x00008c          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x00008e          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x000090          0x4 LONG 0x80a0 (ABSOLUTE (__APP_IVT_BASE) + 0xa0)
+                  0x000092          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x000094          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x000096          0x4 LONG 0x80a4 (ABSOLUTE (__APP_IVT_BASE) + 0xa4)
+                  0x000098          0x4 LONG 0x80a8 (ABSOLUTE (__APP_IVT_BASE) + 0xa8)
+                  0x00009a          0x4 LONG 0x80ac (ABSOLUTE (__APP_IVT_BASE) + 0xac)
+                  0x00009c          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x00009e          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000a0          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000a2          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000a4          0x4 LONG 0x80b0 (ABSOLUTE (__APP_IVT_BASE) + 0xb0)
+                  0x0000a6          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000a8          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000aa          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000ac          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000ae          0x4 LONG 0x80b4 (ABSOLUTE (__APP_IVT_BASE) + 0xb4)
+                  0x0000b0          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000b2          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000b4          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000b6          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000b8          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000ba          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000bc          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000be          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000c0          0x4 LONG 0x80b8 (ABSOLUTE (__APP_IVT_BASE) + 0xb8)
+                  0x0000c2          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000c4          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000c6          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000c8          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000ca          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000cc          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000ce          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000d0          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000d2          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000d4          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000d6          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000d8          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000da          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000dc          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000de          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000e0          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000e2          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000e4          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000e6          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000e8          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000ea          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000ec          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000ee          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000f0          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000f2          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000f4          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000f6          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000f8          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000fa          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000fc          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
+                  0x0000fe          0x4 LONG 0x80bc ABSOLUTE (__DEFAULT_VECTOR)
 
 .aivt
                     0x0000                  WREG0 = 0x0
@@ -1544,58 +1544,58 @@ LOAD default_isr
 LOAD data_init
 
 .debug_pubtypes
-                  0x0024c0        0x18b
+                  0x0080c0        0x18b
  .debug_pubtypes
-                  0x0024c0        0x167 build/default/production/main.o
+                  0x0080c0        0x167 build/default/production/main.o
  .debug_pubtypes
-                  0x002627         0x12 build/default/production/config.o
+                  0x008227         0x12 build/default/production/config.o
  .debug_pubtypes
-                  0x002639         0x12 build/default/production/delay.o
+                  0x008239         0x12 build/default/production/delay.o
 
 __c30_signature
-                  0x00264b         0x7e
+                  0x00824b         0x7e
  __c30_signature
-                  0x00264b          0x6 build/default/production/main.o
+                  0x00824b          0x6 build/default/production/main.o
  __c30_signature
-                  0x002651          0x6 build/default/production/config.o
+                  0x008251          0x6 build/default/production/config.o
  __c30_signature
-                  0x002657          0x6 build/default/production/delay.o
+                  0x008257          0x6 build/default/production/delay.o
  __c30_signature
-                  0x00265d          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-elf.a(CloseUART1.o)
+                  0x00825d          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-elf.a(CloseUART1.o)
  __c30_signature
-                  0x002663          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-elf.a(ConfigIntUART1.o)
+                  0x008263          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-elf.a(ConfigIntUART1.o)
  __c30_signature
-                  0x002669          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-elf.a(OpenUART1.o)
+                  0x008269          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-elf.a(OpenUART1.o)
  __c30_signature
-                  0x00266f          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(crt0_standard.o)
+                  0x00826f          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(crt0_standard.o)
  __c30_signature
-                  0x002675          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(data_init_standard.o)
+                  0x008275          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(data_init_standard.o)
  __c30_signature
-                  0x00267b          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(delay32.eo)
+                  0x00827b          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(delay32.eo)
  __c30_signature
-                  0x002681          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(printf_cdnopuxX.XXeo)
+                  0x008281          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(printf_cdnopuxX.XXeo)
  __c30_signature
-                  0x002687          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(_iob.eo)
+                  0x008287          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(_iob.eo)
  __c30_signature
-                  0x00268d          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(doprnt_cdnopuxX.XXeo)
+                  0x00828d          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(doprnt_cdnopuxX.XXeo)
  __c30_signature
-                  0x002693          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(fputc.eo)
+                  0x008293          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(fputc.eo)
  __c30_signature
-                  0x002699          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(flsbuf.eo)
+                  0x008299          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(flsbuf.eo)
  __c30_signature
-                  0x00269f          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(write.eo)
+                  0x00829f          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(write.eo)
  __c30_signature
-                  0x0026a5          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(c30_uart.eo)
+                  0x0082a5          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(c30_uart.eo)
  __c30_signature
-                  0x0026ab          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(udivsi3.eo)
+                  0x0082ab          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(udivsi3.eo)
  __c30_signature
-                  0x0026b1          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(mulsi3.eo)
+                  0x0082b1          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(mulsi3.eo)
  __c30_signature
-                  0x0026b7          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(divmoddi3.eo)
+                  0x0082b7          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(divmoddi3.eo)
  __c30_signature
-                  0x0026bd          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(muldi3.eo)
+                  0x0082bd          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(muldi3.eo)
  __c30_signature
-                  0x0026c3          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(umuldi3.eo)
+                  0x0082c3          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(umuldi3.eo)
 
 .nbss               0x0800          0x2
  .nbss              0x0800          0x2 build/default/production/main.o
@@ -1633,22 +1633,22 @@ __c30_signature
                     0x08f8          0x2 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(c30_uart.eo)
                     0x08f8                  ___C30_UART
 
-.const              0xb168          0xe load address 0x003168  
- .const             0xb168          0xe build/default/production/main.o
+.const            0x008d68          0xe load address 0x008d68  
+ .const           0x008d68          0xe build/default/production/main.o
 
-.dinit            0x003176         0xdc
- .dinit           0x003176         0xdc data_init
+.dinit            0x008d76         0xdc
+ .dinit           0x008d76         0xdc data_init
 
-.text             0x003252         0xb6
- .text            0x003252         0xb6 build/default/production/main.o
-                  0x003252                  _SYSTEM_Initialize
-                  0x0032a2                  __U1RXInterrupt
-                  0x0032bc                  _main
+.text             0x008e52         0xb6
+ .text            0x008e52         0xb6 build/default/production/main.o
+                  0x008e52                  _SYSTEM_Initialize
+                  0x008ea2                  __U1RXInterrupt
+                  0x008ebc                  _main
 
-.init.delay32     0x003308         0x1c
- .init.delay32    0x003308         0x1c c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(delay32.eo)
-                  0x003308                  ___delay32
+.init.delay32     0x008f08         0x1c
+ .init.delay32    0x008f08         0x1c c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(delay32.eo)
+                  0x008f08                  ___delay32
 
-.text             0x003324          0xa
- .text            0x003324          0xa build/default/production/config.o
-                  0x003324                  _config_init
+.text             0x008f24          0xa
+ .text            0x008f24          0xa build/default/production/config.o
+                  0x008f24                  _config_init

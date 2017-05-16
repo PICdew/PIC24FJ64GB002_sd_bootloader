@@ -51,6 +51,7 @@ CRT_STARTMODE(crt_start_mode_normal)
 OPTIONAL(-lpPIC24Fxxx)
 OPTIONAL(-lfx)
 
+#define __BOOTLOADER
 
 /*
 ** Memory Regions
@@ -65,9 +66,8 @@ MEMORY
   app_ivt        : ORIGIN = 0x8000,        LENGTH = 0xC0
 
 #ifdef __BOOTLOADER
-  program (xr)   : ORIGIN = 0x400,         LENGTH = 0x1400
+  program (xr)   : ORIGIN = 0x400,         LENGTH = 0x7C00
 #else
-  /*program (xr)   : ORIGIN = 0x24C0,          LENGTH = 0x8738*/
   program (xr)   : ORIGIN = 0x80C0,          LENGTH = 0x2038
 #endif
 
@@ -94,8 +94,8 @@ __IVT_BASE  = 0x4;
 __AIVT_BASE = 0x104;
 __DATA_BASE = 0x800;
 __DATA_LENGTH = 0x2000;
-__CODE_BASE = 0x80C0;
-__CODE_LENGTH = 0x2038;
+__CODE_BASE = 0x400;
+__CODE_LENGTH = 0x7C00;
 
 
 /*

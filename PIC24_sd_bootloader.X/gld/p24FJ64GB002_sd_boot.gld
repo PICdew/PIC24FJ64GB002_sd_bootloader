@@ -76,22 +76,27 @@ MEMORY
   CONFIG1        : ORIGIN = 0xABFE,        LENGTH = 0x2
 }
 
-__CONFIG4 = 0xABF8;
-__CONFIG3 = 0xABFA;
-__CONFIG2 = 0xABFC;
-__CONFIG1 = 0xABFE;
-__NO_HANDLES = 1;          /* Suppress handles on this device  */
-__CODE_BASE = 0x400;
-__CODE_LENGTH = 0x7A80;
-__IVT_BASE  = 0x4;
-__AIVT_BASE = 0x104;
 #ifdef __APP_IVT_BASE_ADDR
 __APP_IVT_BASE = __APP_IVT_BASE_ADDR;
 #else
 __APP_IVT_BASE = 0x8000;
 #endif
+
+__CONFIG4 = 0xABF8;
+__CONFIG3 = 0xABFA;
+__CONFIG2 = 0xABFC;
+__CONFIG1 = 0xABFE;
+
+__NO_HANDLES = 1;          /* Suppress handles on this device  */
+
+
+__IVT_BASE  = 0x4;
+__AIVT_BASE = 0x104;
+
 __DATA_BASE = 0x800;
 __DATA_LENGTH = 0x2000;
+__CODE_BASE = 0x400;
+__CODE_LENGTH = 0x7A80;
 
 
 /*

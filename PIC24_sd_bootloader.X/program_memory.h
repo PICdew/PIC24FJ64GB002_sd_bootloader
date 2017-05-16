@@ -5,7 +5,9 @@
  * Created on 2017/05/07, 18:22
  */
 
+#ifdef __XC16
 #include "GenericTypeDefs.h"
+#endif
 
 #ifndef PROGRAM_MEMORY_H
 #define	PROGRAM_MEMORY_H
