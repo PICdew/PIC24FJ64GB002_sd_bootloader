@@ -40,9 +40,9 @@
 #include "fileio.h"
 #include "fileio_private.h"
 #include <string.h>
-#include <stdlib.h>
-#include <stdint.h>
-#include <stdbool.h>
+//#include <stdlib.h>
+//#include <stdint.h>
+//#include <stdbool.h>
 
 uint32_t ReadRam32bit(uint8_t * pBuffer, uint16_t index);
 uint16_t ReadRam16bit (uint8_t * pBuffer, uint16_t index);
@@ -128,10 +128,12 @@ int FILEIO_Initialize (void)
 	return true;
 }
 
+/*
 int FILEIO_Reinitialize (void)
 {
 	return FILEIO_Initialize();
 }
+*/
 
 bool FILEIO_MediaDetect (const FILEIO_DRIVE_CONFIG * driveConfig, void * mediaParameters)
 {
@@ -152,7 +154,7 @@ FILEIO_DRIVE * FILEIO_CharToDrive (char c)
 
 	return NULL;
 }
-
+/*
 FILEIO_FILE_SYSTEM_TYPE FILEIO_FileSystemTypeGet (char driveId)
 {
 	FILEIO_DRIVE * drive = FILEIO_CharToDrive (driveId);
@@ -164,6 +166,7 @@ FILEIO_FILE_SYSTEM_TYPE FILEIO_FileSystemTypeGet (char driveId)
 
 	return drive->type;
 }
+ * */
 
 FILEIO_ERROR_TYPE FILEIO_DriveMount (char driveId, const FILEIO_DRIVE_CONFIG * driveConfig, void * mediaParameters)
 {
@@ -995,7 +998,7 @@ bool FILEIO_IsClusterAllocated(FILEIO_DIRECTORY * directory, FILEIO_OBJECT * fil
 
 	return true;
 }
-
+//may be can remove
 uint32_t FILEIO_FullClusterNumberGet (FILEIO_DIRECTORY_ENTRY * entry)
 {
 	uint32_t result;
@@ -2676,11 +2679,13 @@ int FILEIO_Flush (FILEIO_OBJECT * filePtr)
 }
 #endif
 
+/*
 long FILEIO_Tell (FILEIO_OBJECT * filePtr)
 {
 	((FILEIO_DRIVE *)filePtr->disk)->error = FILEIO_ERROR_NONE;
 	return (filePtr->absoluteOffset);
 }
+*/
 
 int FILEIO_Seek(FILEIO_OBJECT * filePtr, int32_t offset, int whence)
 {
@@ -2822,7 +2827,7 @@ int FILEIO_Seek(FILEIO_OBJECT * filePtr, int32_t offset, int whence)
 
 	return FILEIO_RESULT_SUCCESS;
 }
-
+/*
 #if !defined (FILEIO_CONFIG_WRITE_DISABLE)
 size_t FILEIO_Write (const void * buffer, size_t size, size_t count, FILEIO_OBJECT * filePtr)
 {
@@ -2927,7 +2932,7 @@ size_t FILEIO_Write (const void * buffer, size_t size, size_t count, FILEIO_OBJE
 	return dataWritten;
 }
 #endif
-
+*/
 size_t FILEIO_Read (void * buffer, size_t size, size_t count, FILEIO_OBJECT * filePtr)
 {
 	FILEIO_ERROR_TYPE error;
@@ -3022,12 +3027,13 @@ size_t FILEIO_Read (void * buffer, size_t size, size_t count, FILEIO_OBJECT * fi
 
 	return dataRead;
 }
-
+/*
 bool FILEIO_Eof (FILEIO_OBJECT * filePtr)
 {
 	return (filePtr->absoluteOffset == filePtr->size) ? true : false;
 }
-
+ * */
+/*
 #if !defined (FILEIO_CONFIG_WRITE_DISABLE)
 int FILEIO_Remove (const char * pathName)
 {
@@ -3097,7 +3103,8 @@ int FILEIO_Remove (const char * pathName)
 	return FILEIO_RESULT_SUCCESS;
 }
 #endif
-
+*/
+/*
 #if !defined (FILEIO_CONFIG_WRITE_DISABLE)
 int FILEIO_Rename (const char * oldPathname, const char * newFilename)
 {
@@ -3199,7 +3206,9 @@ int FILEIO_Rename (const char * oldPathname, const char * newFilename)
 	return FILEIO_RESULT_SUCCESS;
 }
 #endif
+ * */
 
+/*
 FILEIO_ERROR_TYPE FILEIO_ErrorGet (char driveId)
 {
 	FILEIO_DRIVE * drive = FILEIO_CharToDrive (driveId);
@@ -3223,7 +3232,7 @@ void FILEIO_ErrorClear (char driveId)
 		drive->error = FILEIO_ERROR_NONE;
 	}
 }
-
+*/
 int FILEIO_GetChar (FILEIO_OBJECT * handle)
 {
 	char c;
@@ -3237,7 +3246,7 @@ int FILEIO_GetChar (FILEIO_OBJECT * handle)
 		return (int)c;
 	}
 }
-
+/*
 #if !defined (FILEIO_CONFIG_WRITE_DISABLE)
 int FILEIO_PutChar (char c, FILEIO_OBJECT * handle)
 {
@@ -3251,7 +3260,9 @@ int FILEIO_PutChar (char c, FILEIO_OBJECT * handle)
 	}
 }
 #endif
+ * */
 
+/*
 #if !defined (FILEIO_CONFIG_DIRECTORY_DISABLE)
 int FILEIO_DirectoryChange (const char * path)
 {
@@ -3284,7 +3295,9 @@ int FILEIO_DirectoryChange (const char * path)
 	return FILEIO_RESULT_SUCCESS;
 }
 #endif
+*/
 
+/*
 #if !defined (FILEIO_CONFIG_WRITE_DISABLE)
 #if !defined (FILEIO_CONFIG_DIRECTORY_DISABLE)
 int FILEIO_DirectoryMake (const char * path)
@@ -3325,7 +3338,8 @@ int FILEIO_DirectoryMake (const char * path)
 }
 #endif
 #endif
-
+ * */
+/*
 #if !defined (FILEIO_CONFIG_WRITE_DISABLE)
 #if !defined (FILEIO_CONFIG_DIRECTORY_DISABLE)
 int FILEIO_DirectoryRemove (const char * path)
@@ -3390,7 +3404,8 @@ int FILEIO_DirectoryRemove (const char * path)
 }
 #endif
 #endif
-
+ * */
+/*
 #if !defined (FILEIO_CONFIG_WRITE_DISABLE)
 #if !defined (FILEIO_CONFIG_DIRECTORY_DISABLE)
 int FILEIO_DirectoryRemoveSingle (FILEIO_DIRECTORY * directory, char * path)
@@ -3440,7 +3455,9 @@ int FILEIO_DirectoryRemoveSingle (FILEIO_DIRECTORY * directory, char * path)
 }
 #endif
 #endif
+*/
 
+/*
 #if !defined (FILEIO_CONFIG_DIRECTORY_DISABLE)
 uint16_t FILEIO_DirectoryGetCurrent (char * buffer, uint16_t size)
 {
@@ -3657,7 +3674,9 @@ uint16_t FILEIO_DirectoryGetCurrent (char * buffer, uint16_t size)
 	return charCount;
 }
 #endif
+ * */
 
+/*
 #if !defined (FILEIO_CONFIG_SEARCH_DISABLE)
 int FILEIO_Find (const char * fileName, unsigned int attr, FILEIO_SEARCH_RECORD * record, bool newSearch)
 {
@@ -3734,6 +3753,7 @@ int FILEIO_Find (const char * fileName, unsigned int attr, FILEIO_SEARCH_RECORD 
 	return FILEIO_RESULT_SUCCESS;
 }
 #endif
+*/
 
 #if !defined (FILEIO_CONFIG_FORMAT_DISABLE)
 #if !defined (FILEIO_CONFIG_WRITE_DISABLE)
@@ -4559,6 +4579,7 @@ int FILEIO_Format (FILEIO_DRIVE_CONFIG * config, void * mediaParameters, FILEIO_
 #endif
 #endif
 
+/*
 #if !defined (FILEIO_CONFIG_DRIVE_PROPERTIES_DISABLE)
 void FILEIO_DrivePropertiesGet(FILEIO_DRIVE_PROPERTIES * properties, char driveId)
 {
@@ -4593,7 +4614,7 @@ void FILEIO_DrivePropertiesGet(FILEIO_DRIVE_PROPERTIES * properties, char driveI
 		properties->results.sectors_per_cluster = drive->sectorsPerCluster;
 		properties->results.total_clusters = drive->partitionClusterCount;
 
-		/* Settings based on FAT type */
+		// Settings based on FAT type
 		switch (drive->type)
 		{
 			case FILEIO_FILE_SYSTEM_TYPE_FAT32:
@@ -4654,7 +4675,8 @@ void FILEIO_DrivePropertiesGet(FILEIO_DRIVE_PROPERTIES * properties, char driveI
 	return;
 }
 #endif
-
+ */
+/*
 void FILEIO_ShortFileNameConvert (char * newFileName, char * oldFileName)
 {
 	uint8_t j = 0;
@@ -4689,6 +4711,7 @@ void FILEIO_ShortFileNameConvert (char * newFileName, char * oldFileName)
 	}
 	*newFileName = 0;
 }
+ * */
 
 #if defined (FILEIO_CONFIG_MULTIPLE_BUFFER_MODE_DISABLE)
 int FILEIO_GetSingleBuffer (FILEIO_DRIVE * drive)

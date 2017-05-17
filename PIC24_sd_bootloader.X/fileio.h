@@ -533,7 +533,7 @@ int FILEIO_Initialize (void);
 	  * If Success: FILEIO_RESULT_SUCCESS
 	  * If Failure: FILEIO_RESULT_FAILURE                   
 ***************************************************************************/
-int FILEIO_Reinitialize (void);
+//int FILEIO_Reinitialize (void);
 
 /***************************************************************************
   Function:
