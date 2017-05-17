@@ -7,7 +7,7 @@
 
 //Define *******************************
 #define DEV_HAS_USB
-#define DEV_HAS_UART
+//#define DEV_HAS_UART
 
 //Includes *******************************
 #ifdef __XC16
@@ -17,6 +17,8 @@
 #ifdef DEV_HAS_UART
 #include <stdio.h>
 #endif
+
+#define EOF (-1)
 
 #include "delay.h"
 #include "sd_card.h"
@@ -55,6 +57,7 @@
 /**
  * 
  */
+#ifdef DEV_HAS_UART
 void init_uart(void){
     RPINR18bits.U1RXR = 2;  //rx UART1 RP2
 	RPOR1bits.RP3R = 3;     //tx UART1
@@ -84,6 +87,7 @@ void init_uart(void){
 	ConfigIntUART1( UART_RX_INT_EN & UART_TX_INT_DIS );
 	IEC0bits.U1RXIE = 0; //disable interrupt
 }
+#endif
 
 /**
  * 
@@ -200,7 +204,9 @@ void verify(char *str){
 int main(void){
     CLKDIV = 0;
     SYSTEM_Initialize();
+#ifdef DEV_HAS_UART
     init_uart();
+#endif
     
     //Set User reset code.
     DWORD_VAL userReset;
