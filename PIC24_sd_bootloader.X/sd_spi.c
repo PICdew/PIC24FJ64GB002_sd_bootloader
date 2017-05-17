@@ -1441,6 +1441,7 @@ void Delayms(uint8_t milliseconds)
   Remarks:
 	None.
   ***************************************************************************************/
+
 void FILEIO_SD_SPISlowInitialize(FILEIO_SD_DRIVE_CONFIG * config)
 {
 #if defined(unix) || defined(__APPLE__) || defined(_WIN32)

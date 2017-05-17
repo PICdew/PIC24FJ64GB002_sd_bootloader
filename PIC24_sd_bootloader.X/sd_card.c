@@ -8,7 +8,7 @@
 
 #ifdef __XC16
 #include <xc.h>
-#include "stdlib.h"
+//#include "stdlib.h"
 #endif
 
 #ifdef EMURATE_PC
@@ -19,9 +19,9 @@
 
 
 #define BUF_SIZE (100)
-#define SD_FILE_NAME "test.hex"
-#define SD_LOG_FILE_NAME "log.txt"
-#define SD_CONFIG_FILE_NAME "config.txt"
+//#define SD_FILE_NAME "test.hex"
+//#define SD_LOG_FILE_NAME "log.txt"
+//#define SD_CONFIG_FILE_NAME "config.txt"
 
 // The sdCardMediaParameters structure defines user-implemented functions needed by the SD-SPI fileio driver.
 // The driver will call these when necessary.  For the SD-SPI driver, the user must provide

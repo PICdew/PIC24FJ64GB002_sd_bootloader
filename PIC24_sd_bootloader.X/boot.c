@@ -16,11 +16,12 @@
 
 #ifdef DEV_HAS_UART
 #include <stdio.h>
+#include "uart.h"
 #endif
 
 #define EOF (-1)
 
-#include "delay.h"
+//#include "delay.h"
 #include "sd_card.h"
 #include "system.h"
 #include "fileio.h"
@@ -28,7 +29,7 @@
 #include "program_memory.h"
 #include "memory.h"
 #include "config.h"
-#include "uart.h"
+
 
 #define BUF             (100)
 //****************************************

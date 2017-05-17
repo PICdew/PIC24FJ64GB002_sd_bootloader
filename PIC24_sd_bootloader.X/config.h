@@ -271,11 +271,11 @@ extern void ResetDevice(WORD);
 //void ReadPM(WORD, DWORD_VAL);
 //void WritePM(WORD, DWORD_VAL);
 //void ErasePM(WORD, DWORD_VAL);
-void WriteTimeout();
-void GetCommand();
-void HandleCommand();
-void PutResponse(WORD);
-void AutoBaud();
+//void WriteTimeout();
+//void GetCommand();
+//void HandleCommand();
+//void PutResponse(WORD);
+//void AutoBaud();
 #if defined(USE_BOOT_PROTECT) || defined(USE_RESET_SAVE)
 //void replaceBLReset(DWORD_VAL);
 #endif

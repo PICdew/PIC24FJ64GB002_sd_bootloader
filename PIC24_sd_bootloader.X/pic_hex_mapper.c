@@ -3,8 +3,8 @@
 #include <stdio.h>
 #endif
 
-#include <stdio.h>
-#include <string.h>
+//#include <stdio.h>
+//#include <string.h>
 #include "pic_hex_mapper.h"
 #include "config.h"
 #include "program_memory.h"
@@ -140,6 +140,7 @@ int parse_hex_format(const char *str, FORMAT *format ){
 /*
 * 	memory handler.
 */
+/*
 void erase_memory(void){
 #ifdef __XC16
     printf(">Erase_memory\r\n");
@@ -173,17 +174,16 @@ void show_memory(void){
 	}
 #endif 
 }
+ * */
 
 
 
 static int intel_hex2program_memory(FORMAT *fmt, MEMORY *mem, int max_memory_size){
 	//NULL check
 	if(fmt==NULL){
-		printf("Err: null\r\n");
 		return -1;
 	}
 	if(mem==NULL){
-		printf("Err: null\r\n");
 		return -1;
 	}
 
@@ -228,7 +228,6 @@ static int intel_hex2program_memory(FORMAT *fmt, MEMORY *mem, int max_memory_siz
 		case 4:
 			//TODO : set extend linear address.
             extended_address_offset = fmt->data[0]*0x100+fmt->data[1];
-            printf("Ex address setting.");
             mem=NULL;
 			break;
 		case 5:
@@ -271,7 +270,7 @@ int write_program_memory(MEMORY *mem){
 	int index = (current_address - active_row_addr) / 2;
 	if (index >= 0x40)
 	{
-		printf("ERROR: invalid index %lx\r\n", mem->address);
+		//printf("ERROR: invalid index %lx\r\n", mem->address);
 		return -1;
 	}
 
@@ -297,7 +296,6 @@ int map_hex_format(FORMAT *fmt){
 	MEMORY mem[BUF];
     int ret = intel_hex2program_memory(fmt, mem, BUF);
 	if(-1==ret){ 
-		printf("Failed to convert hex->progmem\r\n ");
         return -1;
 	}
     
