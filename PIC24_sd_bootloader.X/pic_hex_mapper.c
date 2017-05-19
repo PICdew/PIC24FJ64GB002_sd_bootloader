@@ -3,15 +3,16 @@
 #include <stdio.h>
 #endif
 
+#ifdef DEV_HAS_UART
 #include <stdio.h>
 #include <string.h>
+#endif
 #include "pic_hex_mapper.h"
 #include "config.h"
 #include "program_memory.h"
 
 
 
-#define FILENAME		"test.hex" 	//File name of hex file.
 #define BUF 			(100)	
 #define MEMORY_SIZE		(0xAC00)	//Memory size of PIC program memory.	
 #define ADDRESS_UNSET	(0xFFFF)	//Active address  unset. 
@@ -140,6 +141,7 @@ int parse_hex_format(const char *str, FORMAT *format ){
 /*
 * 	memory handler.
 */
+/*
 void erase_memory(void){
 #ifdef __XC16
     printf(">Erase_memory\r\n");
@@ -173,17 +175,16 @@ void show_memory(void){
 	}
 #endif 
 }
+ * */
 
 
 
 static int intel_hex2program_memory(FORMAT *fmt, MEMORY *mem, int max_memory_size){
 	//NULL check
-	if(fmt==NULL){
+	if((fmt==NULL)||(mem==NULL)){
+#ifdef DEV_HAS_UART
 		printf("Err: null\r\n");
-		return -1;
-	}
-	if(mem==NULL){
-		printf("Err: null\r\n");
+#endif
 		return -1;
 	}
 
@@ -228,7 +229,9 @@ static int intel_hex2program_memory(FORMAT *fmt, MEMORY *mem, int max_memory_siz
 		case 4:
 			//TODO : set extend linear address.
             extended_address_offset = fmt->data[0]*0x100+fmt->data[1];
+#ifdef DEV_HAS_UART
             printf("Ex address setting.");
+#endif
             mem=NULL;
 			break;
 		case 5:
@@ -271,7 +274,9 @@ int write_program_memory(MEMORY *mem){
 	int index = (current_address - active_row_addr) / 2;
 	if (index >= 0x40)
 	{
+#ifdef DEV_HAS_UART
 		printf("ERROR: invalid index %lx\r\n", mem->address);
+#endif
 		return -1;
 	}
 
@@ -291,13 +296,16 @@ int write_program_memory(MEMORY *mem){
 *	
 *	Read hex format and map the data to progmemory.
 */
+
 int map_hex_format(FORMAT *fmt){
 
 	int length = fmt->data_length/4;
 	MEMORY mem[BUF];
     int ret = intel_hex2program_memory(fmt, mem, BUF);
 	if(-1==ret){ 
+#ifdef DEV_HAS_UART
 		printf("Failed to convert hex->progmem\r\n ");
+#endif
         return -1;
 	}
     

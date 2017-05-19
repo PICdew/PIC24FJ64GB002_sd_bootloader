@@ -53,12 +53,6 @@ Command:
 
 Archive member included because of file (symbol)
 
-c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-elf.a(CloseUART1.o)
-                              build/default/production/boot.o (_CloseUART1)
-c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-elf.a(ConfigIntUART1.o)
-                              build/default/production/boot.o (_ConfigIntUART1)
-c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-elf.a(OpenUART1.o)
-                              build/default/production/boot.o (_OpenUART1)
 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(crt0_standard.o)
                               (__resetPRI)
 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(data_init_standard.o)
@@ -71,77 +65,36 @@ c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(memcpy.
                               build/default/production/fileio.o (_memcpy)
 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(memset.eo)
                               build/default/production/fileio.o (_memset)
-c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(puts.eo)
-                              build/default/production/boot.o (_puts)
 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(strlen.eo)
                               build/default/production/fileio.o (_strlen)
 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(strncpy.eo)
                               build/default/production/fileio.o (_strncpy)
-c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(_iob.eo)
-                              c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(puts.eo) (__iob)
-c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(printf_cdnopuxX.XXeo)
-                              build/default/production/pic_hex_mapper.o (__printf_cdnopuxX)
-c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(printf_cdnopsuxX.XXeo)
-                              build/default/production/boot.o (__printf_cdnopsuxX)
-c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(printf_s.XXeo)
-                              build/default/production/boot.o (__printf_s)
-c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(fputc.eo)
-                              c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(puts.eo) (_fputc)
-c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(doprnt_cdnopuxX.XXeo)
-                              c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(printf_cdnopuxX.XXeo) (__vfprintf_cdnopuxX)
-c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(doprnt_cdnopsuxX.XXeo)
-                              c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(printf_cdnopsuxX.XXeo) (__vfprintf_cdnopsuxX)
-c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(doprnt_s.XXeo)
-                              c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(printf_s.XXeo) (__vfprintf_s)
-c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(flsbuf.eo)
-                              c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(fputc.eo) (__flsbuf)
-c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(write.eo)
-                              c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(fputc.eo) (_write)
-c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(c30_uart.eo)
-                              c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(write.eo) (___C30_UART)
-c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(mulsi3.eo)
-                              c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(doprnt_cdnopuxX.XXeo) (___mulsi3)
-c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(divmoddi3.eo)
-                              c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(doprnt_cdnopuxX.XXeo) (___udivdi3)
-c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(muldi3.eo)
-                              c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(doprnt_cdnopuxX.XXeo) (___muldi3)
-c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(umuldi3.eo)
-                              c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(muldi3.eo) (___umuldi3)
 
 
 Program Memory  [Origin = 0x400, Length = 0x7c00]
 
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
-.text                        0x400               0xd88          0x144c  (5196)
-.const                      0x1188               0x1e6           0x2d9  (729)
-.text                       0x136e              0x629e          0x93ed  (37869)
-.dinit                      0x760c               0x116           0x1a1  (417)
-.text                       0x7722               0x1c4           0x2a6  (678)
+.text                        0x400               0x16e           0x225  (549)
+.const                       0x56e                0xae           0x105  (261)
+.text                        0x61c              0x6376          0x9531  (38193)
+.dinit                      0x6992                0x42            0x63  (99)
 
-                     Total program memory used (bytes):         0xaf59  (44889) 94%
+                     Total program memory used (bytes):         0x98be  (39102) 82%
 
 
 Data Memory  [Origin = 0x800, Length = 0x2000]
 
 section                    address      alignment gaps    total length  (dec)
 -------                    -------      --------------    -------------------
-_040A3A20591f268c            0x800                   0           0x200  (512)
-_040A3C00591f268c            0xa00                   0           0x200  (512)
+_040A3A20591f3161            0x800                   0           0x200  (512)
+_040A3C00591f3161            0xa00                   0           0x200  (512)
 .nbss                        0xc00                   0           0x192  (402)
 .ndata                       0xd92                   0             0xa  (10)
 .nbss                        0xd9c                   0            0x10  (16)
 .ndata                       0xdac                   0             0x2  (2)
-.data.dpowers                0xdae                   0            0xa0  (160)
-.data                        0xe4e                   0            0x2a  (42)
-.data._iob                   0xe78                   0            0x24  (36)
-.data._Files                 0xe9c                   0             0x2  (2)
-.bss._outdone                0xe9e                   0             0x2  (2)
-.bss._sibuf                  0xea0                   0             0x2  (2)
-.bss._sobuf                  0xea2                   0             0x2  (2)
-.data.__C30_UART             0xea4                   0             0x2  (2)
 
-                        Total data memory used (bytes):          0x6a6  (1702) 20%
+                        Total data memory used (bytes):          0x5ae  (1454) 17%
 
 
 Dynamic Memory Usage
@@ -149,9 +102,9 @@ Dynamic Memory Usage
 region                     address                      maximum length  (dec)
 ------                     -------                      ---------------------
 heap                             0                                   0  (0)
-stack                        0xea6                              0x195a  (6490)
+stack                        0xdae                              0x1a52  (6738)
 
-                        Maximum dynamic memory (bytes):         0x195a  (6490)
+                        Maximum dynamic memory (bytes):         0x1a52  (6738)
 
 
 External Symbols in Data Memory (by address):
@@ -169,21 +122,9 @@ External Symbols in Data Memory (by address):
                     0x0d56                  _gMediaSectorSize
                     0x0d58                  _gSDMode
                     0x0d92                  _sdCardMediaParameters
-                    0x0e78                  __iob
-                    0x0e9c                  __Files
-                    0x0e9e                  __outdone
-                    0x0ea0                  __sibuf
-                    0x0ea2                  __sobuf
-                    0x0ea4                  ___C30_UART
 
 External Symbols in Data Memory (by name):
 
-                    0x0e9c                  __Files
-                    0x0ea4                  ___C30_UART
-                    0x0e78                  __iob
-                    0x0e9e                  __outdone
-                    0x0ea0                  __sibuf
-                    0x0ea2                  __sobuf
                     0x0d06                  _active_row_addr
                     0x0c00                  _buffer
                     0x0d40                  _bufferStatus
@@ -202,317 +143,261 @@ External Symbols in Program Memory (by address):
 
                   0x000400                  __resetPRI
                   0x00042c                  __psv_init
-                  0x00043c                  __data_init
                   0x00043c                  __data_init_standard
+                  0x00043c                  __data_init
                   0x0004ca                  __DefaultInterrupt
-                  0x00052e                  _CloseUART1
-                  0x00053e                  _ConfigIntUART1
-                  0x0005b0                  _OpenUART1
-                  0x0005d8                  ___udivsi3
-                  0x0005f8                  _memcmp
-                  0x00062c                  _memcpy
-                  0x00063a                  _memset
-                  0x000648                  _fputs
-                  0x000664                  _puts
-                  0x000678                  _strlen
-                  0x000686                  _strncpy
-                  0x0006a8                  __printf_s
-                  0x0006a8                  __printf_cdnopuxX
-                  0x0006a8                  __printf_cdnopsuxX
-                  0x0006a8                  __printf_0
-                  0x00073e                  __vfprintf_s
-                  0x00073e                  __vfprintf_0
-                  0x00073e                  __vfprintf_cdnopuxX
-                  0x00073e                  __vfprintf_cdnopsuxX
-                  0x000ebe                  ___mulsi3
-                  0x000ebe                  ___mulp32eds3
-                  0x000ebe                  ___mulp32peds3
-                  0x000f3c                  ___udivmoddi3
-                  0x001020                  ___udivdi3
-                  0x00102e                  ___umoddi3
-                  0x001036                  ___divdi3
-                  0x001096                  ___moddi3
-                  0x0010f2                  ___muldi3
-                  0x001144                  ___umuldi3
-                  0x0012ca                  _sdmmc_cmdtable
-                  0x001342                  _gShortFileNameCharacters
-                  0x001353                  _gLongFileNameCharacters
-                  0x001360                  _gSdDrive
-                  0x00136e                  _FILEIO_RegisterTimestampGet
-                  0x00137a                  _FILEIO_Initialize
-                  0x001464                  _FILEIO_Reinitialize
-                  0x001470                  _FILEIO_MediaDetect
-                  0x001486                  _FILEIO_CharToDrive
-                  0x0014d8                  _FILEIO_FileSystemTypeGet
-                  0x0014fa                  _FILEIO_DriveMount
-                  0x0016e6                  _FILEIO_LoadMBR
-                  0x0019a2                  _FILEIO_LoadBootSector
-                  0x00209a                  _FILEIO_DriveUnmount
-                  0x002152                  _FILEIO_FileNameTypeGet
-                  0x0022d6                  _FILEIO_FormatShortFileName
-                  0x00237e                  _FILEIO_Open
-                  0x002554                  _FILEIO_IsClusterAllocated
-                  0x0025d2                  _FILEIO_FullClusterNumberGet
-                  0x0025f8                  _FILEIO_CacheDirectory
-                  0x002720                  _FILEIO_FindNextDelimiter
-                  0x002760                  _FILEIO_DirectoryChangeSingle
-                  0x002834                  _FILEIO_DirectoryMakeSingle
-                  0x0029ce                  _FILEIO_DotEntryWrite
-                  0x002b72                  _FILEIO_FindShortFileName
-                  0x002d06                  _FILEIO_DirectoryEntryCreate
-                  0x002d76                  _FILEIO_CreateFirstCluster
-                  0x002e5e                  _FILEIO_DirectoryEntryPopulate
-                  0x002fee                  _FILEIO_DirectoryEntryFindEmpty
-                  0x003104                  _FILEIO_ClusterAllocate
-                  0x003192                  _FILEIO_FindEmptyCluster
-                  0x003296                  _FILEIO_EraseCluster
-                  0x0033ba                  _FILEIO_DirectoryEntryCache
-                  0x0035e0                  _FILEIO_ForceRecache
-                  0x003654                  _FILEIO_FlushBuffer
-                  0x0037b8                  _FILEIO_ShortFileNameCompare
-                  0x00386c                  _FILEIO_ClusterToSector
-                  0x003956                  _FILEIO_FATRead
-                  0x003e84                  _FILEIO_EraseFile
-                  0x004022                  _FILEIO_EraseClusterChain
-                  0x004110                  _FILEIO_FATWrite
-                  0x0045e2                  _FILEIO_NextClusterGet
-                  0x0046ca                  _FILEIO_Close
-                  0x0046f2                  _FILEIO_Flush
-                  0x00483c                  _FILEIO_Tell
-                  0x004854                  _FILEIO_Seek
-                  0x004b36                  _FILEIO_Write
-                  0x004dbe                  _FILEIO_Read
-                  0x004fec                  _FILEIO_Eof
-                  0x005012                  _FILEIO_Remove
-                  0x00511a                  _FILEIO_Rename
-                  0x0052d6                  _FILEIO_ErrorGet
-                  0x0052f8                  _FILEIO_ErrorClear
-                  0x005314                  _FILEIO_GetChar
-                  0x005336                  _FILEIO_PutChar
-                  0x005358                  _FILEIO_DirectoryChange
-                  0x0053a8                  _FILEIO_DirectoryMake
-                  0x00540c                  _FILEIO_DirectoryRemove
-                  0x00550a                  _FILEIO_DirectoryRemoveSingle
-                  0x0055ba                  _FILEIO_DirectoryGetCurrent
-                  0x005950                  _FILEIO_Find
-                  0x005a74                  _FILEIO_DrivePropertiesGet
-                  0x005c48                  _FILEIO_ShortFileNameConvert
-                  0x005cda                  _ReadRam16bit
-                  0x005d0e                  _ReadRam32bit
-                  0x005d8a                  _FILEIO_SD_MediaDetect
-                  0x005d9c                  _FILEIO_SD_SectorSizeRead
-                  0x005da8                  _FILEIO_SD_CapacityRead
-                  0x005db6                  _FILEIO_SD_IOInitialize
-                  0x005dc4                  _FILEIO_SD_MediaDeinitialize
-                  0x005dec                  _FILEIO_SD_SendCmd
-                  0x005f90                  _FILEIO_SD_SectorRead
-                  0x005fde                  _FILEIO_SD_AsyncReadTasks
-                  0x0061de                  _FILEIO_SD_AsyncWriteTasks
-                  0x0064b2                  _FILEIO_SD_SectorWrite
-                  0x00651a                  _FILEIO_SD_WriteProtectStateGet
-                  0x00652c                  _Delayms
-                  0x006576                  _FILEIO_SD_SPISlowInitialize
-                  0x0065e8                  _FILEIO_SD_MediaInitialize
-                  0x006adc                  _parse_hex_format
-                  0x006c1c                  _erase_memory
-                  0x006c26                  _write_memory
-                  0x006c42                  _read_memory
-                  0x006c5a                  _show_memory
-                  0x006d90                  _get_row_base_addr
-                  0x006db8                  _write_program_memory
-                  0x006e8c                  _map_hex_format
-                  0x006ef4                  _DRV_SPI_Initialize
-                  0x006fb4                  _DRV_SPI_Deinitialize
-                  0x006fc4                  _SPI_DummyDataSet
-                  0x006fda                  _DRV_SPI_Put
-                  0x00700a                  _DRV_SPI_PutBuffer
-                  0x0070b2                  _DRV_SPI_Get
-                  0x0070dc                  _DRV_SPI_GetBuffer
-                  0x007190                  _DRV_SPI_Lock
-                  0x0071b8                  _DRV_SPI_Unlock
-                  0x0071cc                  _set_buffer
-                  0x0071de                  _get_buffer
-                  0x0071ee                  _erase_buffer
-                  0x007210                  _ReadPM
-                  0x007282                  _WritePM
-                  0x00741c                  _ErasePM
-                  0x007484                  _init_uart
-                  0x0074b8                  _is_boot_mode
-                  0x0074c2                  _process_each_line
-                  0x00753c                  _parse_hex_and_map
-                  0x00756a                  _main
-                  0x007722                  _WriteMem
-                  0x007748                  _WriteLatch
-                  0x007766                  _ReadLatch
-                  0x007784                  _ResetDevice
-                  0x007790                  _Erase
-                  0x0077cc                  _SYSTEM_Initialize
-                  0x00781c                  _USER_SdSpiConfigurePins_1
-                  0x007828                  _USER_SdSpiSetCs_1
-                  0x007844                  _USER_SdSpiGetCd_1
-                  0x00785c                  _USER_SdSpiGetWp_1
-                  0x007866                  _sd_power_switch
-                  0x007882                  _sd_initialize
-                  0x0078c0                  _sd_finalize
+                  0x0004ce                  ___udivsi3
+                  0x0004ee                  _memcmp
+                  0x000522                  _memcpy
+                  0x000530                  _memset
+                  0x00053e                  _strlen
+                  0x00054c                  _strncpy
+                  0x00056e                  _sdmmc_cmdtable
+                  0x0005e6                  _gShortFileNameCharacters
+                  0x0005f7                  _gLongFileNameCharacters
+                  0x000604                  _gSdDrive
+                  0x00061c                  _FILEIO_RegisterTimestampGet
+                  0x000628                  _FILEIO_Initialize
+                  0x000712                  _FILEIO_Reinitialize
+                  0x00071e                  _FILEIO_MediaDetect
+                  0x000734                  _FILEIO_CharToDrive
+                  0x000786                  _FILEIO_FileSystemTypeGet
+                  0x0007a8                  _FILEIO_DriveMount
+                  0x000994                  _FILEIO_LoadMBR
+                  0x000c50                  _FILEIO_LoadBootSector
+                  0x001348                  _FILEIO_DriveUnmount
+                  0x001400                  _FILEIO_FileNameTypeGet
+                  0x001584                  _FILEIO_FormatShortFileName
+                  0x00162c                  _FILEIO_Open
+                  0x001802                  _FILEIO_IsClusterAllocated
+                  0x001880                  _FILEIO_FullClusterNumberGet
+                  0x0018a6                  _FILEIO_CacheDirectory
+                  0x0019ce                  _FILEIO_FindNextDelimiter
+                  0x001a0e                  _FILEIO_DirectoryChangeSingle
+                  0x001ae2                  _FILEIO_DirectoryMakeSingle
+                  0x001c7c                  _FILEIO_DotEntryWrite
+                  0x001e20                  _FILEIO_FindShortFileName
+                  0x001fb4                  _FILEIO_DirectoryEntryCreate
+                  0x002024                  _FILEIO_CreateFirstCluster
+                  0x00210c                  _FILEIO_DirectoryEntryPopulate
+                  0x00229c                  _FILEIO_DirectoryEntryFindEmpty
+                  0x0023b2                  _FILEIO_ClusterAllocate
+                  0x002440                  _FILEIO_FindEmptyCluster
+                  0x002544                  _FILEIO_EraseCluster
+                  0x002668                  _FILEIO_DirectoryEntryCache
+                  0x00288e                  _FILEIO_ForceRecache
+                  0x002902                  _FILEIO_FlushBuffer
+                  0x002a66                  _FILEIO_ShortFileNameCompare
+                  0x002b1a                  _FILEIO_ClusterToSector
+                  0x002c04                  _FILEIO_FATRead
+                  0x003132                  _FILEIO_EraseFile
+                  0x0032d0                  _FILEIO_EraseClusterChain
+                  0x0033be                  _FILEIO_FATWrite
+                  0x003890                  _FILEIO_NextClusterGet
+                  0x003978                  _FILEIO_Close
+                  0x0039a0                  _FILEIO_Flush
+                  0x003aea                  _FILEIO_Tell
+                  0x003b02                  _FILEIO_Seek
+                  0x003de4                  _FILEIO_Write
+                  0x00406c                  _FILEIO_Read
+                  0x00429a                  _FILEIO_Eof
+                  0x0042c0                  _FILEIO_Remove
+                  0x0043c8                  _FILEIO_Rename
+                  0x004584                  _FILEIO_ErrorGet
+                  0x0045a6                  _FILEIO_ErrorClear
+                  0x0045c2                  _FILEIO_GetChar
+                  0x0045e4                  _FILEIO_PutChar
+                  0x004606                  _FILEIO_DirectoryChange
+                  0x004656                  _FILEIO_DirectoryMake
+                  0x0046ba                  _FILEIO_DirectoryRemove
+                  0x0047b8                  _FILEIO_DirectoryRemoveSingle
+                  0x004868                  _FILEIO_DirectoryGetCurrent
+                  0x004bfe                  _FILEIO_Find
+                  0x004d22                  _FILEIO_DrivePropertiesGet
+                  0x004ef6                  _FILEIO_ShortFileNameConvert
+                  0x004f88                  _ReadRam16bit
+                  0x004fbc                  _ReadRam32bit
+                  0x005038                  _FILEIO_SD_MediaDetect
+                  0x00504a                  _FILEIO_SD_SectorSizeRead
+                  0x005056                  _FILEIO_SD_CapacityRead
+                  0x005064                  _FILEIO_SD_IOInitialize
+                  0x005072                  _FILEIO_SD_MediaDeinitialize
+                  0x00509a                  _FILEIO_SD_SendCmd
+                  0x00523e                  _FILEIO_SD_SectorRead
+                  0x00528c                  _FILEIO_SD_AsyncReadTasks
+                  0x00548c                  _FILEIO_SD_AsyncWriteTasks
+                  0x005760                  _FILEIO_SD_SectorWrite
+                  0x0057c8                  _FILEIO_SD_WriteProtectStateGet
+                  0x0057da                  _Delayms
+                  0x005824                  _FILEIO_SD_SPISlowInitialize
+                  0x005896                  _FILEIO_SD_MediaInitialize
+                  0x005d8a                  _parse_hex_format
+                  0x005fe6                  _get_row_base_addr
+                  0x00600e                  _write_program_memory
+                  0x0060d4                  _map_hex_format
+                  0x006134                  _DRV_SPI_Initialize
+                  0x0061f4                  _DRV_SPI_Deinitialize
+                  0x006204                  _SPI_DummyDataSet
+                  0x00621a                  _DRV_SPI_Put
+                  0x00624a                  _DRV_SPI_PutBuffer
+                  0x0062f2                  _DRV_SPI_Get
+                  0x00631c                  _DRV_SPI_GetBuffer
+                  0x0063d0                  _DRV_SPI_Lock
+                  0x0063f8                  _DRV_SPI_Unlock
+                  0x00640c                  _set_buffer
+                  0x00641e                  _get_buffer
+                  0x00642e                  _erase_buffer
+                  0x006450                  _ReadPM
+                  0x0064c2                  _WritePM
+                  0x00665c                  _ErasePM
+                  0x0066c4                  _is_boot_mode
+                  0x0066ce                  _process_each_line
+                  0x006748                  _parse_hex_and_map
+                  0x00675a                  _main
+                  0x0067ce                  _WriteMem
+                  0x0067f4                  _WriteLatch
+                  0x006812                  _ReadLatch
+                  0x006830                  _ResetDevice
+                  0x00683c                  _Erase
+                  0x006878                  _SYSTEM_Initialize
+                  0x0068c8                  _USER_SdSpiConfigurePins_1
+                  0x0068d4                  _USER_SdSpiSetCs_1
+                  0x0068f0                  _USER_SdSpiGetCd_1
+                  0x006908                  _USER_SdSpiGetWp_1
+                  0x006912                  _sd_power_switch
+                  0x00692e                  _sd_initialize
+                  0x00696c                  _sd_finalize
                   0x0080bc                  __DEFAULT_VECTOR
 
 External Symbols in Program Memory (by name):
 
-                  0x00052e                  _CloseUART1
-                  0x00053e                  _ConfigIntUART1
-                  0x006fb4                  _DRV_SPI_Deinitialize
-                  0x0070b2                  _DRV_SPI_Get
-                  0x0070dc                  _DRV_SPI_GetBuffer
-                  0x006ef4                  _DRV_SPI_Initialize
-                  0x007190                  _DRV_SPI_Lock
-                  0x006fda                  _DRV_SPI_Put
-                  0x00700a                  _DRV_SPI_PutBuffer
-                  0x0071b8                  _DRV_SPI_Unlock
-                  0x00652c                  _Delayms
-                  0x007790                  _Erase
-                  0x00741c                  _ErasePM
-                  0x0025f8                  _FILEIO_CacheDirectory
-                  0x001486                  _FILEIO_CharToDrive
-                  0x0046ca                  _FILEIO_Close
-                  0x003104                  _FILEIO_ClusterAllocate
-                  0x00386c                  _FILEIO_ClusterToSector
-                  0x002d76                  _FILEIO_CreateFirstCluster
-                  0x005358                  _FILEIO_DirectoryChange
-                  0x002760                  _FILEIO_DirectoryChangeSingle
-                  0x0033ba                  _FILEIO_DirectoryEntryCache
-                  0x002d06                  _FILEIO_DirectoryEntryCreate
-                  0x002fee                  _FILEIO_DirectoryEntryFindEmpty
-                  0x002e5e                  _FILEIO_DirectoryEntryPopulate
-                  0x0055ba                  _FILEIO_DirectoryGetCurrent
-                  0x0053a8                  _FILEIO_DirectoryMake
-                  0x002834                  _FILEIO_DirectoryMakeSingle
-                  0x00540c                  _FILEIO_DirectoryRemove
-                  0x00550a                  _FILEIO_DirectoryRemoveSingle
-                  0x0029ce                  _FILEIO_DotEntryWrite
-                  0x0014fa                  _FILEIO_DriveMount
-                  0x005a74                  _FILEIO_DrivePropertiesGet
-                  0x00209a                  _FILEIO_DriveUnmount
-                  0x004fec                  _FILEIO_Eof
-                  0x003296                  _FILEIO_EraseCluster
-                  0x004022                  _FILEIO_EraseClusterChain
-                  0x003e84                  _FILEIO_EraseFile
-                  0x0052f8                  _FILEIO_ErrorClear
-                  0x0052d6                  _FILEIO_ErrorGet
-                  0x003956                  _FILEIO_FATRead
-                  0x004110                  _FILEIO_FATWrite
-                  0x002152                  _FILEIO_FileNameTypeGet
-                  0x0014d8                  _FILEIO_FileSystemTypeGet
-                  0x005950                  _FILEIO_Find
-                  0x003192                  _FILEIO_FindEmptyCluster
-                  0x002720                  _FILEIO_FindNextDelimiter
-                  0x002b72                  _FILEIO_FindShortFileName
-                  0x0046f2                  _FILEIO_Flush
-                  0x003654                  _FILEIO_FlushBuffer
-                  0x0035e0                  _FILEIO_ForceRecache
-                  0x0022d6                  _FILEIO_FormatShortFileName
-                  0x0025d2                  _FILEIO_FullClusterNumberGet
-                  0x005314                  _FILEIO_GetChar
-                  0x00137a                  _FILEIO_Initialize
-                  0x002554                  _FILEIO_IsClusterAllocated
-                  0x0019a2                  _FILEIO_LoadBootSector
-                  0x0016e6                  _FILEIO_LoadMBR
-                  0x001470                  _FILEIO_MediaDetect
-                  0x0045e2                  _FILEIO_NextClusterGet
-                  0x00237e                  _FILEIO_Open
-                  0x005336                  _FILEIO_PutChar
-                  0x004dbe                  _FILEIO_Read
-                  0x00136e                  _FILEIO_RegisterTimestampGet
-                  0x001464                  _FILEIO_Reinitialize
-                  0x005012                  _FILEIO_Remove
-                  0x00511a                  _FILEIO_Rename
-                  0x005fde                  _FILEIO_SD_AsyncReadTasks
-                  0x0061de                  _FILEIO_SD_AsyncWriteTasks
-                  0x005da8                  _FILEIO_SD_CapacityRead
-                  0x005db6                  _FILEIO_SD_IOInitialize
-                  0x005dc4                  _FILEIO_SD_MediaDeinitialize
-                  0x005d8a                  _FILEIO_SD_MediaDetect
-                  0x0065e8                  _FILEIO_SD_MediaInitialize
-                  0x006576                  _FILEIO_SD_SPISlowInitialize
-                  0x005f90                  _FILEIO_SD_SectorRead
-                  0x005d9c                  _FILEIO_SD_SectorSizeRead
-                  0x0064b2                  _FILEIO_SD_SectorWrite
-                  0x005dec                  _FILEIO_SD_SendCmd
-                  0x00651a                  _FILEIO_SD_WriteProtectStateGet
-                  0x004854                  _FILEIO_Seek
-                  0x0037b8                  _FILEIO_ShortFileNameCompare
-                  0x005c48                  _FILEIO_ShortFileNameConvert
-                  0x00483c                  _FILEIO_Tell
-                  0x004b36                  _FILEIO_Write
-                  0x0005b0                  _OpenUART1
-                  0x007766                  _ReadLatch
-                  0x007210                  _ReadPM
-                  0x005cda                  _ReadRam16bit
-                  0x005d0e                  _ReadRam32bit
-                  0x007784                  _ResetDevice
-                  0x006fc4                  _SPI_DummyDataSet
-                  0x0077cc                  _SYSTEM_Initialize
-                  0x00781c                  _USER_SdSpiConfigurePins_1
-                  0x007844                  _USER_SdSpiGetCd_1
-                  0x00785c                  _USER_SdSpiGetWp_1
-                  0x007828                  _USER_SdSpiSetCs_1
-                  0x007748                  _WriteLatch
-                  0x007722                  _WriteMem
-                  0x007282                  _WritePM
+                  0x0061f4                  _DRV_SPI_Deinitialize
+                  0x0062f2                  _DRV_SPI_Get
+                  0x00631c                  _DRV_SPI_GetBuffer
+                  0x006134                  _DRV_SPI_Initialize
+                  0x0063d0                  _DRV_SPI_Lock
+                  0x00621a                  _DRV_SPI_Put
+                  0x00624a                  _DRV_SPI_PutBuffer
+                  0x0063f8                  _DRV_SPI_Unlock
+                  0x0057da                  _Delayms
+                  0x00683c                  _Erase
+                  0x00665c                  _ErasePM
+                  0x0018a6                  _FILEIO_CacheDirectory
+                  0x000734                  _FILEIO_CharToDrive
+                  0x003978                  _FILEIO_Close
+                  0x0023b2                  _FILEIO_ClusterAllocate
+                  0x002b1a                  _FILEIO_ClusterToSector
+                  0x002024                  _FILEIO_CreateFirstCluster
+                  0x004606                  _FILEIO_DirectoryChange
+                  0x001a0e                  _FILEIO_DirectoryChangeSingle
+                  0x002668                  _FILEIO_DirectoryEntryCache
+                  0x001fb4                  _FILEIO_DirectoryEntryCreate
+                  0x00229c                  _FILEIO_DirectoryEntryFindEmpty
+                  0x00210c                  _FILEIO_DirectoryEntryPopulate
+                  0x004868                  _FILEIO_DirectoryGetCurrent
+                  0x004656                  _FILEIO_DirectoryMake
+                  0x001ae2                  _FILEIO_DirectoryMakeSingle
+                  0x0046ba                  _FILEIO_DirectoryRemove
+                  0x0047b8                  _FILEIO_DirectoryRemoveSingle
+                  0x001c7c                  _FILEIO_DotEntryWrite
+                  0x0007a8                  _FILEIO_DriveMount
+                  0x004d22                  _FILEIO_DrivePropertiesGet
+                  0x001348                  _FILEIO_DriveUnmount
+                  0x00429a                  _FILEIO_Eof
+                  0x002544                  _FILEIO_EraseCluster
+                  0x0032d0                  _FILEIO_EraseClusterChain
+                  0x003132                  _FILEIO_EraseFile
+                  0x0045a6                  _FILEIO_ErrorClear
+                  0x004584                  _FILEIO_ErrorGet
+                  0x002c04                  _FILEIO_FATRead
+                  0x0033be                  _FILEIO_FATWrite
+                  0x001400                  _FILEIO_FileNameTypeGet
+                  0x000786                  _FILEIO_FileSystemTypeGet
+                  0x004bfe                  _FILEIO_Find
+                  0x002440                  _FILEIO_FindEmptyCluster
+                  0x0019ce                  _FILEIO_FindNextDelimiter
+                  0x001e20                  _FILEIO_FindShortFileName
+                  0x0039a0                  _FILEIO_Flush
+                  0x002902                  _FILEIO_FlushBuffer
+                  0x00288e                  _FILEIO_ForceRecache
+                  0x001584                  _FILEIO_FormatShortFileName
+                  0x001880                  _FILEIO_FullClusterNumberGet
+                  0x0045c2                  _FILEIO_GetChar
+                  0x000628                  _FILEIO_Initialize
+                  0x001802                  _FILEIO_IsClusterAllocated
+                  0x000c50                  _FILEIO_LoadBootSector
+                  0x000994                  _FILEIO_LoadMBR
+                  0x00071e                  _FILEIO_MediaDetect
+                  0x003890                  _FILEIO_NextClusterGet
+                  0x00162c                  _FILEIO_Open
+                  0x0045e4                  _FILEIO_PutChar
+                  0x00406c                  _FILEIO_Read
+                  0x00061c                  _FILEIO_RegisterTimestampGet
+                  0x000712                  _FILEIO_Reinitialize
+                  0x0042c0                  _FILEIO_Remove
+                  0x0043c8                  _FILEIO_Rename
+                  0x00528c                  _FILEIO_SD_AsyncReadTasks
+                  0x00548c                  _FILEIO_SD_AsyncWriteTasks
+                  0x005056                  _FILEIO_SD_CapacityRead
+                  0x005064                  _FILEIO_SD_IOInitialize
+                  0x005072                  _FILEIO_SD_MediaDeinitialize
+                  0x005038                  _FILEIO_SD_MediaDetect
+                  0x005896                  _FILEIO_SD_MediaInitialize
+                  0x005824                  _FILEIO_SD_SPISlowInitialize
+                  0x00523e                  _FILEIO_SD_SectorRead
+                  0x00504a                  _FILEIO_SD_SectorSizeRead
+                  0x005760                  _FILEIO_SD_SectorWrite
+                  0x00509a                  _FILEIO_SD_SendCmd
+                  0x0057c8                  _FILEIO_SD_WriteProtectStateGet
+                  0x003b02                  _FILEIO_Seek
+                  0x002a66                  _FILEIO_ShortFileNameCompare
+                  0x004ef6                  _FILEIO_ShortFileNameConvert
+                  0x003aea                  _FILEIO_Tell
+                  0x003de4                  _FILEIO_Write
+                  0x006812                  _ReadLatch
+                  0x006450                  _ReadPM
+                  0x004f88                  _ReadRam16bit
+                  0x004fbc                  _ReadRam32bit
+                  0x006830                  _ResetDevice
+                  0x006204                  _SPI_DummyDataSet
+                  0x006878                  _SYSTEM_Initialize
+                  0x0068c8                  _USER_SdSpiConfigurePins_1
+                  0x0068f0                  _USER_SdSpiGetCd_1
+                  0x006908                  _USER_SdSpiGetWp_1
+                  0x0068d4                  _USER_SdSpiSetCs_1
+                  0x0067f4                  _WriteLatch
+                  0x0067ce                  _WriteMem
+                  0x0064c2                  _WritePM
                   0x0080bc                  __DEFAULT_VECTOR
                   0x0004ca                  __DefaultInterrupt
-                  0x001036                  ___divdi3
-                  0x001096                  ___moddi3
-                  0x0010f2                  ___muldi3
-                  0x000ebe                  ___mulp32eds3
-                  0x000ebe                  ___mulp32peds3
-                  0x000ebe                  ___mulsi3
-                  0x001020                  ___udivdi3
-                  0x000f3c                  ___udivmoddi3
-                  0x0005d8                  ___udivsi3
-                  0x00102e                  ___umoddi3
-                  0x001144                  ___umuldi3
+                  0x0004ce                  ___udivsi3
                   0x00043c                  __data_init
                   0x00043c                  __data_init_standard
-                  0x0006a8                  __printf_0
-                  0x0006a8                  __printf_cdnopsuxX
-                  0x0006a8                  __printf_cdnopuxX
-                  0x0006a8                  __printf_s
                   0x00042c                  __psv_init
                   0x000400                  __resetPRI
-                  0x00073e                  __vfprintf_0
-                  0x00073e                  __vfprintf_cdnopsuxX
-                  0x00073e                  __vfprintf_cdnopuxX
-                  0x00073e                  __vfprintf_s
-                  0x0071ee                  _erase_buffer
-                  0x006c1c                  _erase_memory
-                  0x000648                  _fputs
-                  0x001353                  _gLongFileNameCharacters
-                  0x001360                  _gSdDrive
-                  0x001342                  _gShortFileNameCharacters
-                  0x0071de                  _get_buffer
-                  0x006d90                  _get_row_base_addr
-                  0x007484                  _init_uart
-                  0x0074b8                  _is_boot_mode
-                  0x00756a                  _main
-                  0x006e8c                  _map_hex_format
-                  0x0005f8                  _memcmp
-                  0x00062c                  _memcpy
-                  0x00063a                  _memset
-                  0x00753c                  _parse_hex_and_map
-                  0x006adc                  _parse_hex_format
-                  0x0074c2                  _process_each_line
-                  0x000664                  _puts
-                  0x006c42                  _read_memory
-                  0x0078c0                  _sd_finalize
-                  0x007882                  _sd_initialize
-                  0x007866                  _sd_power_switch
-                  0x0012ca                  _sdmmc_cmdtable
-                  0x0071cc                  _set_buffer
-                  0x006c5a                  _show_memory
-                  0x000678                  _strlen
-                  0x000686                  _strncpy
-                  0x006c26                  _write_memory
-                  0x006db8                  _write_program_memory
+                  0x00642e                  _erase_buffer
+                  0x0005f7                  _gLongFileNameCharacters
+                  0x000604                  _gSdDrive
+                  0x0005e6                  _gShortFileNameCharacters
+                  0x00641e                  _get_buffer
+                  0x005fe6                  _get_row_base_addr
+                  0x0066c4                  _is_boot_mode
+                  0x00675a                  _main
+                  0x0060d4                  _map_hex_format
+                  0x0004ee                  _memcmp
+                  0x000522                  _memcpy
+                  0x000530                  _memset
+                  0x006748                  _parse_hex_and_map
+                  0x005d8a                  _parse_hex_format
+                  0x0066ce                  _process_each_line
+                  0x00696c                  _sd_finalize
+                  0x00692e                  _sd_initialize
+                  0x006912                  _sd_power_switch
+                  0x00056e                  _sdmmc_cmdtable
+                  0x00640c                  _set_buffer
+                  0x00053e                  _strlen
+                  0x00054c                  _strncpy
+                  0x00600e                  _write_program_memory
 
 Memory Configuration
 
@@ -563,7 +448,7 @@ LOAD c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libfx-elf.a
                   0x000002          0x2 SHORT 0x0 ((ABSOLUTE (__reset) >> 0x10) & 0x7f)
                   0x000003          0x2 SHORT 0x0
 
-.text             0x000400        0xd88
+.text             0x000400        0x16e
  *(.init)
  .init            0x000400         0x3c c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(crt0_standard.o)
                   0x000400                  __resetPRI
@@ -578,78 +463,21 @@ LOAD c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libfx-elf.a
  .isr             0x0004ca          0x4 default_isr
                   0x0004ca                  __DefaultInterrupt
  *(.libc)
- .libc            0x0004ce         0x60 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(write.eo)
-                  0x0004ce                  _write
  *(.libm)
  *(.libdsp)
  *(.lib*)
- .libperi         0x00052e         0x10 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-elf.a(CloseUART1.o)
-                  0x00052e                  _CloseUART1
- .libperi         0x00053e         0x72 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-elf.a(ConfigIntUART1.o)
-                  0x00053e                  _ConfigIntUART1
- .libperi         0x0005b0         0x28 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-elf.a(OpenUART1.o)
-                  0x0005b0                  _OpenUART1
- .libm.udivsi3    0x0005d8         0x20 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(udivsi3.eo)
-                  0x0005d8                  ___udivsi3
- .libc.memcmp     0x0005f8         0x34 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(memcmp.eo)
-                  0x0005f8                  _memcmp
- .libc.memcpy     0x00062c          0xe c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(memcpy.eo)
-                  0x00062c                  _memcpy
- .libc.memset     0x00063a          0xe c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(memset.eo)
-                  0x00063a                  _memset
- .libc.fputs      0x000648         0x1c c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(puts.eo)
-                  0x000648                  _fputs
- .libc.puts       0x000664         0x14 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(puts.eo)
-                  0x000664                  _puts
- .libc.strlen     0x000678          0xe c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(strlen.eo)
-                  0x000678                  _strlen
- .libc.strncpy    0x000686         0x22 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(strncpy.eo)
-                  0x000686                  _strncpy
- .libc._printf_cdnopsuxX
-                  0x0006a8          0xe c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(printf_cdnopsuxX.XXeo)
-                  0x0006a8                  __printf_0
-                  0x0006a8                  __printf_s
-                  0x0006a8                  __printf_cdnopuxX
-                  0x0006a8                  __printf_cdnopsuxX
- .libc.fputc      0x0006b6         0x88 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(fputc.eo)
-                  0x0006b6                  _fputc
- .libc._vfprintf_cdnopsuxX
-                  0x00073e        0x6f8 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(doprnt_cdnopsuxX.XXeo)
-                  0x00073e                  __vfprintf_cdnopuxX
-                  0x00073e                  __vfprintf_cdnopsuxX
-                  0x00073e                  __vfprintf_0
-                  0x00073e                  __vfprintf_s
- .libc._flsbuf    0x000e36         0x84 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(flsbuf.eo)
-                  0x000e36                  __flsbuf
- .libc.dowrite    0x000eba          0x4 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(write.eo)
- .libm.mulsi3     0x000ebe          0xc c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(mulsi3.eo)
-                  0x000ebe                  ___mulp32peds3
-                  0x000ebe                  ___mulsi3
-                  0x000ebe                  ___mulp32eds3
- .libm.__PplusBdi
-                  0x000eca         0x28 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(divmoddi3.eo)
- .libm.__PminusBdi
-                  0x000ef2         0x4a c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(divmoddi3.eo)
- .libm.__udivmoddi3
-                  0x000f3c         0xe4 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(divmoddi3.eo)
-                  0x000f3c                  ___udivmoddi3
- .libm.__udivdi3
-                  0x001020          0xe c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(divmoddi3.eo)
-                  0x001020                  ___udivdi3
- .libm.__umoddi3
-                  0x00102e          0x8 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(divmoddi3.eo)
-                  0x00102e                  ___umoddi3
- .libm.__divdi3
-                  0x001036         0x60 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(divmoddi3.eo)
-                  0x001036                  ___divdi3
- .libm.__moddi3
-                  0x001096         0x5c c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(divmoddi3.eo)
-                  0x001096                  ___moddi3
- .libm.__muldi3
-                  0x0010f2         0x52 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(muldi3.eo)
-                  0x0010f2                  ___muldi3
- .libm.umuldi3    0x001144         0x44 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(umuldi3.eo)
-                  0x001144                  ___umuldi3
+ .libm.udivsi3    0x0004ce         0x20 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(udivsi3.eo)
+                  0x0004ce                  ___udivsi3
+ .libc.memcmp     0x0004ee         0x34 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(memcmp.eo)
+                  0x0004ee                  _memcmp
+ .libc.memcpy     0x000522          0xe c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(memcpy.eo)
+                  0x000522                  _memcpy
+ .libc.memset     0x000530          0xe c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(memset.eo)
+                  0x000530                  _memset
+ .libc.strlen     0x00053e          0xe c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(strlen.eo)
+                  0x00053e                  _strlen
+ .libc.strncpy    0x00054c         0x22 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(strncpy.eo)
+                  0x00054c                  _strncpy
 
 usercode
  *(usercode)
@@ -672,66 +500,65 @@ __CONFIG1         0x00abfe          0x2
 .comment
  *(.comment)
 
-.debug_info       0x000000       0xae34
+.debug_info       0x000000       0xa91f
  *(.debug_info)
- .debug_info      0x000000       0x1057 build/default/production/boot.o
- .debug_info      0x001057        0x9e3 build/default/production/memory.o
- .debug_info      0x001a3a        0xab3 build/default/production/drv_spi_16bit.o
- .debug_info      0x0024ed       0x447e build/default/production/fileio.o
- .debug_info      0x00696b        0xc0c build/default/production/system.o
- .debug_info      0x007577        0xdb1 build/default/production/sd_card.o
- .debug_info      0x008328       0x1679 build/default/production/sd_spi.o
- .debug_info      0x0099a1        0xba3 build/default/production/pic_hex_mapper.o
- .debug_info      0x00a544        0x8f0 build/default/production/program_memory.o
+ .debug_info      0x000000        0xbe1 build/default/production/boot.o
+ .debug_info      0x000be1        0x9e3 build/default/production/memory.o
+ .debug_info      0x0015c4        0xab3 build/default/production/drv_spi_16bit.o
+ .debug_info      0x002077       0x447e build/default/production/fileio.o
+ .debug_info      0x0064f5        0xc0c build/default/production/system.o
+ .debug_info      0x007101        0xdb1 build/default/production/sd_card.o
+ .debug_info      0x007eb2       0x1679 build/default/production/sd_spi.o
+ .debug_info      0x00952b        0xb04 build/default/production/pic_hex_mapper.o
+ .debug_info      0x00a02f        0x8f0 build/default/production/program_memory.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000       0x1045
+.debug_abbrev     0x000000        0xfcb
  *(.debug_abbrev)
- .debug_abbrev    0x000000        0x1ca build/default/production/boot.o
- .debug_abbrev    0x0001ca        0x13f build/default/production/memory.o
- .debug_abbrev    0x000309        0x1c7 build/default/production/drv_spi_16bit.o
- .debug_abbrev    0x0004d0        0x2da build/default/production/fileio.o
- .debug_abbrev    0x0007aa        0x102 build/default/production/system.o
- .debug_abbrev    0x0008ac        0x1df build/default/production/sd_card.o
- .debug_abbrev    0x000a8b        0x277 build/default/production/sd_spi.o
- .debug_abbrev    0x000d02        0x1e5 build/default/production/pic_hex_mapper.o
- .debug_abbrev    0x000ee7        0x15e build/default/production/program_memory.o
+ .debug_abbrev    0x000000        0x19a build/default/production/boot.o
+ .debug_abbrev    0x00019a        0x13f build/default/production/memory.o
+ .debug_abbrev    0x0002d9        0x1c7 build/default/production/drv_spi_16bit.o
+ .debug_abbrev    0x0004a0        0x2da build/default/production/fileio.o
+ .debug_abbrev    0x00077a        0x102 build/default/production/system.o
+ .debug_abbrev    0x00087c        0x1df build/default/production/sd_card.o
+ .debug_abbrev    0x000a5b        0x277 build/default/production/sd_spi.o
+ .debug_abbrev    0x000cd2        0x19b build/default/production/pic_hex_mapper.o
+ .debug_abbrev    0x000e6d        0x15e build/default/production/program_memory.o
 
-.debug_line       0x000000       0x59ff
+.debug_line       0x000000       0x588d
  *(.debug_line)
- .debug_line      0x000000        0x3a3 build/default/production/boot.o
- .debug_line      0x0003a3        0x205 build/default/production/memory.o
- .debug_line      0x0005a8        0x4f1 build/default/production/drv_spi_16bit.o
- .debug_line      0x000a99       0x363f build/default/production/fileio.o
- .debug_line      0x0040d8        0x245 build/default/production/system.o
- .debug_line      0x00431d        0x1c2 build/default/production/sd_card.o
- .debug_line      0x0044df        0xca4 build/default/production/sd_spi.o
- .debug_line      0x005183        0x54f build/default/production/pic_hex_mapper.o
- .debug_line      0x0056d2        0x32d build/default/production/program_memory.o
+ .debug_line      0x000000        0x2f1 build/default/production/boot.o
+ .debug_line      0x0002f1        0x205 build/default/production/memory.o
+ .debug_line      0x0004f6        0x4f1 build/default/production/drv_spi_16bit.o
+ .debug_line      0x0009e7       0x363f build/default/production/fileio.o
+ .debug_line      0x004026        0x245 build/default/production/system.o
+ .debug_line      0x00426b        0x1c2 build/default/production/sd_card.o
+ .debug_line      0x00442d        0xca4 build/default/production/sd_spi.o
+ .debug_line      0x0050d1        0x48f build/default/production/pic_hex_mapper.o
+ .debug_line      0x005560        0x32d build/default/production/program_memory.o
 
-.debug_frame      0x000000        0x8ec
+.debug_frame      0x000000        0x7c4
  *(.debug_frame)
- .debug_frame     0x000000         0xa4 build/default/production/boot.o
- .debug_frame     0x0000a4         0x64 build/default/production/memory.o
- .debug_frame     0x000108         0xa4 build/default/production/drv_spi_16bit.o
- .debug_frame     0x0001ac        0x3e4 build/default/production/fileio.o
- .debug_frame     0x000590         0x64 build/default/production/system.o
- .debug_frame     0x0005f4         0x44 build/default/production/sd_card.o
- .debug_frame     0x000638         0xf4 build/default/production/sd_spi.o
- .debug_frame     0x00072c        0x14c build/default/production/pic_hex_mapper.o
- .debug_frame     0x000878         0x74 build/default/production/program_memory.o
+ .debug_frame     0x000000         0x54 build/default/production/boot.o
+ .debug_frame     0x000054         0x64 build/default/production/memory.o
+ .debug_frame     0x0000b8         0xa4 build/default/production/drv_spi_16bit.o
+ .debug_frame     0x00015c        0x3e4 build/default/production/fileio.o
+ .debug_frame     0x000540         0x64 build/default/production/system.o
+ .debug_frame     0x0005a4         0x44 build/default/production/sd_card.o
+ .debug_frame     0x0005e8         0xf4 build/default/production/sd_spi.o
+ .debug_frame     0x0006dc         0x74 build/default/production/pic_hex_mapper.o
+ .debug_frame     0x000750         0x74 build/default/production/program_memory.o
 
-.debug_str        0x000000        0x54c
+.debug_str        0x000000        0x525
  *(.debug_str)
- .debug_str       0x000000         0x1f build/default/production/boot.o
- .debug_str       0x00001f         0x12 build/default/production/memory.o
- .debug_str       0x000031         0x59 build/default/production/drv_spi_16bit.o
- .debug_str       0x00008a        0x341 build/default/production/fileio.o
- .debug_str       0x0003cb         0x50 build/default/production/system.o
- .debug_str       0x00041b         0x3c build/default/production/sd_card.o
- .debug_str       0x000457         0xd0 build/default/production/sd_spi.o
- .debug_str       0x000527         0x13 build/default/production/pic_hex_mapper.o
- .debug_str       0x00053a         0x12 build/default/production/program_memory.o
+ .debug_str       0x000000         0x12 build/default/production/memory.o
+ .debug_str       0x000012         0x59 build/default/production/drv_spi_16bit.o
+ .debug_str       0x00006b        0x341 build/default/production/fileio.o
+ .debug_str       0x0003ac         0x50 build/default/production/system.o
+ .debug_str       0x0003fc         0x3c build/default/production/sd_card.o
+ .debug_str       0x000438         0xd0 build/default/production/sd_spi.o
+ .debug_str       0x000508          0xb build/default/production/pic_hex_mapper.o
+ .debug_str       0x000513         0x12 build/default/production/program_memory.o
 
 .debug_loc
  *(.debug_loc)
@@ -740,26 +567,26 @@ __CONFIG1         0x00abfe          0x2
  *(.debug_macinfo)
 
 .debug_pubnames
-                  0x000000        0xc40
+                  0x000000        0xbf0
  *(.debug_pubnames)
  .debug_pubnames
-                  0x000000         0x8d build/default/production/boot.o
+                  0x000000         0x7f build/default/production/boot.o
  .debug_pubnames
-                  0x00008d         0x56 build/default/production/memory.o
+                  0x00007f         0x56 build/default/production/memory.o
  .debug_pubnames
-                  0x0000e3         0xc7 build/default/production/drv_spi_16bit.o
+                  0x0000d5         0xc7 build/default/production/drv_spi_16bit.o
  .debug_pubnames
-                  0x0001aa        0x6a0 build/default/production/fileio.o
+                  0x00019c        0x6a0 build/default/production/fileio.o
  .debug_pubnames
-                  0x00084a         0x88 build/default/production/system.o
+                  0x00083c         0x88 build/default/production/system.o
  .debug_pubnames
-                  0x0008d2         0x6f build/default/production/sd_card.o
+                  0x0008c4         0x6f build/default/production/sd_card.o
  .debug_pubnames
-                  0x000941        0x1d1 build/default/production/sd_spi.o
+                  0x000933        0x1d1 build/default/production/sd_spi.o
  .debug_pubnames
-                  0x000b12         0xab build/default/production/pic_hex_mapper.o
+                  0x000b04         0x69 build/default/production/pic_hex_mapper.o
  .debug_pubnames
-                  0x000bbd         0x83 build/default/production/program_memory.o
+                  0x000b6d         0x83 build/default/production/program_memory.o
 
 .debug_ranges
  *(.debug_ranges)
@@ -2066,102 +1893,72 @@ LOAD default_isr
 LOAD data_init
 
 .debug_pubtypes
-                  0x0080c0        0xc0c
+                  0x0080c0        0xbad
  .debug_pubtypes
-                  0x0080c0        0x100 build/default/production/boot.o
+                  0x0080c0         0xa1 build/default/production/boot.o
  .debug_pubtypes
-                  0x0081c0         0x6a build/default/production/memory.o
+                  0x008161         0x6a build/default/production/memory.o
  .debug_pubtypes
-                  0x00822a         0xd8 build/default/production/drv_spi_16bit.o
+                  0x0081cb         0xd8 build/default/production/drv_spi_16bit.o
  .debug_pubtypes
-                  0x008302        0x3e4 build/default/production/fileio.o
+                  0x0082a3        0x3e4 build/default/production/fileio.o
  .debug_pubtypes
-                  0x0086e6        0x116 build/default/production/system.o
+                  0x008687        0x116 build/default/production/system.o
  .debug_pubtypes
-                  0x0087fc        0x216 build/default/production/sd_card.o
+                  0x00879d        0x216 build/default/production/sd_card.o
  .debug_pubtypes
-                  0x008a12        0x1ce build/default/production/sd_spi.o
+                  0x0089b3        0x1ce build/default/production/sd_spi.o
  .debug_pubtypes
-                  0x008be0         0xa3 build/default/production/pic_hex_mapper.o
+                  0x008b81         0xa3 build/default/production/pic_hex_mapper.o
  .debug_pubtypes
-                  0x008c83         0x49 build/default/production/program_memory.o
+                  0x008c24         0x49 build/default/production/program_memory.o
 
 __c30_signature
-                  0x008ccc         0xc0
+                  0x008c6d         0x66
  __c30_signature
-                  0x008ccc          0x6 build/default/production/boot.o
+                  0x008c6d          0x6 build/default/production/boot.o
  __c30_signature
-                  0x008cd2          0x6 build/default/production/memory.o
+                  0x008c73          0x6 build/default/production/memory.o
  __c30_signature
-                  0x008cd8          0x6 build/default/production/drv_spi_16bit.o
+                  0x008c79          0x6 build/default/production/drv_spi_16bit.o
  __c30_signature
-                  0x008cde          0x6 build/default/production/fileio.o
+                  0x008c7f          0x6 build/default/production/fileio.o
  __c30_signature
-                  0x008ce4          0x6 build/default/production/system.o
+                  0x008c85          0x6 build/default/production/system.o
  __c30_signature
-                  0x008cea          0x6 build/default/production/sd_card.o
+                  0x008c8b          0x6 build/default/production/sd_card.o
  __c30_signature
-                  0x008cf0          0x6 build/default/production/sd_spi.o
+                  0x008c91          0x6 build/default/production/sd_spi.o
  __c30_signature
-                  0x008cf6          0x6 build/default/production/pic_hex_mapper.o
+                  0x008c97          0x6 build/default/production/pic_hex_mapper.o
  __c30_signature
-                  0x008cfc          0x6 build/default/production/program_memory.o
+                  0x008c9d          0x6 build/default/production/program_memory.o
  __c30_signature
-                  0x008d02          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-elf.a(CloseUART1.o)
+                  0x008ca3          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(crt0_standard.o)
  __c30_signature
-                  0x008d08          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-elf.a(ConfigIntUART1.o)
+                  0x008ca9          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(data_init_standard.o)
  __c30_signature
-                  0x008d0e          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib/PIC24F\libpPIC24Fxxx-elf.a(OpenUART1.o)
+                  0x008caf          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(udivsi3.eo)
  __c30_signature
-                  0x008d14          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(crt0_standard.o)
+                  0x008cb5          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(memcmp.eo)
  __c30_signature
-                  0x008d1a          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(data_init_standard.o)
+                  0x008cbb          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(memcpy.eo)
  __c30_signature
-                  0x008d20          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(udivsi3.eo)
+                  0x008cc1          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(memset.eo)
  __c30_signature
-                  0x008d26          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(memcmp.eo)
+                  0x008cc7          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(strlen.eo)
  __c30_signature
-                  0x008d2c          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(memcpy.eo)
- __c30_signature
-                  0x008d32          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(memset.eo)
- __c30_signature
-                  0x008d38          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(puts.eo)
- __c30_signature
-                  0x008d3e          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(strlen.eo)
- __c30_signature
-                  0x008d44          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(strncpy.eo)
- __c30_signature
-                  0x008d4a          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(_iob.eo)
- __c30_signature
-                  0x008d50          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(printf_cdnopsuxX.XXeo)
- __c30_signature
-                  0x008d56          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(fputc.eo)
- __c30_signature
-                  0x008d5c          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(doprnt_cdnopsuxX.XXeo)
- __c30_signature
-                  0x008d62          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(flsbuf.eo)
- __c30_signature
-                  0x008d68          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(write.eo)
- __c30_signature
-                  0x008d6e          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(c30_uart.eo)
- __c30_signature
-                  0x008d74          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(mulsi3.eo)
- __c30_signature
-                  0x008d7a          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(divmoddi3.eo)
- __c30_signature
-                  0x008d80          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(muldi3.eo)
- __c30_signature
-                  0x008d86          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(umuldi3.eo)
+                  0x008ccd          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(strncpy.eo)
 
-_040A3A20591f268c
+_040A3A20591f3161
                     0x0800        0x200
- _040A3A20591f268c
+ _040A3A20591f3161
                     0x0800        0x200 build/default/production/fileio.o
                     0x0800                  _gDataBuffer
 
-_040A3C00591f268c
+_040A3C00591f3161
                     0x0a00        0x200
- _040A3C00591f268c
+ _040A3C00591f3161
                     0x0a00        0x200 build/default/production/fileio.o
                     0x0a00                  _gFATBuffer
 
@@ -2191,177 +1988,137 @@ _040A3C00591f268c
 .ndata              0x0dac          0x2
  .ndata             0x0dac          0x2 build/default/production/drv_spi_16bit.o
 
-.data.dpowers       0x0dae         0xa0
- .data.dpowers      0x0dae         0xa0 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(doprnt_cdnopsuxX.XXeo)
+.const              0x856e         0xae load address 0x00056e  
+ .const             0x856e         0x78 build/default/production/sd_spi.o
+                    0x856e                  _sdmmc_cmdtable
+ .const             0x85e6         0x1e build/default/production/fileio.o
+                    0x85e6                  _gShortFileNameCharacters
+                    0x85f7                  _gLongFileNameCharacters
+ .const             0x8604          0xe build/default/production/sd_card.o
+                    0x8604                  _gSdDrive
+ .const             0x8612          0xa build/default/production/boot.o
 
-.data               0x0e4e         0x2a
- .data              0x0e4e         0x2a c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(doprnt_cdnopsuxX.XXeo)
+.text             0x00061c       0x6376
+ .text            0x00061c       0x4a1c build/default/production/fileio.o
+                  0x00061c                  _FILEIO_RegisterTimestampGet
+                  0x000628                  _FILEIO_Initialize
+                  0x000712                  _FILEIO_Reinitialize
+                  0x00071e                  _FILEIO_MediaDetect
+                  0x000734                  _FILEIO_CharToDrive
+                  0x000786                  _FILEIO_FileSystemTypeGet
+                  0x0007a8                  _FILEIO_DriveMount
+                  0x000994                  _FILEIO_LoadMBR
+                  0x000c50                  _FILEIO_LoadBootSector
+                  0x001348                  _FILEIO_DriveUnmount
+                  0x001400                  _FILEIO_FileNameTypeGet
+                  0x001584                  _FILEIO_FormatShortFileName
+                  0x00162c                  _FILEIO_Open
+                  0x001802                  _FILEIO_IsClusterAllocated
+                  0x001880                  _FILEIO_FullClusterNumberGet
+                  0x0018a6                  _FILEIO_CacheDirectory
+                  0x0019ce                  _FILEIO_FindNextDelimiter
+                  0x001a0e                  _FILEIO_DirectoryChangeSingle
+                  0x001ae2                  _FILEIO_DirectoryMakeSingle
+                  0x001c7c                  _FILEIO_DotEntryWrite
+                  0x001e20                  _FILEIO_FindShortFileName
+                  0x001fb4                  _FILEIO_DirectoryEntryCreate
+                  0x002024                  _FILEIO_CreateFirstCluster
+                  0x00210c                  _FILEIO_DirectoryEntryPopulate
+                  0x00229c                  _FILEIO_DirectoryEntryFindEmpty
+                  0x0023b2                  _FILEIO_ClusterAllocate
+                  0x002440                  _FILEIO_FindEmptyCluster
+                  0x002544                  _FILEIO_EraseCluster
+                  0x002668                  _FILEIO_DirectoryEntryCache
+                  0x00288e                  _FILEIO_ForceRecache
+                  0x002902                  _FILEIO_FlushBuffer
+                  0x002a66                  _FILEIO_ShortFileNameCompare
+                  0x002b1a                  _FILEIO_ClusterToSector
+                  0x002c04                  _FILEIO_FATRead
+                  0x003132                  _FILEIO_EraseFile
+                  0x0032d0                  _FILEIO_EraseClusterChain
+                  0x0033be                  _FILEIO_FATWrite
+                  0x003890                  _FILEIO_NextClusterGet
+                  0x003978                  _FILEIO_Close
+                  0x0039a0                  _FILEIO_Flush
+                  0x003aea                  _FILEIO_Tell
+                  0x003b02                  _FILEIO_Seek
+                  0x003de4                  _FILEIO_Write
+                  0x00406c                  _FILEIO_Read
+                  0x00429a                  _FILEIO_Eof
+                  0x0042c0                  _FILEIO_Remove
+                  0x0043c8                  _FILEIO_Rename
+                  0x004584                  _FILEIO_ErrorGet
+                  0x0045a6                  _FILEIO_ErrorClear
+                  0x0045c2                  _FILEIO_GetChar
+                  0x0045e4                  _FILEIO_PutChar
+                  0x004606                  _FILEIO_DirectoryChange
+                  0x004656                  _FILEIO_DirectoryMake
+                  0x0046ba                  _FILEIO_DirectoryRemove
+                  0x0047b8                  _FILEIO_DirectoryRemoveSingle
+                  0x004868                  _FILEIO_DirectoryGetCurrent
+                  0x004bfe                  _FILEIO_Find
+                  0x004d22                  _FILEIO_DrivePropertiesGet
+                  0x004ef6                  _FILEIO_ShortFileNameConvert
+                  0x004f88                  _ReadRam16bit
+                  0x004fbc                  _ReadRam32bit
+ .text            0x005038        0xcf6 build/default/production/sd_spi.o
+                  0x005038                  _FILEIO_SD_MediaDetect
+                  0x00504a                  _FILEIO_SD_SectorSizeRead
+                  0x005056                  _FILEIO_SD_CapacityRead
+                  0x005064                  _FILEIO_SD_IOInitialize
+                  0x005072                  _FILEIO_SD_MediaDeinitialize
+                  0x00509a                  _FILEIO_SD_SendCmd
+                  0x00523e                  _FILEIO_SD_SectorRead
+                  0x00528c                  _FILEIO_SD_AsyncReadTasks
+                  0x00548c                  _FILEIO_SD_AsyncWriteTasks
+                  0x005760                  _FILEIO_SD_SectorWrite
+                  0x0057c8                  _FILEIO_SD_WriteProtectStateGet
+                  0x0057da                  _Delayms
+                  0x005824                  _FILEIO_SD_SPISlowInitialize
+                  0x005896                  _FILEIO_SD_MediaInitialize
+ .text            0x005d2e        0x406 build/default/production/pic_hex_mapper.o
+                  0x005d8a                  _parse_hex_format
+                  0x005fe6                  _get_row_base_addr
+                  0x00600e                  _write_program_memory
+                  0x0060d4                  _map_hex_format
+ .text            0x006134        0x2d8 build/default/production/drv_spi_16bit.o
+                  0x006134                  _DRV_SPI_Initialize
+                  0x0061f4                  _DRV_SPI_Deinitialize
+                  0x006204                  _SPI_DummyDataSet
+                  0x00621a                  _DRV_SPI_Put
+                  0x00624a                  _DRV_SPI_PutBuffer
+                  0x0062f2                  _DRV_SPI_Get
+                  0x00631c                  _DRV_SPI_GetBuffer
+                  0x0063d0                  _DRV_SPI_Lock
+                  0x0063f8                  _DRV_SPI_Unlock
+ .text            0x00640c        0x2b8 build/default/production/program_memory.o
+                  0x00640c                  _set_buffer
+                  0x00641e                  _get_buffer
+                  0x00642e                  _erase_buffer
+                  0x006450                  _ReadPM
+                  0x0064c2                  _WritePM
+                  0x00665c                  _ErasePM
+ .text            0x0066c4        0x10a build/default/production/boot.o
+                  0x0066c4                  _is_boot_mode
+                  0x0066ce                  _process_each_line
+                  0x006748                  _parse_hex_and_map
+                  0x00675a                  _main
+ .text            0x0067ce         0xaa build/default/production/memory.o
+                  0x0067ce                  _WriteMem
+                  0x0067f4                  _WriteLatch
+                  0x006812                  _ReadLatch
+                  0x006830                  _ResetDevice
+                  0x00683c                  _Erase
+ .text            0x006878         0x9a build/default/production/system.o
+                  0x006878                  _SYSTEM_Initialize
+                  0x0068c8                  _USER_SdSpiConfigurePins_1
+                  0x0068d4                  _USER_SdSpiSetCs_1
+                  0x0068f0                  _USER_SdSpiGetCd_1
+                  0x006908                  _USER_SdSpiGetWp_1
+ .text            0x006912         0x80 build/default/production/sd_card.o
+                  0x006912                  _sd_power_switch
+                  0x00692e                  _sd_initialize
+                  0x00696c                  _sd_finalize
 
-.data._iob          0x0e78         0x24
- .data._iob         0x0e78         0x24 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(_iob.eo)
-                    0x0e78                  __iob
-
-.data._Files        0x0e9c          0x2
- .data._Files       0x0e9c          0x2 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(_iob.eo)
-                    0x0e9c                  __Files
-
-.bss._outdone       0x0e9e          0x2
- .bss._outdone      0x0e9e          0x2 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(_iob.eo)
-                    0x0e9e                  __outdone
-
-.bss._sibuf         0x0ea0          0x2
- .bss._sibuf        0x0ea0          0x2 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(_iob.eo)
-                    0x0ea0                  __sibuf
-
-.bss._sobuf         0x0ea2          0x2
- .bss._sobuf        0x0ea2          0x2 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(_iob.eo)
-                    0x0ea2                  __sobuf
-
-.data.__C30_UART
-                    0x0ea4          0x2
- .data.__C30_UART
-                    0x0ea4          0x2 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(c30_uart.eo)
-                    0x0ea4                  ___C30_UART
-
-.const              0x9188        0x1e6 load address 0x001188  
- .const             0x9188         0xae build/default/production/pic_hex_mapper.o
- .const             0x9236         0x94 build/default/production/boot.o
- .const             0x92ca         0x78 build/default/production/sd_spi.o
-                    0x92ca                  _sdmmc_cmdtable
- .const             0x9342         0x1e build/default/production/fileio.o
-                    0x9342                  _gShortFileNameCharacters
-                    0x9353                  _gLongFileNameCharacters
- .const             0x9360          0xe build/default/production/sd_card.o
-                    0x9360                  _gSdDrive
-
-.text             0x00136e       0x629e
- .text            0x00136e       0x4a1c build/default/production/fileio.o
-                  0x00136e                  _FILEIO_RegisterTimestampGet
-                  0x00137a                  _FILEIO_Initialize
-                  0x001464                  _FILEIO_Reinitialize
-                  0x001470                  _FILEIO_MediaDetect
-                  0x001486                  _FILEIO_CharToDrive
-                  0x0014d8                  _FILEIO_FileSystemTypeGet
-                  0x0014fa                  _FILEIO_DriveMount
-                  0x0016e6                  _FILEIO_LoadMBR
-                  0x0019a2                  _FILEIO_LoadBootSector
-                  0x00209a                  _FILEIO_DriveUnmount
-                  0x002152                  _FILEIO_FileNameTypeGet
-                  0x0022d6                  _FILEIO_FormatShortFileName
-                  0x00237e                  _FILEIO_Open
-                  0x002554                  _FILEIO_IsClusterAllocated
-                  0x0025d2                  _FILEIO_FullClusterNumberGet
-                  0x0025f8                  _FILEIO_CacheDirectory
-                  0x002720                  _FILEIO_FindNextDelimiter
-                  0x002760                  _FILEIO_DirectoryChangeSingle
-                  0x002834                  _FILEIO_DirectoryMakeSingle
-                  0x0029ce                  _FILEIO_DotEntryWrite
-                  0x002b72                  _FILEIO_FindShortFileName
-                  0x002d06                  _FILEIO_DirectoryEntryCreate
-                  0x002d76                  _FILEIO_CreateFirstCluster
-                  0x002e5e                  _FILEIO_DirectoryEntryPopulate
-                  0x002fee                  _FILEIO_DirectoryEntryFindEmpty
-                  0x003104                  _FILEIO_ClusterAllocate
-                  0x003192                  _FILEIO_FindEmptyCluster
-                  0x003296                  _FILEIO_EraseCluster
-                  0x0033ba                  _FILEIO_DirectoryEntryCache
-                  0x0035e0                  _FILEIO_ForceRecache
-                  0x003654                  _FILEIO_FlushBuffer
-                  0x0037b8                  _FILEIO_ShortFileNameCompare
-                  0x00386c                  _FILEIO_ClusterToSector
-                  0x003956                  _FILEIO_FATRead
-                  0x003e84                  _FILEIO_EraseFile
-                  0x004022                  _FILEIO_EraseClusterChain
-                  0x004110                  _FILEIO_FATWrite
-                  0x0045e2                  _FILEIO_NextClusterGet
-                  0x0046ca                  _FILEIO_Close
-                  0x0046f2                  _FILEIO_Flush
-                  0x00483c                  _FILEIO_Tell
-                  0x004854                  _FILEIO_Seek
-                  0x004b36                  _FILEIO_Write
-                  0x004dbe                  _FILEIO_Read
-                  0x004fec                  _FILEIO_Eof
-                  0x005012                  _FILEIO_Remove
-                  0x00511a                  _FILEIO_Rename
-                  0x0052d6                  _FILEIO_ErrorGet
-                  0x0052f8                  _FILEIO_ErrorClear
-                  0x005314                  _FILEIO_GetChar
-                  0x005336                  _FILEIO_PutChar
-                  0x005358                  _FILEIO_DirectoryChange
-                  0x0053a8                  _FILEIO_DirectoryMake
-                  0x00540c                  _FILEIO_DirectoryRemove
-                  0x00550a                  _FILEIO_DirectoryRemoveSingle
-                  0x0055ba                  _FILEIO_DirectoryGetCurrent
-                  0x005950                  _FILEIO_Find
-                  0x005a74                  _FILEIO_DrivePropertiesGet
-                  0x005c48                  _FILEIO_ShortFileNameConvert
-                  0x005cda                  _ReadRam16bit
-                  0x005d0e                  _ReadRam32bit
- .text            0x005d8a        0xcf6 build/default/production/sd_spi.o
-                  0x005d8a                  _FILEIO_SD_MediaDetect
-                  0x005d9c                  _FILEIO_SD_SectorSizeRead
-                  0x005da8                  _FILEIO_SD_CapacityRead
-                  0x005db6                  _FILEIO_SD_IOInitialize
-                  0x005dc4                  _FILEIO_SD_MediaDeinitialize
-                  0x005dec                  _FILEIO_SD_SendCmd
-                  0x005f90                  _FILEIO_SD_SectorRead
-                  0x005fde                  _FILEIO_SD_AsyncReadTasks
-                  0x0061de                  _FILEIO_SD_AsyncWriteTasks
-                  0x0064b2                  _FILEIO_SD_SectorWrite
-                  0x00651a                  _FILEIO_SD_WriteProtectStateGet
-                  0x00652c                  _Delayms
-                  0x006576                  _FILEIO_SD_SPISlowInitialize
-                  0x0065e8                  _FILEIO_SD_MediaInitialize
- .text            0x006a80        0x474 build/default/production/pic_hex_mapper.o
-                  0x006adc                  _parse_hex_format
-                  0x006c1c                  _erase_memory
-                  0x006c26                  _write_memory
-                  0x006c42                  _read_memory
-                  0x006c5a                  _show_memory
-                  0x006d90                  _get_row_base_addr
-                  0x006db8                  _write_program_memory
-                  0x006e8c                  _map_hex_format
- .text            0x006ef4        0x2d8 build/default/production/drv_spi_16bit.o
-                  0x006ef4                  _DRV_SPI_Initialize
-                  0x006fb4                  _DRV_SPI_Deinitialize
-                  0x006fc4                  _SPI_DummyDataSet
-                  0x006fda                  _DRV_SPI_Put
-                  0x00700a                  _DRV_SPI_PutBuffer
-                  0x0070b2                  _DRV_SPI_Get
-                  0x0070dc                  _DRV_SPI_GetBuffer
-                  0x007190                  _DRV_SPI_Lock
-                  0x0071b8                  _DRV_SPI_Unlock
- .text            0x0071cc        0x2b8 build/default/production/program_memory.o
-                  0x0071cc                  _set_buffer
-                  0x0071de                  _get_buffer
-                  0x0071ee                  _erase_buffer
-                  0x007210                  _ReadPM
-                  0x007282                  _WritePM
-                  0x00741c                  _ErasePM
- .text            0x007484        0x188 build/default/production/boot.o
-                  0x007484                  _init_uart
-                  0x0074b8                  _is_boot_mode
-                  0x0074c2                  _process_each_line
-                  0x00753c                  _parse_hex_and_map
-                  0x00756a                  _main
-
-.dinit            0x00760c        0x116
- .dinit           0x00760c        0x116 data_init
-
-.text             0x007722        0x1c4
- .text            0x007722         0xaa build/default/production/memory.o
-                  0x007722                  _WriteMem
-                  0x007748                  _WriteLatch
-                  0x007766                  _ReadLatch
-                  0x007784                  _ResetDevice
-                  0x007790                  _Erase
- .text            0x0077cc         0x9a build/default/production/system.o
-                  0x0077cc                  _SYSTEM_Initialize
-                  0x00781c                  _USER_SdSpiConfigurePins_1
-                  0x007828                  _USER_SdSpiSetCs_1
-                  0x007844                  _USER_SdSpiGetCd_1
-                  0x00785c                  _USER_SdSpiGetWp_1
- .text            0x007866         0x80 build/default/production/sd_card.o
-                  0x007866                  _sd_power_switch
-                  0x007882                  _sd_initialize
-                  0x0078c0                  _sd_finalize
+.dinit            0x006992         0x42
+ .dinit           0x006992         0x42 data_init
