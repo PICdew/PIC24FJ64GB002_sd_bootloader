@@ -43,7 +43,6 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 // DOM-IGNORE-END
 
 #include <xc.h>
-//#include "driver/spi/drv_spi.h"
 #include "drv_spi.h"
 #include "system_config.h"
 #include "system.h"
@@ -923,6 +922,7 @@ int DRV_SPI_Lock(uint8_t channel)
 /*****************************************************************************
  * int SPIUnLock(unsigned int channel)
  *****************************************************************************/
+/*
 void DRV_SPI_Unlock(uint8_t channel)
 {
 #ifdef DRV_SPI_CONFIG_CHANNEL_1_ENABLE
@@ -950,3 +950,4 @@ void DRV_SPI_Unlock(uint8_t channel)
 	}
 #endif // #ifdef DRV_SPI_CONFIG_CHANNEL_4_ENABLE
 }
+*/

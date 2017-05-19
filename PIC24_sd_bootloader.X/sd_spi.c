@@ -53,9 +53,9 @@
 #include "sd_spi.h"
 #include "sd_spi_private.h"
 
-#include <string.h>
-#include <stdint.h>
-#include <stdbool.h>
+//#include <string.h>
+//#include <stdint.h>
+//#include <stdbool.h>
 
 #if defined(unix) || defined(__APPLE__) || defined(_WIN32)
 #include <stdio.h>
@@ -116,7 +116,7 @@ FILEIO_SD_RESPONSE FILEIO_SD_SendCmd(FILEIO_SD_DRIVE_CONFIG * config, uint8_t cm
 #if defined __XC8__
 	FILEIO_SD_RESPONSE FILEIO_SD_SendCmdSlow(FILEIO_SD_DRIVE_CONFIG * config, uint8_t cmd, uint32_t address);
 #endif
-void FILEIO_SD_SPISlowInitialize(FILEIO_SD_DRIVE_CONFIG * config);
+//void FILEIO_SD_SPISlowInitialize(FILEIO_SD_DRIVE_CONFIG * config);
 
 #ifdef __XC32__
 /*********************************************************
@@ -289,7 +289,7 @@ bool FILEIO_SD_MediaDetect (FILEIO_SD_DRIVE_CONFIG * config)
 	#endif  //End of else of #ifndef MEDIA_SOFT_DETECT
 #endif
 }//end MediaDetect
-
+/*
 uint16_t FILEIO_SD_SectorSizeRead(FILEIO_SD_DRIVE_CONFIG * config)
 {
 #if defined(unix) || defined(__APPLE__) || defined(_WIN32)
@@ -298,8 +298,9 @@ uint16_t FILEIO_SD_SectorSizeRead(FILEIO_SD_DRIVE_CONFIG * config)
 	return gMediaSectorSize;
 #endif
 }
+*/
 
-
+/*
 uint32_t FILEIO_SD_CapacityRead(FILEIO_SD_DRIVE_CONFIG * config)
 {
 #if defined(unix) || defined(__APPLE__) || defined(_WIN32)
@@ -308,7 +309,7 @@ uint32_t FILEIO_SD_CapacityRead(FILEIO_SD_DRIVE_CONFIG * config)
 	return (finalLBA);
 #endif
 }
-
+*/
 
 void FILEIO_SD_IOInitialize (FILEIO_SD_DRIVE_CONFIG * config)
 {
@@ -1368,7 +1369,6 @@ bool FILEIO_SD_SectorWrite(FILEIO_SD_DRIVE_CONFIG * config, uint32_t sectorAddre
 #endif
 }    
 
-
 bool FILEIO_SD_WriteProtectStateGet(FILEIO_SD_DRIVE_CONFIG * config)
 {
 #if defined(unix) || defined(__APPLE__) || defined(_WIN32)
@@ -1377,7 +1377,6 @@ bool FILEIO_SD_WriteProtectStateGet(FILEIO_SD_DRIVE_CONFIG * config)
 	return (*config->wpFunc)();
 #endif
 }
-
 
 /*******************************************************************************
   Function:
@@ -1404,9 +1403,8 @@ void Delayms(uint8_t milliseconds)
 {
 #if defined(unix) || defined(__APPLE__) || defined(_WIN32)
 #else
-	uint8_t    ms;
-	uint32_t   count;
-	
+	uint8_t    ms;	
+    uint32_t   count;
 	ms = milliseconds;
 	while (ms--)
 	{
@@ -1441,7 +1439,7 @@ void Delayms(uint8_t milliseconds)
   Remarks:
 	None.
   ***************************************************************************************/
-
+/*
 void FILEIO_SD_SPISlowInitialize(FILEIO_SD_DRIVE_CONFIG * config)
 {
 #if defined(unix) || defined(__APPLE__) || defined(_WIN32)
@@ -1536,7 +1534,7 @@ void FILEIO_SD_SPISlowInitialize(FILEIO_SD_DRIVE_CONFIG * config)
 	#endif //#if defined __XC16__ || defined __XC32__
 #endif
 }    
-
+*/
 
 FILEIO_MEDIA_INFORMATION *  FILEIO_SD_MediaInitialize (FILEIO_SD_DRIVE_CONFIG * config)
 {
@@ -1572,7 +1570,7 @@ FILEIO_MEDIA_INFORMATION *  FILEIO_SD_MediaInitialize (FILEIO_SD_DRIVE_CONFIG * 
 
 	//MMC media powers up in the open-drain mode and cannot handle a clock faster
 	//than 400kHz. Initialize SPI port to <= 400kHz
-	FILEIO_SD_SPIInitialize_Slow(config);
+//	FILEIO_SD_SPIInitialize_Slow(config);
 	
 	#ifdef __DEBUG_UART  
 	PrintROMASCIIStringUART("\r\n\r\nInitializing Media\r\n"); 

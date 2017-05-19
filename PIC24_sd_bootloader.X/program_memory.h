@@ -17,10 +17,10 @@ extern "C" {
 #endif
     
 void set_buffer(unsigned int address, BYTE data);
-BYTE get_buffer(unsigned int address);
+//BYTE get_buffer(unsigned int address);
 void erase_buffer(void);
 
-void ReadPM( WORD length, DWORD_VAL sourceAddr);
+//void ReadPM( WORD length, DWORD_VAL sourceAddr);
 void WritePM( WORD length, DWORD_VAL addr);
 void ErasePM( WORD length, DWORD_VAL sourceAddr);
 

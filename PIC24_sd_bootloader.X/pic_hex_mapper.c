@@ -11,7 +11,7 @@
 
 
 
-#define FILENAME		"test.hex" 	//File name of hex file.
+//#define FILENAME		"test.hex" 	//File name of hex file.
 #define BUF 			(100)	
 #define MEMORY_SIZE		(0xAC00)	//Memory size of PIC program memory.	
 #define ADDRESS_UNSET	(0xFFFF)	//Active address  unset. 
@@ -98,10 +98,7 @@ static int char2hex(char chr){
 */
 int parse_hex_format(const char *str, FORMAT *format ){
 	//NULL check	
-	if(format == NULL ){
-		return -1;
-	}
-	if(str==NULL){
+	if((format == NULL )||(str==NULL)){
 		return -1;
 	}
 
@@ -268,11 +265,13 @@ int write_program_memory(MEMORY *mem){
 
 	//Error case. address excess
 	int index = (current_address - active_row_addr) / 2;
+    /*
 	if (index >= 0x40)
 	{
 		//printf("ERROR: invalid index %lx\r\n", mem->address);
 		return -1;
 	}
+    */
 
 	//Write data to buffer.
 	set_buffer(4 * index + 0, mem->data.b_data[0]);

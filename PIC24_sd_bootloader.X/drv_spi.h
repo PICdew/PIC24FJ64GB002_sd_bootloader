@@ -375,7 +375,7 @@ int DRV_SPI_Lock(uint8_t channel);
 	None.
 */
 
-void DRV_SPI_Unlock(uint8_t channel);
+//void DRV_SPI_Unlock(uint8_t channel);
 
 
 // *****************************************************************************

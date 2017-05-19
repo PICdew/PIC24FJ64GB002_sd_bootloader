@@ -191,7 +191,7 @@
     #define BRG_DIV 16
 #endif
 
-
+/*
 #define BAUDRATEREG    ((FCY + (BRG_DIV/2*BAUDRATE))/BRG_DIV/BAUDRATE-1)
 #define BAUD_ACTUAL    (FCY/BRG_DIV/(BAUDRATEREG+1))
 
@@ -203,12 +203,14 @@
 #elif (BAUD_ERROR_PRECENT > 2)
     #warning "UART frequency error is worse than 2%"
 #endif
+*/
 
 #endif
 //**********************************************************************************
 
 //Constant Defines *****************************************************************
 //Protocol Commands
+/*
 #define RD_VER 		0x00
 #define RD_FLASH 	0x01
 #define WT_FLASH	0x02
@@ -223,6 +225,7 @@
 #define STX 0x55
 #define ETX 0x04
 #define DLE 0x05
+ * */
 //**********************************************************************************
 
 
@@ -235,11 +238,12 @@
 	#define U2TX_IO		5
 	#define U2RTS_IO	6
 
-	extern void ioMap();
+	//extern void ioMap();
 #endif
 //**********************************************************************************
 
 //UART Configuration ***************************************************************
+/*
 #define UARTREG2(a,b)     U##a##b
 #define UARTREG(a,b)    UARTREG2(a,b)
 
@@ -254,6 +258,7 @@
 #ifdef DEV_HAS_PPS
     #define UxTX_IO UARTREG(UARTNUM,TX_IO)
 #endif
+ * */
 //**********************************************************************************
 
 

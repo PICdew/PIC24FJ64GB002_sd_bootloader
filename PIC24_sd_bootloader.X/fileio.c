@@ -86,11 +86,12 @@ struct
 /************************************************************************************/
 /*                               Prototypes                                         */
 /************************************************************************************/
-
+/*
 void FILEIO_RegisterTimestampGet (FILEIO_TimestampGet timestampFunction)
 {
 	timestampGet = timestampFunction;
 }
+*/
 
 int FILEIO_Initialize (void)
 {

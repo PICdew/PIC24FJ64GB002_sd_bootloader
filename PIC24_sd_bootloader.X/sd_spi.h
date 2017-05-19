@@ -36,8 +36,8 @@
 
 #include "system_config.h"
 #include "system.h"
-#include <stdint.h>
-#include <stdbool.h>
+//#include <stdint.h>
+//#include <stdbool.h>
 
 
 /*****************************************************************************/
@@ -377,7 +377,7 @@ uint32_t FILEIO_SD_CapacityRead(FILEIO_SD_DRIVE_CONFIG * config);
   Remarks:
 	None
   *********************************************************/
-uint16_t FILEIO_SD_SectorSizeRead(FILEIO_SD_DRIVE_CONFIG * config);
+//uint16_t FILEIO_SD_SectorSizeRead(FILEIO_SD_DRIVE_CONFIG * config);
 
 /*********************************************************
   Function:

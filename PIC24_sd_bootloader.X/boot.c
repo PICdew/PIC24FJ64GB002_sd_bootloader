@@ -7,7 +7,7 @@
 
 //Define *******************************
 #define DEV_HAS_USB
-//#define DEV_HAS_UART
+#define DEV_HAS_UART
 
 //Includes *******************************
 #ifdef __XC16
@@ -21,7 +21,6 @@
 
 #define EOF (-1)
 
-//#include "delay.h"
 #include "sd_card.h"
 #include "system.h"
 #include "fileio.h"
@@ -29,11 +28,10 @@
 #include "program_memory.h"
 #include "memory.h"
 #include "config.h"
-
+#include "GenericTypeDefs.h"
 
 #define BUF             (100)
 //****************************************
-
 
 
 //Configuation bits****************************************
@@ -63,6 +61,8 @@ void init_uart(void){
     RPINR18bits.U1RXR = 2;  //rx UART1 RP2
 	RPOR1bits.RP3R = 3;     //tx UART1
 	CloseUART1();
+    
+
 
 	unsigned int config1 =  UART_EN &               // UART enable
 							UART_IDLE_CON &         // operete in Idle mode
@@ -98,7 +98,7 @@ int is_boot_mode(void){
     //TODO: Implement decision logic here.
     return 1;
 }
-   
+
 /**
  * process_each_line
  * @param 
@@ -208,10 +208,14 @@ int main(void){
 #ifdef DEV_HAS_UART
     init_uart();
 #endif
-    
+
     //Set User reset code.
     DWORD_VAL userReset;
     userReset.Val = USER_PROG_RESET_ADDR;
+
+    if(0==is_boot_mode()){
+        ResetDevice(userReset.Val);
+    }
     
     //Erase mamery space.
     ErasePM(8, userReset);
@@ -235,9 +239,9 @@ int main(void){
         #endif
         return -1;
     }
-    #ifdef DEV_HAS_UART
+#ifdef DEV_HAS_UART
     printf("Open HEX file.\r\n");
-    #endif
+#endif
 
     //move pointer to the target.
 	if(FILEIO_Seek (&file,0, FILEIO_SEEK_SET) != FILEIO_RESULT_SUCCESS){
@@ -245,9 +249,9 @@ int main(void){
 	}
     
     //process_each_line(&file, print); //TEST 
-    #ifdef DEV_HAS_UART
+#ifdef DEV_HAS_UART
     printf("parse and hex\r\n");
-    #endif
+#endif
     process_each_line(&file, parse_hex_and_map);
     
     //TODO :verify memory
@@ -255,20 +259,20 @@ int main(void){
     
     // Close the file to save the data
     if (FILEIO_Close (&file) != FILEIO_RESULT_SUCCESS){ 
-        #ifdef DEV_HAS_UART
+#ifdef DEV_HAS_UART
         printf("failed to close sd \r\n");
-        #endif
+#endif
         return -1; 
     }
 #ifdef DEV_HAS_UART
     printf("SD finalize\r\n");
-    #endif
+#endif
     sd_finalize();
     
     //GOTO user application.
-    #ifdef DEV_HAS_UART
+#ifdef DEV_HAS_UART
     printf("GOTO %lx\r\n",userReset.Val);    
-    #endif
+#endif
     ResetDevice(userReset.Val);
 
     return 0;

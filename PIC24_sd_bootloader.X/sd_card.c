@@ -58,11 +58,13 @@ const FILEIO_DRIVE_CONFIG gSdDrive =
 /*********************************************************************************************
  *sd_power_switch(int power);
  *********************************************************************************************/
+/*
 void sd_power_switch(unsigned char power){
 #ifdef __XC16
 	LATAbits.LATA3 = power;     //turn off high side switch
 #endif
 }
+ */ 
 
 /*********************************************************************************************
  * har sd_initialize(void)
@@ -73,7 +75,7 @@ void sd_power_switch(unsigned char power){
  *      mount
  ********************************************************************************************/
 char sd_initialize(void){
-	sd_power_switch(1);
+	//sd_power_switch(1);
 	// Initialize the library
 	if (!FILEIO_Initialize()) {
 		return SD_FAILED;
@@ -98,16 +100,16 @@ char sd_initialize(void){
  *      turn off SD card
  ********************************************************************************************/
 char sd_finalize(void){
-	sd_power_switch(1);
+	//sd_power_switch(1);
 	char result = SD_SUCCESS;
 
 	if (FILEIO_DriveUnmount('A') != FILEIO_RESULT_SUCCESS) {
 		result = SD_FAILED;
 	}
 	
-	sd_power_switch(0);
+	//sd_power_switch(0);
 #ifdef __XC16    
-	LATBbits.LATB9 = 0;     //turn off spi pin
+	//LATBbits.LATB9 = 0;     //turn off spi pin
 #endif
 
 	return result;

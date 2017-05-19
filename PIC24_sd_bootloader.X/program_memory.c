@@ -16,9 +16,11 @@ unsigned long active_row_addr=0;
 void set_buffer(unsigned int address, BYTE data){
     buffer[address]=data;
 }
+/*
 BYTE get_buffer(unsigned int address){
     return buffer[address];
 }
+*/
 void erase_buffer(void){
     //memset(buffer,0x00,MAX_PACKET_SIZE+1);
     int i=0;
@@ -45,6 +47,7 @@ void erase_buffer(void){
 * Note:			None
  * 
 ********************************************************************/
+/*
 void ReadPM(WORD length, DWORD_VAL sourceAddr)
 {
 	WORD bytesRead = 0;
@@ -68,7 +71,7 @@ void ReadPM(WORD length, DWORD_VAL sourceAddr)
 		addr.Val = addr.Val + 2;  //increment addr by 2
 	}//end while(bytesRead < length*PM_INSTR_SIZE)
 }//end ReadPM(WORD length, DWORD_VAL sourceAddr)
-
+*/
 
 
 
