@@ -18,7 +18,7 @@
 #include <stdio.h>
 #endif
 
-#include "delay.h"
+//#include "delay.h"
 #include "sd_card.h"
 #include "system.h"
 #include "fileio.h"

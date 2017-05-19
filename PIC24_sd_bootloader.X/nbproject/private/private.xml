@@ -3,9 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/NAOYA/code/pic24FJ64GB002_serial_bootloader/PIC24_serial_bootloader.X/boot.c</file>
-            <file>file:/C:/Users/NAOYA/code/pic24FJ64GB002_serial_bootloader/PIC24_serial_bootloader.X/config.h</file>
-            <file>file:/C:/Users/NAOYA/code/pic24FJ64GB002_serial_bootloader/PIC24_serial_bootloader.X/memory.c</file>
+            <file>file:/C:/Users/NAOYA/code/pic24FJ64GB002_sd_bootloader/PIC24_sd_bootloader.X/gld/p24FJ64GB002_boot_linker.gld</file>
+            <file>file:/C:/Users/NAOYA/code/pic24FJ64GB002_sd_bootloader/PIC24_sd_bootloader.X/pic_hex_mapper.c</file>
+            <file>file:/C:/Users/NAOYA/code/pic24FJ64GB002_sd_bootloader/PIC24_sd_bootloader.X/memory.c</file>
+            <file>file:/C:/Users/NAOYA/code/pic24FJ64GB002_sd_bootloader/PIC24_sd_bootloader.X/program_memory.c</file>
+            <file>file:/C:/Users/NAOYA/code/pic24FJ64GB002_sd_bootloader/PIC24_sd_bootloader.X/pic_hex_mapper.h</file>
+            <file>file:/C:/Users/NAOYA/code/pic24FJ64GB002_sd_bootloader/PIC24_sd_bootloader.X/boot.c</file>
         </group>
     </open-files>
 </project-private>
