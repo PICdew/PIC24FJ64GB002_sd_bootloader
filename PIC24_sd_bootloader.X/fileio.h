@@ -1182,7 +1182,7 @@ size_t FILEIO_Read (void * buffer, size_t size, size_t count, FILEIO_OBJECT * ha
 	  * FILEIO_ERROR_DRIVE_FULL - There are no more clusters on the
 		media that can be allocated to the file.                              
   *****************************************************************************/
-size_t FILEIO_Write (const void * buffer, size_t size, size_t count, FILEIO_OBJECT * handle);
+//size_t FILEIO_Write (const void * buffer, size_t size, size_t count, FILEIO_OBJECT * handle);
 
 /***************************************************************************
   Function:
