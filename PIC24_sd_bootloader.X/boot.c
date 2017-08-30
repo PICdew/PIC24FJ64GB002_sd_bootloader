@@ -6,8 +6,8 @@
  */
 
 //Define *******************************
-#define DEV_HAS_USB
-#define DEV_HAS_UART
+//#define DEV_HAS_USB
+//#define DEV_HAS_UART
 
 //Includes *******************************
 #ifdef __XC16
